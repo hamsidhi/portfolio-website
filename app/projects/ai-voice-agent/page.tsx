@@ -8,7 +8,6 @@ import {
   CaseCardGrid,
   CaseStudyCta,
 } from '@/components/case-study'
-import { VoiceDemo } from '@/components/voice-demo'
 import { Reveal } from '@/components/reveal'
 import { businessValue } from '@/lib/content'
 
@@ -55,7 +54,9 @@ export default function VoiceAgentPage() {
       >
         <div className="flex flex-wrap gap-3 pt-2">
           <Link
-            href="#demo"
+            href="https://vapi.ai?demo=true&shareKey=0dc98dc6-9b4d-49b6-9f7c-4933a0b3ded3&assistantId=5e52cf1e-3160-47db-befe-7eefb58fb02e"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             <PlayCircle className="size-4" />
@@ -77,11 +78,15 @@ export default function VoiceAgentPage() {
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Live demo</h2>
             <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-              Rather than telling you what it can do, here&apos;s a simulated real-estate call. Press
-              start to watch the agent qualify a lead in real time.
+              Experience the AI Voice Agent in real time. Click the microphone below to start a live conversation and see how it qualifies leads and answers questions natively.
             </p>
-            <div className="mt-8">
-              <VoiceDemo />
+            <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card/50 shadow-xl">
+              <iframe
+                src="https://vapi.ai?demo=true&shareKey=0dc98dc6-9b4d-49b6-9f7c-4933a0b3ded3&assistantId=5e52cf1e-3160-47db-befe-7eefb58fb02e"
+                allow="microphone"
+                className="h-[600px] w-full border-0"
+                title="AI Voice Agent Demo"
+              />
             </div>
           </Reveal>
         </div>
