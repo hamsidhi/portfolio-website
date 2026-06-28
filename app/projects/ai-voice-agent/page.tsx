@@ -81,12 +81,24 @@ export default function VoiceAgentPage() {
               Experience the AI Voice Agent in real time. Click the microphone below to start a live conversation and see how it qualifies leads and answers questions natively.
             </p>
             <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card/50 shadow-xl">
-              <iframe
-                src="https://vapi.ai?demo=true&shareKey=0dc98dc6-9b4d-49b6-9f7c-4933a0b3ded3&assistantId=5e52cf1e-3160-47db-befe-7eefb58fb02e"
-                allow="microphone"
-                className="h-[600px] w-full border-0"
-                title="AI Voice Agent Demo"
-              />
+              <div className="flex flex-col items-center justify-center p-12 text-center sm:p-20">
+                <div className="mb-6 flex size-20 items-center justify-center rounded-full bg-primary/10">
+                  <PlayCircle className="size-10 text-primary" />
+                </div>
+                <h3 className="mb-2 text-xl font-bold tracking-tight">Interactive Voice Demo</h3>
+                <p className="mb-8 max-w-md text-sm text-muted-foreground">
+                  Because this demo requests microphone access to speak with you directly, it must run in a secure, dedicated window. 
+                </p>
+                <Link
+                  href="https://vapi.ai?demo=true&shareKey=0dc98dc6-9b4d-49b6-9f7c-4933a0b3ded3&assistantId=5e52cf1e-3160-47db-befe-7eefb58fb02e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-medium text-primary-foreground transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+                >
+                  <PlayCircle className="size-5" />
+                  Connect to Voice Agent
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>
