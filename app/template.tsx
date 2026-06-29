@@ -1,16 +1,15 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { ReactNode } from 'react'
 
-export default function Template({ children }: { children: ReactNode }) {
+export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15, scale: 0.99 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ 
-        duration: 0.45,
-        ease: [0.21, 0.5, 0.25, 1], // Custom calm premium easing
+      initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+      animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
       }}
     >
       {children}

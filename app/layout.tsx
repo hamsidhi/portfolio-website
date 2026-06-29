@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
-import { CursorGlow } from '@/components/cursor-glow'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ScrollProgress } from '@/components/scroll-progress'
 
@@ -79,7 +78,6 @@ export default function RootLayout({
           themes={['dark', 'beige']}
           disableTransitionOnChange
         >
-          <CursorGlow />
         <ScrollProgress />
         <Navbar />
         <main id="main">{children}</main>
