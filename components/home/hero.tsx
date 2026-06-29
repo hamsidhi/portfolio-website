@@ -41,21 +41,24 @@ const floatingCards = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div aria-hidden className="glow-blue absolute -top-32 left-1/4 size-[600px] rounded-full" />
-      <div className="bg-grid absolute inset-0 opacity-50" aria-hidden />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" aria-hidden />
+      <div aria-hidden className="glow-blue absolute -top-32 left-1/4 size-[600px] rounded-full mix-blend-screen opacity-70 animate-pulse" style={{ animationDuration: '4s' }} />
+      <div aria-hidden className="glow-purple absolute -top-10 right-1/4 size-[500px] rounded-full mix-blend-screen opacity-60 animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
+      <div aria-hidden className="glow-teal absolute top-40 left-1/3 size-[400px] rounded-full mix-blend-screen opacity-50 animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }} />
+      <div className="bg-grid absolute inset-0 opacity-[0.25]" aria-hidden />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-32 lg:px-8 lg:pt-40">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div variants={container} initial="hidden" animate="visible">
             <motion.div variants={item}>
-              <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full glass-panel px-3.5 py-1.5 text-xs text-muted-foreground">
-                <span className="inline-block size-1.5 animate-pulse rounded-full bg-primary" />
-                Building Practical AI Products
-                <span className="text-border">•</span>
-                Open to AI Engineering Opportunities
-                <span className="text-border">•</span>
-                Based in UAE
+              <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full glass-panel px-4 py-1.5 text-xs text-foreground shadow-lg border-primary/20 bg-primary/5">
+                <span className="inline-block size-2 animate-ping absolute rounded-full bg-primary opacity-75" />
+                <span className="inline-block size-2 relative rounded-full bg-primary" />
+                <span className="font-medium tracking-wide">Data Science Student & Analytics Builder</span>
+                <span className="text-primary/40">•</span>
+                <span className="text-muted-foreground">Open to Data Roles</span>
+                <span className="text-primary/40">•</span>
+                <span className="text-muted-foreground">Based in UAE</span>
               </span>
             </motion.div>
 
@@ -63,7 +66,7 @@ export function Hero() {
               variants={item}
               className="mt-6 text-balance text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
             >
-              Hi, I&apos;m Hamza Siddiqui. I build AI products that solve real business problems.
+              Hi, I&apos;m Hamza Siddiqui. I build <span className="text-gradient">data-driven products</span> that solve real business problems.
             </motion.h1>
 
             <motion.div variants={item} className="mt-5 flex items-center gap-2 font-mono text-base text-muted-foreground sm:text-lg">
@@ -75,10 +78,10 @@ export function Hero() {
               variants={item}
               className="mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground"
             >
-              I don&apos;t just learn Artificial Intelligence—I build intelligent products that
-              businesses and people can actually use. My work combines AI, data analytics,
+              I don&apos;t just study Data Science—I build intelligent, data-driven systems that
+              businesses and people can actually use. My work combines data analytics, applied AI,
               automation, and product thinking to create solutions that reduce manual work,
-              improve decision-making, and deliver measurable value.
+              uncover insights, and deliver measurable value.
             </motion.p>
 
             <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
@@ -135,7 +138,7 @@ export function Hero() {
                         <span className="min-w-0">
                           <span className="flex items-center gap-2">
                             <span className="truncate text-sm font-semibold">{card.title}</span>
-                            <span className="shrink-0 rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-medium text-primary">
+                            <span className="shrink-0 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-primary shadow-sm">
                               {card.tag}
                             </span>
                           </span>

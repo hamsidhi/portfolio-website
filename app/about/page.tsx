@@ -6,7 +6,7 @@ import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Hamza Siddiqui — from curiosity in data science to building practical AI systems. Calm, honest, and business-minded.',
+    'Hamza Siddiqui — from curiosity in data science to building practical, data-driven systems. Calm, honest, and business-minded.',
 }
 
 const focus = [
@@ -26,8 +26,8 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About"
-        title="I build AI that solves real problems — and empowers people"
-        description="My journey went from curiosity in Data Science to building practical AI systems businesses can actually use."
+        title="I build data-driven systems that solve real problems — and empower people"
+        description="My journey went from curiosity in Data Science to building practical intelligent systems businesses can actually use."
       />
 
       <section className="mx-auto max-w-4xl px-5 py-16 lg:px-8">
@@ -35,15 +35,15 @@ export default function AboutPage() {
           <p>
             I started with a simple curiosity about data — how numbers could explain behavior and
             guide better decisions. That curiosity grew into a conviction: the real value of AI
-            isn&apos;t in the models, it&apos;s in the problems they solve for people and businesses.
+            isn&apos;t in complex algorithms, it&apos;s in the problems they solve for people and businesses.
           </p>
           <p>
-            So I stopped just learning AI and started building it. I now build AI-powered
-            applications, intelligent automation, and data-driven products — from voice agents to
+            So I stopped just studying Data Science and started building it. I now build data-driven
+            applications, intelligent automation, and analytics dashboards — from voice agents to
             academic intelligence platforms — always anchored to a practical outcome.
           </p>
           <p>
-            I believe technology should solve real problems and that AI should empower people, not
+            I believe technology should solve real problems and that data and AI should empower people, not
             replace them. I&apos;m calm, honest, and business-minded — more interested in shipping
             something useful than in chasing hype.
           </p>

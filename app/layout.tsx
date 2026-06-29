@@ -19,18 +19,18 @@ const siteUrl = 'https://hamsidhi.me'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Hamza Siddiqui | AI Engineer | Data Analyst | Automation Builder',
+    default: 'Hamza Siddiqui | Data Scientist | Data Analyst | Applied AI',
     template: '%s | Hamza Siddiqui',
   },
   description:
-    'AI Engineer building practical AI products, automation systems, healthcare intelligence solutions, and business analytics platforms.',
+    'Data Science student building data-driven analytics platforms, automation systems, and practical AI solutions.',
   keywords: [
-    'AI Engineer',
-    'Applied AI',
+    'Data Scientist',
     'Data Analyst',
+    'Applied AI',
     'Automation Engineer',
     'Business Intelligence',
-    'Healthcare AI',
+    'Data Analytics',
     'Hamza Siddiqui',
   ],
   authors: [{ name: 'Hamza Siddiqui', url: siteUrl }],
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Hamza Siddiqui | AI Engineer | Data Analyst | Automation Builder',
+    title: 'Hamza Siddiqui | Data Scientist | Data Analyst',
     description:
-      'AI Engineer building practical AI products, automation systems, healthcare intelligence solutions, and business analytics platforms.',
+      'Data Science student building data-driven analytics platforms, automation systems, and practical AI solutions.',
     siteName: 'Hamza Siddiqui',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hamza Siddiqui | AI Engineer',
+    title: 'Hamza Siddiqui | Data Scientist',
     description:
-      'Building AI that solves real business problems. AI products, automation, and business analytics.',
+      'Building data-driven systems that solve real business problems. Data analytics, automation, and applied AI.',
   },
   generator: 'v0.app',
 }

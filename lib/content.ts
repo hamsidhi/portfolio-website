@@ -1,12 +1,12 @@
 export const techStack = [
   'Python',
-  'FastAPI',
+  'Data Analytics',
   'Power BI',
   'PostgreSQL',
-  'GitHub',
-  'AI',
+  'Machine Learning',
+  'Applied AI',
   'Automation',
-  'Analytics',
+  'Data Science',
 ]
 
 export const whyWorkWithMe = [
@@ -15,8 +15,8 @@ export const whyWorkWithMe = [
     body: 'I start from the problem and the outcome, not the framework. Technology is a means to a measurable result.',
   },
   {
-    title: 'Applied Artificial Intelligence',
-    body: 'I build AI products people actually use — voice agents, RAG systems, and intelligent analytics, not demos.',
+    title: 'Applied Data Science & AI',
+    body: 'I build data-driven products people actually use — predictive analytics, intelligent agents, and scalable data systems, not just demos.',
   },
   {
     title: 'Execution',
@@ -32,7 +32,7 @@ export const whyWorkWithMe = [
   },
   {
     title: 'Continuous Learning',
-    body: 'AI moves fast. I keep learning deliberately and translate new capabilities into practical business value.',
+    body: 'Data science and AI move fast. I keep learning deliberately and translate new capabilities into practical business value.',
   },
 ]
 
@@ -80,14 +80,14 @@ export const timeline: Experience[] = [
     ],
   },
   {
-    role: 'Independent AI Product Development',
+    role: 'Independent Data Science & Analytics Development',
     org: 'Personal Projects',
     location: 'Remote',
     period: 'Ongoing',
     type: 'project',
     points: [
-      'Designed and built AGMIS, an academic intelligence platform.',
-      'Developed an AI Voice Agent to automate real-estate customer conversations.',
+      'Designed and built AGMIS, an academic data analytics and intelligence platform.',
+      'Developed a Data-Driven Voice Agent to automate real-estate lead qualification.',
       'Explored RAG, sentiment analysis, and automation systems end to end.',
     ],
   },
@@ -99,7 +99,7 @@ export const timeline: Experience[] = [
     type: 'education',
     points: [
       'Foundations in statistics, machine learning, and data engineering.',
-      'Applied coursework toward real, deployable AI projects.',
+      'Applied coursework toward real, deployable data science and AI projects.',
     ],
   },
   {

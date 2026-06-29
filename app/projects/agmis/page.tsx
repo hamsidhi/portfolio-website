@@ -15,7 +15,7 @@ import { site } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'AGMIS — Academic Guidance & Monitoring Intelligence System',
   description:
-    'AGMIS turns fragmented academic data into actionable insights for students, faculty, and institutions — a flagship AI product case study.',
+    'AGMIS turns fragmented academic data into actionable insights for students, faculty, and institutions — a flagship data analytics product case study.',
 }
 
 const roles = [
@@ -57,10 +57,10 @@ export default function AgmisPage() {
   return (
     <>
       <CaseStudyHero
-        badge="Flagship AI Product · EdTech"
+        badge="Flagship Data Product · EdTech Analytics"
         title="AGMIS — Academic Guidance & Monitoring Intelligence System"
         subtitle="Transforming educational data into actionable insights for students, teachers, and institutions."
-        tags={['AI Product', 'Analytics', 'EdTech', 'Dashboards', 'Product Thinking']}
+        tags={['Data Analytics', 'EdTech', 'Dashboards', 'Business Intelligence']}
       >
         <div className="flex flex-wrap gap-3 pt-2">
           <Link
