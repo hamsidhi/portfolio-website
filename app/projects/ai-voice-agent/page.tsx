@@ -48,7 +48,7 @@ export default function VoiceAgentPage() {
     <>
       <CaseStudyHero
         badge="Intelligent Automation · Voice System"
-        title="Data-Driven Voice Agent for Real Estate"
+        title="AI Voice Agent for Real Estate"
         subtitle="An intelligent voice agent that automates customer conversations, qualifies leads, and answers property questions 24/7 — built as a practical business solution, backed by data."
         tags={['Intelligent Automation', 'Data-Driven', 'Lead Qualification', 'Prompt Engineering']}
       >

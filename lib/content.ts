@@ -87,7 +87,7 @@ export const timeline: Experience[] = [
     type: 'project',
     points: [
       'Designed and built AGMIS, an academic data analytics and intelligence platform.',
-      'Developed a Data-Driven Voice Agent to automate real-estate lead qualification.',
+      'Developed an AI Voice Agent to automate real-estate lead qualification.',
       'Explored RAG, sentiment analysis, and automation systems end to end.',
     ],
   },
