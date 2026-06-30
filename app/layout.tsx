@@ -18,17 +18,17 @@ const siteUrl = 'https://hamsidhi.me'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Hamza Siddiqui | Data Scientist | Data Analyst | Applied AI',
+    default: 'Hamza Siddiqui | AI Engineer | Data Analyst | Automation Builder',
     template: '%s | Hamza Siddiqui',
   },
   description:
-    'Data Science student building data-driven analytics platforms, automation systems, and practical AI solutions.',
+    'AI Engineer building intelligent systems, data analytics platforms, and production-ready automation solutions.',
   keywords: [
-    'Data Scientist',
+    'AI Engineer',
     'Data Analyst',
+    'Automation Builder',
     'Applied AI',
-    'Automation Engineer',
-    'Business Intelligence',
+    'Machine Learning',
     'Data Analytics',
     'Hamza Siddiqui',
   ],
@@ -38,18 +38,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Hamza Siddiqui | Data Scientist | Data Analyst',
+    title: 'Hamza Siddiqui | AI Engineer | Data Analyst | Automation Builder',
     description:
-      'Data Science student building data-driven analytics platforms, automation systems, and practical AI solutions.',
+      'AI Engineer building intelligent systems, data analytics platforms, and production-ready automation solutions.',
     siteName: 'Hamza Siddiqui',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hamza Siddiqui | Data Scientist',
+    title: 'Hamza Siddiqui | AI Engineer',
     description:
-      'Building data-driven systems that solve real business problems. Data analytics, automation, and applied AI.',
+      'Building data-driven systems and production-ready software that solves real business problems.',
   },
-  generator: 'v0.app',
 }
 
 export const viewport: Viewport = {

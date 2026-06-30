@@ -1,12 +1,65 @@
-export const techStack = [
-  'Python',
-  'Data Analytics',
-  'Power BI',
-  'PostgreSQL',
-  'Machine Learning',
-  'Applied AI',
-  'Automation',
-  'Data Science',
+export const techSkills = [
+  {
+    name: 'Python',
+    icon: 'SiPython',
+    color: '#3776AB',
+    description: 'The backbone of my AI systems. I use it for building FastAPI backends, NLP pipelines, and data processing scripts.',
+  },
+  {
+    name: 'Power BI',
+    icon: 'BarChart3',
+    color: '#F2C811',
+    description: 'My go-to tool for business intelligence. I build interactive dashboards that translate raw ERP data into strategic insights.',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: 'SiPostgresql',
+    color: '#4169E1',
+    description: 'My primary relational database. I use it to securely store and query complex data for applications like AGMIS.',
+  },
+  {
+    name: 'Machine Learning',
+    icon: 'BrainCircuit',
+    color: '#8B5CF6',
+    description: 'Applied ML models. I focus on practical implementations like sentiment analysis and predictive scoring.',
+  },
+  {
+    name: 'Prompt Engineering',
+    icon: 'TbBrandOpenai',
+    color: '#10A37F',
+    description: 'Crafting structured, constraint-based prompts to make LLMs predictable and reliable for business workflows.',
+  },
+  {
+    name: 'Data Analytics',
+    icon: 'SiPandas',
+    color: '#150458',
+    description: 'Processing and cleaning messy datasets. I transform raw data into analysis-ready formats for stakeholders.',
+  },
+  {
+    name: 'Automation',
+    icon: 'Workflow',
+    color: '#F97316',
+    description: 'Connecting systems together. I design automated pipelines and webhooks that eliminate repetitive manual work.',
+  },
+]
+
+export const skillCategories = [
+  {
+    title: 'AI & Machine Learning',
+    skills: ['Applied AI', 'Prompt Engineering', 'RAG Systems', 'NLP', 'AI Agents', 'LLMs'],
+  },
+  {
+    title: 'Data & Analytics',
+    skills: ['Power BI', 'Data Cleaning', 'ERP Data', 'Business Intelligence', 'Excel', 'Data Visualization'],
+  },
+  {
+    title: 'Engineering',
+    skills: ['Python', 'FastAPI', 'PostgreSQL', 'GitHub', 'REST APIs', 'Webhooks'],
+  },
+  {
+    title: 'Automation & Product',
+    skills: ['Workflow Automation', 'Voice Systems', 'Product Thinking', 'System Design', 'Speech-to-Text', 'Text-to-Speech'],
+  },
 ]
 
 export const whyWorkWithMe = [
@@ -15,8 +68,8 @@ export const whyWorkWithMe = [
     body: 'I start from the problem and the outcome, not the framework. Technology is a means to a measurable result.',
   },
   {
-    title: 'Applied Data Science & AI',
-    body: 'I build data-driven products people actually use — predictive analytics, intelligent agents, and scalable data systems, not just demos.',
+    title: 'Applied AI & Data Science',
+    body: 'I build AI-driven products people actually use — predictive analytics, intelligent agents, and scalable data systems, not just demos.',
   },
   {
     title: 'Execution',
@@ -32,7 +85,7 @@ export const whyWorkWithMe = [
   },
   {
     title: 'Continuous Learning',
-    body: 'Data science and AI move fast. I keep learning deliberately and translate new capabilities into practical business value.',
+    body: 'AI moves fast. I keep learning deliberately and translate new capabilities into practical business value.',
   },
 ]
 
@@ -62,6 +115,7 @@ export type Experience = {
   period: string
   type: 'work' | 'education' | 'project' | 'leadership'
   points: string[]
+  credential?: string
 }
 
 export const timeline: Experience[] = [
@@ -78,9 +132,10 @@ export const timeline: Experience[] = [
       'Identified trends and anomalies that supported operational decisions.',
       'Collaborated with business teams to translate questions into insights.',
     ],
+    credential: '/assets/credentials/Sahil_Dresses.jpg',
   },
   {
-    role: 'Independent Data Science & Analytics Development',
+    role: 'Independent AI & Data Science Development',
     org: 'Personal Projects',
     location: 'Remote',
     period: 'Ongoing',
@@ -99,7 +154,7 @@ export const timeline: Experience[] = [
     type: 'education',
     points: [
       'Foundations in statistics, machine learning, and data engineering.',
-      'Applied coursework toward real, deployable data science and AI projects.',
+      'Applied coursework toward real, deployable AI and data science projects.',
     ],
   },
   {
@@ -127,21 +182,24 @@ export const timeline: Experience[] = [
 export type Certification = {
   title: string
   issuer: string
+  image?: string
+  credential?: string
 }
 
 export const certificationsTier1: Certification[] = [
-  { title: 'IBM SkillsBuild', issuer: 'IBM' },
-  { title: 'Make Agentic AI Work for You', issuer: 'IBM' },
-  { title: 'Introduction to Retrieval-Augmented Generation', issuer: 'IBM' },
-  { title: 'Unleashing the Power of AI Agents', issuer: 'IBM' },
-  { title: 'The Rise of Multiagent Systems', issuer: 'IBM' },
-  { title: 'Intel AI For All', issuer: 'Intel' },
-  { title: 'Microsoft Excel', issuer: 'Microsoft' },
-  { title: 'Power BI', issuer: 'Microsoft' },
+  { title: 'IBM SkillsBuild', issuer: 'IBM', credential: '/assets/credentials/Hamza_Siddiqui_AI_AWARE_CERTIFICATE.png' },
+  { title: 'Make Agentic AI Work for You', issuer: 'IBM', credential: '/assets/credentials/MakeAgenticAIWorkforYou_Badge20260407-30-d6j8n3.pdf' },
+  { title: 'Introduction to Retrieval-Augmented Generation', issuer: 'IBM', credential: '/assets/credentials/Digital_Sticker__Introduction_to_Retrieval-Augmented_Generation.png' },
+  { title: 'Unleashing the Power of AI Agents', issuer: 'IBM', credential: '/assets/credentials/Digital_Sticker_Unleashing_the_Power_of_AI_Agents.png' },
+  { title: 'The Rise of Multiagent Systems', issuer: 'IBM', credential: '/assets/credentials/Digital_Sticker_The_Rise_of_Multiagent_Systems.png' },
+  { title: 'Intel AI For All', issuer: 'Intel', credential: '/assets/credentials/Hamza_Siddiqui_AI_APPRECIATE_CERTIFICATE.png' },
+  { title: 'Microsoft Excel', issuer: 'Microsoft', credential: '/assets/credentials/Microsoft_Excel_-_Excel_from_Beginner_to_Advanced.pdf' },
+  { title: 'Power BI', issuer: 'Microsoft', credential: '/assets/credentials/PowerBI.pdf' },
 ]
 
 export const certificationsTier2: Certification[] = [
-  { title: 'AI & Data Science Workshops', issuer: 'Various' },
-  { title: 'Participation Certificates', issuer: 'Various' },
-  { title: 'Supporting Learning Credentials', issuer: 'Various' },
+  { title: 'AI & Data Science Workshops', issuer: 'Various', credential: '/assets/credentials/Skill_Nation.jpg' },
+  { title: 'Participation Certificates', issuer: 'Various', credential: '/assets/credentials/certificate.jpg' },
+  { title: 'Supporting Learning Credentials', issuer: 'Various', credential: '/assets/credentials/Indrustry_traning_(Atharva).jpg' },
+  { title: 'GoGo A1 Vehicle Conversions', issuer: 'GoGo A1', credential: '/assets/credentials/GOGOA1.jpg' },
 ]

@@ -17,10 +17,10 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustBar />
-      <VoiceAgentFeature />
+      <AgmisFeature />
       <WhoIAm />
       <WhyWorkWithMe />
-      <AgmisFeature />
+      <VoiceAgentFeature />
       <SelectedProjects />
       <ExperienceHighlight />
       <CertificationsHighlight />

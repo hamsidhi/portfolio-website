@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { Briefcase, GraduationCap, Rocket, Shield } from 'lucide-react'
+import { Briefcase, GraduationCap, Rocket, Shield, ExternalLink } from 'lucide-react'
 import { timeline, type Experience } from '@/lib/content'
 
 const iconFor = (type: Experience['type']) => {
@@ -62,6 +62,18 @@ export function Timeline() {
                     </li>
                   ))}
                 </ul>
+                {item.credential && (
+                  <div className="mt-5">
+                    <a
+                      href={item.credential}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                    >
+                      View Credential <ExternalLink className="size-3" />
+                    </a>
+                  </div>
+                )}
               </div>
             </motion.li>
           )

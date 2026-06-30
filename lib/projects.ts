@@ -10,6 +10,7 @@ export type Project = {
   href?: string // dedicated detail route, if any
   github?: string
   demo?: string
+  image?: string // preview image path
 }
 
 export const projects: Project[] = [
@@ -24,6 +25,7 @@ export const projects: Project[] = [
     tags: ['Data Analytics', 'Dashboards', 'EdTech', 'Business Intelligence'],
     href: '/projects/agmis',
     github: 'https://github.com/hamsidhi',
+    image: '/assets/agmis/1.jpg',
   },
   {
     slug: 'ai-voice-agent',
@@ -33,9 +35,10 @@ export const projects: Project[] = [
     flagship: true,
     summary:
       'A voice agent that automates customer conversations, qualifies leads, and answers property questions 24/7 for a real estate business.',
-    tags: ['Intelligent Automation', 'Data-Driven', 'Lead Qualification', 'Prompt Engineering'],
+    tags: ['Intelligent Automation', 'AI Voice', 'Lead Qualification', 'Prompt Engineering'],
     href: '/projects/ai-voice-agent',
     demo: '#demo',
+    image: '/assets/voice-agent/1.png',
   },
   {
     slug: 'sentiment-analysis',

@@ -1,24 +1,8 @@
 import Link from 'next/link'
-import {
-  GraduationCap,
-  Users,
-  ShieldCheck,
-  Sparkles,
-  Gauge,
-  LineChart,
-  ArrowRight,
-} from 'lucide-react'
-import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
 import { SectionLabel } from '@/components/section'
-
-const features = [
-  { icon: GraduationCap, label: 'Student Dashboard' },
-  { icon: Users, label: 'Faculty Dashboard' },
-  { icon: ShieldCheck, label: 'Principal Dashboard' },
-  { icon: Sparkles, label: 'AI Guidance' },
-  { icon: Gauge, label: 'Motivation Engine' },
-  { icon: LineChart, label: 'Analytics' },
-]
 
 export function AgmisFeature() {
   return (
@@ -26,21 +10,43 @@ export function AgmisFeature() {
       <div aria-hidden className="glow-blue absolute -right-20 top-0 size-[420px] rounded-full" />
       <div className="relative mx-auto max-w-6xl px-5 py-24 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <Stagger className="order-2 grid grid-cols-2 gap-4 lg:order-1">
-            {features.map((f) => {
-              const Icon = f.icon
-              return (
-                <StaggerItem key={f.label}>
-                  <div className="flex h-full items-center gap-3 rounded-2xl border border-border bg-card/60 p-4 backdrop-blur transition-colors hover:border-primary/40">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-secondary text-primary">
-                      <Icon className="size-5" />
-                    </span>
-                    <span className="text-sm font-medium">{f.label}</span>
-                  </div>
-                </StaggerItem>
-              )
-            })}
-          </Stagger>
+          {/* Screenshot showcase */}
+          <Reveal className="order-2 lg:order-1">
+            <div className="space-y-4">
+              <div className="image-showcase overflow-hidden rounded-2xl shadow-xl">
+                <Image
+                  src="/assets/agmis/1.jpg"
+                  alt="AGMIS Dashboard overview"
+                  width={600}
+                  height={400}
+                  className="w-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="image-showcase overflow-hidden rounded-xl">
+                  <Image
+                    src="/assets/agmis/2.jpg"
+                    alt="AGMIS Analytics"
+                    width={300}
+                    height={200}
+                    className="aspect-video w-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="image-showcase overflow-hidden rounded-xl">
+                  <Image
+                    src="/assets/agmis/3.jpg"
+                    alt="AGMIS Charts"
+                    width={300}
+                    height={200}
+                    className="aspect-video w-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </Reveal>
 
           <Reveal className="order-1 lg:order-2">
             <SectionLabel>Featured Project — AGMIS</SectionLabel>
@@ -56,6 +62,17 @@ export function AgmisFeature() {
               insights. AGMIS is a practical intelligence system that helps identify risks, improve
               academic monitoring, and support better decisions across every role.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-1.5">
+              {['Data Analytics', 'EdTech', 'Dashboards', 'Business Intelligence'].map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-md border border-border bg-secondary/60 px-2.5 py-1 text-xs text-muted-foreground"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link

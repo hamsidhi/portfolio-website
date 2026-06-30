@@ -21,7 +21,7 @@ export function WhoIAm() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-        <SectionHeading label="Who I Am" title="An AI builder with a business mindset" />
+        <SectionHeading label="Who I Am" title="An AI engineer with a business mindset" />
         <Reveal className="space-y-5 text-pretty text-lg leading-relaxed text-muted-foreground">
           <p>
             My journey started with curiosity in Data Science and grew into building practical AI
@@ -163,13 +163,15 @@ export function AboutPreview() {
         <div aria-hidden className="glow-blue absolute -left-10 -top-10 size-72 rounded-full" />
         <div className="relative flex flex-col md:flex-row md:items-center gap-8">
           <div className="shrink-0">
-            <Image 
-              src="/my-image/profile.jpg" 
-              alt="Hamza Siddiqui" 
-              width={160} 
-              height={160} 
-              className="rounded-full border border-border bg-card/60 object-cover shadow-2xl" 
-            />
+            <div className="profile-glow rounded-full">
+              <Image 
+                src="/assets/profile/profile-main.jpg" 
+                alt="Hamza Siddiqui" 
+                width={160} 
+                height={160} 
+                className="rounded-full border-2 border-primary/20 object-cover shadow-2xl" 
+              />
+            </div>
           </div>
           <div>
             <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
@@ -203,7 +205,7 @@ export function ContactCta() {
             Let&apos;s build something that solves a real problem.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            Interested in discussing AI, Data Analytics, Business Intelligence, or Automation? I&apos;d
+            Interested in discussing AI Engineering, Data Analytics, Business Intelligence, or Automation? I&apos;d
             be happy to connect.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">

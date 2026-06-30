@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'motion/react'
 import { ArrowUpRight, Sparkles, Lock } from 'lucide-react'
 import { Github } from '@/components/icons'
@@ -18,7 +19,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: index * 0.06, ease: [0.21, 0.5, 0.25, 1] }}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl glass-panel p-6 antigravity-hover hover:border-primary/40"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl glass-panel antigravity-hover hover:border-primary/40"
     >
       {/* Full-card click target for detail pages or github */}
       {(hasDetail || project.github) && (
@@ -31,7 +32,21 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
         />
       )}
 
-      <div className="pointer-events-none relative z-[1] flex flex-1 flex-col">
+      {/* Project image preview */}
+      {project.image && (
+        <div className="image-showcase overflow-hidden rounded-none border-0 border-b border-border">
+          <Image
+            src={project.image}
+            alt={`${project.title} preview`}
+            width={600}
+            height={340}
+            className="h-44 w-full object-cover object-top"
+            loading="lazy"
+          />
+        </div>
+      )}
+
+      <div className="pointer-events-none relative z-[1] flex flex-1 flex-col p-6">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             {project.flagship && (
@@ -50,7 +65,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
           )}
         </div>
 
-        <h3 className="mt-5 text-lg font-semibold tracking-tight">{project.title}</h3>
+        <h3 className="mt-4 text-lg font-semibold tracking-tight">{project.title}</h3>
         {project.fullTitle && project.fullTitle !== project.title && (
           <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
             {project.fullTitle}
@@ -73,7 +88,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
       </div>
 
       {/* Interactive buttons sit above the full-card link */}
-      <div className="relative z-20 mt-6 flex flex-wrap gap-2">
+      <div className="relative z-20 border-t border-border px-6 py-4 flex flex-wrap gap-2">
         {hasDetail && (
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
@@ -94,6 +109,16 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
             >
               <Github className="size-4" />
               GitHub
+            </Link>
+          </motion.div>
+        )}
+        {project.demo && (
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href={project.demo}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-3.5 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+            >
+              Live Demo
             </Link>
           </motion.div>
         )}

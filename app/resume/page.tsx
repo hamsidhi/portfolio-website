@@ -6,7 +6,7 @@ import { PageHero } from '@/components/section'
 import { Reveal } from '@/components/reveal'
 import { ResumeActions } from '@/components/resume-actions'
 import { site } from '@/lib/site'
-import { timeline, certificationsTier1, techStack } from '@/lib/content'
+import { timeline, certificationsTier1, techSkills } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Resume',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 }
 
 const summary =
-  'AI Systems Builder and Data-Driven Product Thinker who builds practical AI products, automation systems, and business analytics platforms. I translate business problems into production-ready AI solutions across voice agents, RAG systems, and intelligent analytics.'
+  'AI Engineer and Automation Builder who builds practical AI products, intelligent voice agents, and data analytics platforms. I translate business problems into production-ready AI solutions across applied ML, RAG systems, prompt engineering, and business intelligence.'
 
 const technicalAreas = [
   { label: 'AI & ML', items: 'Applied AI, Prompt Engineering, RAG, Agents, NLP' },
@@ -109,12 +109,12 @@ export default function ResumePage() {
                 ))}
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
-                {techStack.map((tech) => (
+                {techSkills.map((tech) => (
                   <span
-                    key={tech}
+                    key={tech.name}
                     className="rounded-full border border-border bg-secondary px-3 py-1 text-xs text-muted-foreground"
                   >
-                    {tech}
+                    {tech.name}
                   </span>
                 ))}
               </div>

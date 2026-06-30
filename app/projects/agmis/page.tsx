@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { GraduationCap, Users, ShieldCheck } from 'lucide-react'
 import { Github } from '@/components/icons'
 import {
@@ -9,6 +10,7 @@ import {
   CaseCardGrid,
   CaseStudyCta,
 } from '@/components/case-study'
+import { ImageGallery } from '@/components/image-gallery'
 import { Reveal } from '@/components/reveal'
 import { site } from '@/lib/site'
 
@@ -53,6 +55,15 @@ const roadmap = [
   'Automated reporting for accreditation and reviews.',
 ]
 
+const galleryImages = [
+  { src: '/assets/agmis/1.jpg', alt: 'AGMIS Dashboard Overview', caption: 'Main dashboard with student performance overview' },
+  { src: '/assets/agmis/2.jpg', alt: 'AGMIS Analytics View', caption: 'Analytics and monitoring dashboard' },
+  { src: '/assets/agmis/3.jpg', alt: 'AGMIS Reports', caption: 'Detailed reports and insights view' },
+  { src: '/assets/agmis/4.jpg', alt: 'AGMIS Login', caption: 'Secure login portal' },
+  { src: '/assets/agmis/5.jpg', alt: 'AGMIS Analytics', caption: 'Advanced analytics and charts' },
+  { src: '/assets/agmis/6.jpg', alt: 'AGMIS Insights', caption: 'Comprehensive institutional view' },
+]
+
 export default function AgmisPage() {
   return (
     <>
@@ -80,6 +91,24 @@ export default function AgmisPage() {
           </Link>
         </div>
       </CaseStudyHero>
+
+      {/* Hero screenshot */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-5xl px-5 py-14 lg:px-8">
+          <Reveal>
+            <div className="image-showcase overflow-hidden rounded-2xl shadow-2xl">
+              <Image
+                src="/assets/agmis/1.jpg"
+                alt="AGMIS Dashboard — main overview"
+                width={1200}
+                height={700}
+                className="w-full object-cover"
+                priority
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <CaseSection label="The Problem" title="Data is collected, but insight is lost">
         <p>
@@ -118,6 +147,25 @@ export default function AgmisPage() {
           })}
         </div>
       </CaseSection>
+
+      {/* Screenshot Gallery */}
+      <section className="border-b border-border bg-card/20">
+        <div className="mx-auto max-w-5xl px-5 py-14 lg:px-8">
+          <Reveal>
+            <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              <span className="h-px w-6 bg-primary/50" />
+              Screenshots
+            </span>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Platform in action</h2>
+            <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
+              Click any screenshot to view in full resolution.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <ImageGallery images={galleryImages} />
+          </div>
+        </div>
+      </section>
 
       <CaseSection label="Intelligence" title="AI guidance, motivation, and analytics">
         <p>

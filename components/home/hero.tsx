@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'motion/react'
-import { ArrowRight, Download, MessageSquare, ChevronDown, Radio, GraduationCap, HeartPulse } from 'lucide-react'
+import { ArrowRight, Download, MessageSquare, ChevronDown } from 'lucide-react'
 import { RotatingRole } from '@/components/rotating-role'
 
 const container = {
@@ -14,49 +15,33 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.21, 0.5, 0.25, 1] } },
 }
 
-const floatingCards = [
-  {
-    icon: Radio,
-    title: 'AI Voice Agent',
-    body: '24/7 Customer Interaction',
-    tag: 'Live Demo',
-    href: '/projects/ai-voice-agent',
-  },
-  {
-    icon: GraduationCap,
-    title: 'AGMIS',
-    body: 'Academic Intelligence Platform',
-    tag: 'Flagship',
-    href: '/projects/agmis',
-  },
-  {
-    icon: HeartPulse,
-    title: 'Healthcare AI',
-    body: 'Clinical & operational intelligence',
-    tag: 'Coming Soon',
-    href: '/projects',
-  },
+const stats = [
+  { value: '5+', label: 'Projects Shipped' },
+  { value: '8+', label: 'Certifications' },
+  { value: '6mo', label: 'Industry Experience' },
 ]
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div aria-hidden className="glow-blue absolute -top-32 left-1/4 size-[600px] rounded-full mix-blend-screen opacity-70 animate-pulse" style={{ animationDuration: '4s' }} />
-      <div aria-hidden className="glow-purple absolute -top-10 right-1/4 size-[500px] rounded-full mix-blend-screen opacity-60 animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
-      <div aria-hidden className="glow-teal absolute top-40 left-1/3 size-[400px] rounded-full mix-blend-screen opacity-50 animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }} />
-      <div className="bg-grid absolute inset-0 opacity-[0.25]" aria-hidden />
+      {/* Premium background effects */}
+      <div aria-hidden className="glow-blue absolute -top-40 left-1/4 size-[700px] rounded-full mix-blend-screen opacity-60 animate-pulse" style={{ animationDuration: '5s' }} />
+      <div aria-hidden className="glow-purple absolute -top-20 right-1/4 size-[550px] rounded-full mix-blend-screen opacity-50 animate-pulse" style={{ animationDuration: '7s', animationDelay: '1s' }} />
+      <div aria-hidden className="glow-teal absolute top-60 left-1/2 size-[400px] rounded-full mix-blend-screen opacity-40 animate-pulse" style={{ animationDuration: '6s', animationDelay: '2.5s' }} />
+      <div className="bg-dot-grid absolute inset-0 opacity-[0.15]" aria-hidden />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-32 lg:px-8 lg:pt-40">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          {/* Left content */}
           <motion.div variants={container} initial="hidden" animate="visible">
             <motion.div variants={item}>
               <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full glass-panel px-4 py-1.5 text-xs text-foreground shadow-lg border-primary/20 bg-primary/5">
                 <span className="inline-block size-2 animate-ping absolute rounded-full bg-primary opacity-75" />
                 <span className="inline-block size-2 relative rounded-full bg-primary" />
-                <span className="font-medium tracking-wide">Data Science Student & Analytics Builder</span>
+                <span className="font-medium tracking-wide">AI Engineer & Automation Builder</span>
                 <span className="text-primary/40">•</span>
-                <span className="text-muted-foreground">Open to Data Roles</span>
+                <span className="text-muted-foreground">Open to Opportunities</span>
                 <span className="text-primary/40">•</span>
                 <span className="text-muted-foreground">Based in UAE</span>
               </span>
@@ -64,13 +49,13 @@ export function Hero() {
 
             <motion.h1
               variants={item}
-              className="mt-6 text-balance text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
+              className="mt-6 text-balance text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]"
             >
-              Hi, I&apos;m Hamza Siddiqui. I build <span className="text-gradient">data-driven products</span> that solve real business problems.
+              Hi, I&apos;m Hamza Siddiqui. I build <span className="text-gradient">data-driven systems</span> and production-ready software.
             </motion.h1>
 
             <motion.div variants={item} className="mt-5 flex items-center gap-2 font-mono text-base text-muted-foreground sm:text-lg">
-              <span className="text-foreground/70">I am an</span>
+              <span className="text-foreground/70">I am</span>
               <RotatingRole />
             </motion.div>
 
@@ -78,10 +63,9 @@ export function Hero() {
               variants={item}
               className="mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground"
             >
-              I don&apos;t just study Data Science—I build intelligent, data-driven systems that
-              businesses and people can actually use. My work combines data analytics, applied AI,
-              automation, and product thinking to create solutions that reduce manual work,
-              uncover insights, and deliver measurable value.
+              I don&apos;t just study AI—I build it. From voice agents to analytics platforms,
+              I create intelligent systems that automate work, uncover insights, and deliver
+              measurable value for businesses.
             </motion.p>
 
             <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
@@ -107,51 +91,81 @@ export function Hero() {
                 Let&apos;s Connect
               </Link>
             </motion.div>
+
+            {/* Stats bar */}
+            <motion.div variants={item} className="mt-10 flex gap-8">
+              {stats.map((stat) => (
+                <div key={stat.label} className="flex flex-col">
+                  <span className="text-2xl font-bold tracking-tight text-gradient-static">{stat.value}</span>
+                  <span className="mt-0.5 text-xs text-muted-foreground">{stat.label}</span>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
 
-          {/* Hero visual: floating product cards */}
+          {/* Right side: Profile image card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.5, 0.25, 1] }}
-            className="relative"
+            initial={{ opacity: 0, scale: 0.94, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.21, 0.5, 0.25, 1] }}
+            className="relative flex items-center justify-center"
           >
-            <div className="relative mx-auto flex max-w-md flex-col gap-4">
-              {floatingCards.map((card, i) => {
-                const Icon = card.icon
-                return (
-                  <motion.div
-                    key={card.title}
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.35 + i * 0.12 }}
-                  >
-                    <motion.div className={i % 2 === 0 ? "animate-float" : "animate-float-delayed"}>
-                      <Link
-                        href={card.href}
-                        className="group flex items-center gap-4 rounded-2xl glass-panel p-4 antigravity-hover"
-                        style={{ marginLeft: i % 2 === 1 ? '2rem' : 0 }}
-                      >
-                        <span className="grid size-11 shrink-0 place-items-center rounded-xl border border-border bg-secondary text-primary">
-                          <Icon className="size-5" />
+            <div className="relative">
+              {/* Decorative ring */}
+              <div aria-hidden className="absolute -inset-3 rounded-3xl border border-primary/20 opacity-60" />
+              <div aria-hidden className="absolute -inset-6 rounded-3xl border border-primary/10 opacity-40" />
+              
+              {/* Glass card with profile */}
+              <div className="relative overflow-hidden rounded-2xl glass-panel p-6 sm:p-8">
+                <div className="flex flex-col items-center gap-5">
+                  {/* Profile image */}
+                  <div className="profile-glow rounded-full">
+                    <Image
+                      src="/assets/profile/profile-main.jpg"
+                      alt="Hamza Siddiqui — AI Engineer"
+                      width={160}
+                      height={160}
+                      className="rounded-full border-2 border-primary/20 object-cover shadow-2xl"
+                      priority
+                    />
+                  </div>
+                  
+                  {/* Identity badges */}
+                  <div className="flex flex-col items-center gap-2 text-center">
+                    <h2 className="text-lg font-semibold tracking-tight">Hamza Siddiqui</h2>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      {['AI Engineer', 'Data Analyst', 'Automation Builder'].map((role) => (
+                        <span
+                          key={role}
+                          className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                        >
+                          {role}
                         </span>
-                        <span className="min-w-0">
-                          <span className="flex items-center gap-2">
-                            <span className="truncate text-sm font-semibold">{card.title}</span>
-                            <span className="shrink-0 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-primary shadow-sm">
-                              {card.tag}
-                            </span>
-                          </span>
-                          <span className="mt-0.5 block truncate text-xs text-muted-foreground">
-                            {card.body}
-                          </span>
-                        </span>
-                        <ArrowRight className="ml-auto size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
-                      </Link>
-                    </motion.div>
-                  </motion.div>
-                )
-              })}
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Quick links */}
+                  <div className="flex gap-2 pt-2">
+                    <Link
+                      href="/projects/agmis"
+                      className="group flex items-center gap-2 rounded-xl border border-border bg-secondary/60 px-3.5 py-2.5 text-xs font-medium transition-colors hover:border-primary/40 hover:bg-primary/10"
+                    >
+                      <span className="size-1.5 rounded-full bg-emerald-400" />
+                      AGMIS
+                      <ArrowRight className="size-3 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                    <Link
+                      href="/projects/ai-voice-agent"
+                      className="group flex items-center gap-2 rounded-xl border border-border bg-secondary/60 px-3.5 py-2.5 text-xs font-medium transition-colors hover:border-primary/40 hover:bg-primary/10"
+                    >
+                      <span className="size-1.5 rounded-full bg-blue-400" />
+                      Voice Agent
+                      <ArrowRight className="size-3 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

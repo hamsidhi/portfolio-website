@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { PlayCircle, GitBranch, FileText, ArrowRight } from 'lucide-react'
 import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
 import { SectionLabel } from '@/components/section'
@@ -65,27 +66,42 @@ export function VoiceAgentFeature() {
             </div>
           </Reveal>
 
-          <Stagger className="grid grid-cols-2 gap-4">
-            {businessValue.map((v) => (
-              <StaggerItem key={v.title}>
-                <div className="h-full rounded-2xl border border-border bg-card/50 p-5 transition-colors hover:border-primary/40">
-                  <p className="text-sm font-semibold">{v.title}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{v.body}</p>
-                </div>
+          {/* Screenshot showcase */}
+          <Reveal delay={0.15}>
+            <div className="space-y-4">
+              <div className="image-showcase overflow-hidden rounded-2xl shadow-xl">
+                <Image
+                  src="/assets/voice-agent/1.png"
+                  alt="AI Voice Agent interface"
+                  width={600}
+                  height={400}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <Stagger className="grid grid-cols-2 gap-3">
+                {businessValue.slice(0, 4).map((v) => (
+                  <StaggerItem key={v.title}>
+                    <div className="h-full rounded-xl border border-border bg-card/50 p-4 transition-colors hover:border-primary/40">
+                      <p className="text-xs font-semibold">{v.title}</p>
+                      <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">{v.body}</p>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </Stagger>
+              <StaggerItem>
+                <Link
+                  href="/projects/ai-voice-agent"
+                  className="group flex items-center justify-between rounded-xl border border-primary/30 bg-primary/10 p-4 transition-colors hover:bg-primary/15"
+                >
+                  <span className="text-sm font-medium text-primary">
+                    Read the full case study
+                  </span>
+                  <ArrowRight className="size-4 text-primary transition-transform group-hover:translate-x-0.5" />
+                </Link>
               </StaggerItem>
-            ))}
-            <StaggerItem className="col-span-2">
-              <Link
-                href="/projects/ai-voice-agent"
-                className="group flex items-center justify-between rounded-2xl border border-primary/30 bg-primary/10 p-5 transition-colors hover:bg-primary/15"
-              >
-                <span className="text-sm font-medium text-primary">
-                  Read the full case study
-                </span>
-                <ArrowRight className="size-4 text-primary transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </StaggerItem>
-          </Stagger>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

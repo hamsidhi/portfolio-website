@@ -1,8 +1,8 @@
 export const site = {
   name: 'Hamza Siddiqui',
   domain: 'hamsidhi.me',
-  tagline: 'Building Data-Driven Systems & Intelligent Analytics.',
-  identity: 'Data Science Student · Data Analyst · Applied AI Builder',
+  tagline: 'Building Data-Driven Systems & Production-Ready Software.',
+  identity: 'AI Engineer · Data Analyst · Automation Builder',
   email: 'hamsidhi@gmail.com',
   phoneIndia: '+91 9170838459',
   phoneUae: '+971 50 804 2826',
@@ -13,13 +13,13 @@ export const site = {
 }
 
 export const rotatingRoles = [
-  'Data Science Student',
-  'Data Analyst',
-  'Applied AI Builder',
-  'Automation Engineer',
-  'Business Intelligence Thinker',
-  'Healthcare Analytics Enthusiast',
-  'Problem Solver',
+  'an AI Engineer.',
+  'a Data Analyst.',
+  'an Automation Builder.',
+  'an Applied AI Developer.',
+  'a Business Intelligence Thinker.',
+  'a Data Science Student.',
+  'a Problem Solver.',
 ]
 
 export const navLinks = [

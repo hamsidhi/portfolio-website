@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { PlayCircle, GitBranch } from 'lucide-react'
 import {
   CaseStudyHero,
@@ -8,6 +9,7 @@ import {
   CaseCardGrid,
   CaseStudyCta,
 } from '@/components/case-study'
+import { ImageGallery } from '@/components/image-gallery'
 import { Reveal } from '@/components/reveal'
 import { businessValue } from '@/lib/content'
 
@@ -43,14 +45,20 @@ const lessons = [
   'Business outcomes, not model novelty, should drive every design decision.',
 ]
 
+const galleryImages = [
+  { src: '/assets/voice-agent/1.png', alt: 'AI Voice Agent Interface', caption: 'Voice agent conversation interface' },
+  { src: '/assets/voice-agent/2.png', alt: 'AI Voice Agent Workflow', caption: 'Conversation workflow and automation' },
+  { src: '/assets/voice-agent/3.png', alt: 'AI Voice Agent Features', caption: 'Feature overview and configuration' },
+]
+
 export default function VoiceAgentPage() {
   return (
     <>
       <CaseStudyHero
         badge="Intelligent Automation · Voice System"
         title="AI Voice Agent for Real Estate"
-        subtitle="An intelligent voice agent that automates customer conversations, qualifies leads, and answers property questions 24/7 — built as a practical business solution, backed by data."
-        tags={['Intelligent Automation', 'Data-Driven', 'Lead Qualification', 'Prompt Engineering']}
+        subtitle="An intelligent voice agent that automates customer conversations, qualifies leads, and answers property questions 24/7 — built as a practical business solution."
+        tags={['Intelligent Automation', 'AI Voice', 'Lead Qualification', 'Prompt Engineering']}
       >
         <div className="flex flex-wrap gap-3 pt-2">
           <Link
@@ -72,13 +80,31 @@ export default function VoiceAgentPage() {
         </div>
       </CaseStudyHero>
 
+      {/* Hero screenshot */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-5xl px-5 py-14 lg:px-8">
+          <Reveal>
+            <div className="image-showcase overflow-hidden rounded-2xl shadow-2xl">
+              <Image
+                src="/assets/voice-agent/1.png"
+                alt="AI Voice Agent — main interface"
+                width={1200}
+                height={700}
+                className="w-full object-cover"
+                priority
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Live demo */}
       <section id="demo" className="scroll-mt-24 border-b border-border">
         <div className="mx-auto max-w-4xl px-5 py-14 lg:px-8">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Live demo</h2>
             <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-              Experience the AI Voice Agent in real time. Click the microphone below to start a live conversation and see how it qualifies leads and answers questions natively.
+              Experience the AI Voice Agent in real time. Click below to start a live conversation and see how it qualifies leads and answers questions natively.
             </p>
             <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card/50 shadow-xl">
               <div className="flex flex-col items-center justify-center p-12 text-center sm:p-20">
@@ -129,6 +155,25 @@ export default function VoiceAgentPage() {
         </p>
         <CaseCardGrid items={businessValue} />
       </CaseSection>
+
+      {/* Screenshot Gallery */}
+      <section className="border-b border-border bg-card/20">
+        <div className="mx-auto max-w-5xl px-5 py-14 lg:px-8">
+          <Reveal>
+            <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              <span className="h-px w-6 bg-primary/50" />
+              Screenshots
+            </span>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Voice Agent in action</h2>
+            <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
+              Click any screenshot to view in full resolution.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <ImageGallery images={galleryImages} />
+          </div>
+        </div>
+      </section>
 
       <CaseSection id="architecture" label="Conversation Flow" title="How a call moves from hello to qualified lead">
         <CaseList items={conversationFlow} />

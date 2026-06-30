@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import { Mail, FileText, ArrowUpRight } from 'lucide-react'
+import { Mail, FileText } from 'lucide-react'
 import { Github, Linkedin } from '@/components/icons'
-import { Link001 } from '@/components/ui/skiper-ui/skiper40'
 import { site } from '@/lib/site'
 
 export function Footer() {
@@ -11,7 +10,7 @@ export function Footer() {
         <div className="rounded-2xl glass-panel p-8 sm:p-12">
           <p className="text-sm font-medium text-primary">Let&apos;s build something useful</p>
           <h2 className="mt-3 max-w-2xl text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
-            Looking for someone who builds practical AI systems and understands the business behind them?
+            Looking for an AI Engineer who builds practical, production-ready systems?
           </h2>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -34,11 +33,11 @@ export function Footer() {
           <div>
             <p className="text-sm font-semibold">{site.name}</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Made with curiosity, AI, and lots of coffee.
+              AI Engineer · Data Analyst · Automation Builder
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             {[
               { label: 'GitHub', href: site.github, icon: Github, external: true },
               { label: 'LinkedIn', href: site.linkedin, icon: Linkedin, external: true },
@@ -47,16 +46,16 @@ export function Footer() {
             ].map((item) => {
               const Icon = item.icon
               return (
-                <Link001
+                <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground"
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className="group inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/5 hover:text-foreground"
                 >
-                  <span className="flex items-center gap-1.5">
-                    <Icon className="size-4" />
-                    {item.label}
-                  </span>
-                </Link001>
+                  <Icon className="size-4" />
+                  {item.label}
+                </Link>
               )
             })}
           </div>
