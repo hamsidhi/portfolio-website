@@ -115,21 +115,55 @@ export default async function DynamicProjectPage({ params }: Props) {
         <section id="demo" className="scroll-mt-24 border-b border-border bg-card/20">
           <div className="mx-auto max-w-4xl px-5 py-14 lg:px-8">
             <Reveal>
-              <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-primary">
-                <span className="h-px w-6 bg-primary/50" />
+              <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-accent-1">
+                <span className="h-px w-6 bg-accent-1/50" />
                 Live Interaction
               </span>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Talk to the AI Agent</h2>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl text-foreground">Talk to the AI Agent</h2>
               <p className="mt-2 text-muted-foreground">
-                Experience the conversational agent in real-time. Give it microphone permissions and click the button in the widget below to start.
+                Experience the conversational agent in real-time. Give it microphone permissions and start the session below.
               </p>
-              <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-background shadow-2xl">
-                <iframe
-                  src="https://vapi.ai?demo=true&shareKey=0dc98dc6-9b4d-49b6-9f7c-4933a0b3ded3&assistantId=5e52cf1e-3160-47db-befe-7eefb58fb02e"
-                  className="w-full h-[550px] border-0"
-                  allow="microphone"
-                  title="AI Voice Agent Live Demo"
-                />
+              <div className="mt-8 max-w-2xl mx-auto rounded-3xl border border-border/80 bg-card/45 p-8 sm:p-12 shadow-2xl relative overflow-hidden glass-panel flex flex-col items-center justify-center text-center">
+                <div className="absolute top-4 right-4 flex items-center gap-2 rounded-full border border-border bg-background/50 px-3 py-1 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                  <span className="size-2 rounded-full bg-accent-3 animate-pulse" />
+                  Agent Ready
+                </div>
+                
+                <div className="mt-4 flex items-center justify-center size-16 rounded-2xl bg-accent-1/10 text-accent-1 border border-accent-1/20">
+                  <svg className="size-8 animate-float" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+                  </svg>
+                </div>
+
+                <h3 className="mt-6 text-lg font-semibold text-foreground">Secure Microphone Session</h3>
+                <p className="mt-2 max-w-md text-sm text-muted-foreground leading-relaxed">
+                  Due to browser security protocols, voice-interactive agents require secure mic access and cannot be run inside an embedded frame. Connect directly in a secure workspace sandbox.
+                </p>
+
+                {/* Animated Voice Waveform */}
+                <div className="flex items-end justify-center gap-1.5 h-10 my-8">
+                  <div className="w-1.5 bg-accent-1/40 rounded-full waveform-bar h-6" style={{ animationDelay: '0.1s' }} />
+                  <div className="w-1.5 bg-accent-1/60 rounded-full waveform-bar h-8" style={{ animationDelay: '0.3s' }} />
+                  <div className="w-1.5 bg-accent-1/90 rounded-full waveform-bar h-10" style={{ animationDelay: '0.5s' }} />
+                  <div className="w-1.5 bg-accent-1/50 rounded-full waveform-bar h-7" style={{ animationDelay: '0.2s' }} />
+                  <div className="w-1.5 bg-accent-1/70 rounded-full waveform-bar h-9" style={{ animationDelay: '0.4s' }} />
+                </div>
+
+                <Link
+                  href="https://vapi.ai?demo=true&shareKey=0dc98dc6-9b4d-49b6-9f7c-4933a0b3ded3&assistantId=5e52cf1e-3160-47db-befe-7eefb58fb02e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 rounded-xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  Start Live Session
+                  <svg className="size-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+
+                <div className="mt-6 text-[10px] text-muted-foreground">
+                  Powered by Vapi.ai • Secure SSL Connection • Cancel anytime
+                </div>
               </div>
             </Reveal>
           </div>
