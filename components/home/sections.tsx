@@ -1,5 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'motion/react'
 import {
   Brain,
   Briefcase,
@@ -12,76 +16,22 @@ import {
   MapPin,
 } from 'lucide-react'
 import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
-import { SectionHeading } from '@/components/section'
-import { whyWorkWithMe, timeline, certificationsTier1 } from '@/lib/content'
+import { SectionHeading, SectionLabel } from '@/components/section'
+import { experienceTimeline, certificationsTier1 } from '@/lib/content'
 
-const whyIcons = [Briefcase, Brain, Rocket, Boxes, Workflow, GraduationCap]
-
-export function WhoIAm() {
-  return (
-    <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-        <SectionHeading label="Who I Am" title="An AI engineer with a business mindset" />
-        <Reveal className="space-y-5 text-pretty text-lg leading-relaxed text-muted-foreground">
-          <p>
-            My journey started with curiosity in Data Science and grew into building practical AI
-            systems that people and businesses can actually use.
-          </p>
-          <p>
-            I believe technology should solve real problems, and that AI should empower people
-            rather than replace them. My focus areas are{' '}
-            <span className="text-foreground">Healthcare AI</span>,{' '}
-            <span className="text-foreground">Business Intelligence</span>, and{' '}
-            <span className="text-foreground">Automation</span>.
-          </p>
-          <Link
-            href="/about"
-            className="group inline-flex items-center gap-2 text-sm font-medium text-primary"
-          >
-            More about my philosophy
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
-        </Reveal>
-      </div>
-    </section>
-  )
-}
-
-export function WhyWorkWithMe() {
-  return (
-    <section className="border-y border-border bg-card/30">
-      <div className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
-        <SectionHeading
-          label="Why Work With Me"
-          title="Why organizations choose builders instead of just developers"
-          description="Modern businesses don't need more code. They need solutions. Instead of asking 'Which framework should we use?', I first ask 'What problem are we trying to solve?'"
-        />
-
-        <Stagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {whyWorkWithMe.map((item, i) => {
-            const Icon = whyIcons[i % whyIcons.length]
-            return (
-              <StaggerItem key={item.title}>
-                <div className="h-full rounded-2xl glass-panel p-6 antigravity-hover hover:border-primary/40">
-                  <span className="grid size-10 place-items-center rounded-xl border border-border bg-secondary text-primary">
-                    <Icon className="size-5" />
-                  </span>
-                  <h3 className="mt-5 text-base font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-                </div>
-              </StaggerItem>
-            )
-          })}
-        </Stagger>
-      </div>
-    </section>
-  )
-}
-
+/* ─── Experience Highlight with Glowing Timeline ─── */
 export function ExperienceHighlight() {
-  const item = timeline[0]
+  const ref = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
+  const lineHeight = useTransform(scrollYProgress, [0, 0.5], ['0%', '100%'])
+
+  const item = experienceTimeline[0]
+
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
+    <section ref={ref} className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           label="Experience"
@@ -89,31 +39,51 @@ export function ExperienceHighlight() {
           description="From ERP data to Power BI dashboards — turning raw data into decisions."
         />
         <Reveal>
-          <div className="rounded-2xl border border-border bg-card/50 p-7">
-            <div className="flex flex-wrap items-start justify-between gap-3">
-              <div>
-                <h3 className="text-lg font-semibold">{item.role}</h3>
-                <p className="text-sm text-primary">{item.org} · {item.location}</p>
+          <div className="relative pl-8">
+            {/* Timeline line */}
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-border" aria-hidden />
+            {/* Glowing progress line */}
+            <motion.div
+              className="absolute left-0 top-0 w-px bg-gradient-to-b from-blue-500 to-cyan-400"
+              style={{ height: lineHeight }}
+              aria-hidden
+            />
+            {/* Dot */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.4, type: 'spring' }}
+              className="absolute left-[-5px] top-0 size-[11px] rounded-full bg-blue-500 border-2 border-background shadow-lg shadow-blue-500/50"
+              aria-hidden
+            />
+
+            <div className="rounded-2xl glass-panel p-7 antigravity-hover hover:border-blue-500/30">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                  <p className="text-sm text-blue-400">{item.company}</p>
+                </div>
+                <span className="rounded-full border border-border bg-secondary/30 px-3 py-1 text-xs text-muted-foreground">
+                  {item.date}
+                </span>
               </div>
-              <span className="rounded-full border border-border bg-secondary px-3 py-1 text-xs text-muted-foreground">
-                {item.period}
-              </span>
+              <ul className="mt-5 space-y-2.5">
+                {item.achievements.slice(0, 4).map((p) => (
+                  <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-blue-500" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/experience"
+                className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-400"
+              >
+                See full experience &amp; journey
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
             </div>
-            <ul className="mt-5 space-y-2.5">
-              {item.points.slice(0, 4).map((p) => (
-                <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                  {p}
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/experience"
-              className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary"
-            >
-              See full experience &amp; journey
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
           </div>
         </Reveal>
       </div>
@@ -121,9 +91,10 @@ export function ExperienceHighlight() {
   )
 }
 
+/* ─── Certifications with Marquee ─── */
 export function CertificationsHighlight() {
   return (
-    <section className="border-y border-border bg-card/30">
+    <section className="border-y border-border bg-card/50">
       <div className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
@@ -133,19 +104,43 @@ export function CertificationsHighlight() {
           />
           <Link
             href="/certifications"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-card"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-lg glass-panel px-4 py-2.5 text-sm font-medium text-foreground transition-colors"
           >
             View all
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
 
-        <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Seamless Marquee */}
+        <div className="mt-12 overflow-hidden relative">
+          <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-background to-transparent" aria-hidden />
+          <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-background to-transparent" aria-hidden />
+          <div className="marquee-track">
+            {/* Duplicate for seamless loop */}
+            {[...certificationsTier1, ...certificationsTier1].map((c, i) => (
+              <div
+                key={`${c.name}-${i}`}
+                className="flex-shrink-0 mx-2 w-64 rounded-2xl glass-panel p-5 antigravity-hover hover:border-blue-500/30 transition-all group cursor-default"
+              >
+                <div className="flex items-center gap-3">
+                  <Award className="size-5 text-blue-400 opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-semibold leading-snug text-foreground truncate">{c.name}</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">{c.issuer}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Grid below for regular display */}
+        <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {certificationsTier1.slice(0, 4).map((c) => (
-            <StaggerItem key={c.title}>
-              <div className="h-full rounded-2xl glass-panel p-5 antigravity-hover hover:border-primary/40">
-                <Award className="size-5 text-primary" />
-                <h3 className="mt-4 text-sm font-semibold leading-snug">{c.title}</h3>
+            <StaggerItem key={c.name}>
+              <div className="h-full rounded-2xl glass-panel p-5 antigravity-hover hover:border-blue-500/30">
+                <Award className="size-5 text-blue-400" />
+                <h3 className="mt-4 text-sm font-semibold leading-snug text-foreground">{c.name}</h3>
                 <p className="mt-1 text-xs text-muted-foreground">{c.issuer}</p>
               </div>
             </StaggerItem>
@@ -156,38 +151,72 @@ export function CertificationsHighlight() {
   )
 }
 
+/* ─── About Preview with Parallax Photo ─── */
 export function AboutPreview() {
+  const ref = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
+  const photoY = useTransform(scrollYProgress, [0, 1], [30, -30])
+
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
-      <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-card/50 p-8 sm:p-12">
+    <section ref={ref} className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
+      <Reveal className="relative overflow-hidden rounded-3xl glass-panel p-8 sm:p-12">
         <div aria-hidden className="glow-blue absolute -left-10 -top-10 size-72 rounded-full" />
         <div className="relative flex flex-col md:flex-row md:items-center gap-8">
-          <div className="shrink-0">
+          {/* Photo with parallax and duotone */}
+          <motion.div className="shrink-0" style={{ y: photoY }}>
             <div className="profile-glow rounded-full">
-              <Image 
-                src="/assets/profile/profile-main.jpg" 
-                alt="Hamza Siddiqui" 
-                width={160} 
-                height={160} 
-                className="rounded-full border-2 border-primary/20 object-cover shadow-2xl" 
-              />
+              <div className="relative overflow-hidden rounded-full">
+                <Image
+                  src="/assets/profile/profile-main.jpg"
+                  alt="Hamza Siddiqui"
+                  width={160}
+                  height={160}
+                  className="rounded-full border-2 border-blue-500/20 object-cover shadow-2xl"
+                />
+                {/* Duotone overlay */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/20 to-transparent mix-blend-color pointer-events-none" />
+              </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Text with line-by-line reveal */}
           <div>
-            <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="size-4 text-primary" />
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground"
+            >
+              <MapPin className="size-4 text-blue-400" />
               Based in UAE · Available in UAE, India &amp; Remote
-            </span>
-          <h2 className="mt-5 max-w-2xl text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
-            Calm, honest, and business-minded. I build AI that empowers people, not replaces them.
-          </h2>
-          <Link
-            href="/about"
-            className="group mt-7 inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-card"
-          >
-            Read my story
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mt-5 max-w-2xl text-balance text-2xl font-semibold tracking-[-0.02em] sm:text-3xl text-foreground"
+            >
+              Calm, honest, and business-minded. I build data-driven systems that simplify complexity and solve real problems.
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <Link
+                href="/about"
+                className="group mt-7 inline-flex items-center gap-2 rounded-lg glass-panel px-5 py-3 text-sm font-medium text-foreground transition-colors"
+              >
+                Read my story
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </Reveal>
@@ -195,29 +224,35 @@ export function AboutPreview() {
   )
 }
 
+/* ─── Contact CTA with Pulsing Aura ─── */
 export function ContactCta() {
   return (
     <section className="mx-auto max-w-6xl px-5 pb-8 pt-0 lg:px-8">
-      <Reveal className="relative overflow-hidden rounded-3xl border border-primary/30 bg-primary/10 p-10 text-center sm:p-16">
+      <Reveal className="relative overflow-hidden rounded-3xl border border-blue-500/20 bg-blue-500/5 p-10 text-center sm:p-16">
+        {/* Massive pulsating blue aura */}
+        <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="size-[500px] rounded-full bg-blue-500/10 blur-[100px] animate-pulse-aura" />
+        </div>
         <div aria-hidden className="glow-blue absolute inset-0" />
+
         <div className="relative mx-auto max-w-2xl">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-balance text-3xl font-semibold tracking-[-0.02em] sm:text-4xl text-foreground">
             Let&apos;s build something that solves a real problem.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            Interested in discussing AI Engineering, Data Analytics, Business Intelligence, or Automation? I&apos;d
+            Interested in discussing Data Science, Data Analytics, Business Intelligence, or Automation? I&apos;d
             be happy to connect.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground antigravity-hover"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-500 px-8 py-3.5 text-sm font-medium text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-600 hover:shadow-blue-500/40 btn-glow"
             >
-              Start a conversation
+              Contact Me
             </Link>
             <Link
               href="/resume"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background/60 px-6 py-3 text-sm font-medium text-foreground antigravity-hover"
+              className="inline-flex items-center gap-2 rounded-full glass-panel px-8 py-3.5 text-sm font-medium text-foreground transition-all"
             >
               Download Resume
             </Link>

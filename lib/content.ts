@@ -43,23 +43,18 @@ export const techSkills = [
   },
 ]
 
-export const skillCategories = [
-  {
-    title: 'AI & Machine Learning',
-    skills: ['Applied AI', 'Prompt Engineering', 'RAG Systems', 'NLP', 'AI Agents', 'LLMs'],
-  },
-  {
-    title: 'Data & Analytics',
-    skills: ['Power BI', 'Data Cleaning', 'ERP Data', 'Business Intelligence', 'Excel', 'Data Visualization'],
-  },
-  {
-    title: 'Engineering',
-    skills: ['Python', 'FastAPI', 'PostgreSQL', 'GitHub', 'REST APIs', 'Webhooks'],
-  },
-  {
-    title: 'Automation & Product',
-    skills: ['Workflow Automation', 'Voice Systems', 'Product Thinking', 'System Design', 'Speech-to-Text', 'Text-to-Speech'],
-  },
+export interface SkillCategory {
+  title: 'AI' | 'Data' | 'Automation' | 'Backend' | 'BI' | 'Soft Skills';
+  skills: string[];
+}
+
+export const categorizedSkills: SkillCategory[] = [
+  { title: 'AI', skills: ['Applied AI', 'Prompt Engineering', 'RAG Systems', 'NLP', 'AI Agents', 'LLMs'] },
+  { title: 'Data', skills: ['Data Cleaning', 'Data Engineering', 'Pandas', 'SQL'] },
+  { title: 'Automation', skills: ['Workflow Automation', 'Webhooks', 'Process Optimization', 'Voice Systems'] },
+  { title: 'Backend', skills: ['Python', 'FastAPI', 'PostgreSQL', 'REST APIs'] },
+  { title: 'BI', skills: ['Power BI', 'Excel', 'Data Visualization', 'Business Dashboards'] },
+  { title: 'Soft Skills', skills: ['Business Thinking', 'Product Ownership', 'Problem Solving', 'Communication'] },
 ]
 
 export const whyWorkWithMe = [
@@ -108,98 +103,84 @@ export const businessValue = [
   },
 ]
 
-export type Experience = {
-  role: string
-  org: string
-  location: string
-  period: string
+export interface TimelineItem {
+  title: string
+  company: string
+  date: string
+  description: string
+  achievements: string[]
   type: 'work' | 'education' | 'project' | 'leadership'
-  points: string[]
-  credential?: string
+  credentialUrl?: string
 }
 
-export const timeline: Experience[] = [
+export const experienceTimeline: TimelineItem[] = [
   {
-    role: 'Data Analyst Intern',
-    org: 'Sahil Dresses',
-    location: 'Mumbai, India',
-    period: 'Dec 2023 – May 2024',
+    title: 'Data Analyst Intern',
+    company: 'Sahil Dresses',
+    date: 'Dec 2023 – May 2024',
+    description: 'Transformed business data into strategic insights for operational decision-making.',
+    achievements: [
+      'Engineered an end-to-end data pipeline from raw ERP exports to interactive Power BI dashboards.',
+      'Identified sales anomalies that improved inventory restocking efficiency.',
+      'Automated weekly reporting, saving hours of manual data entry per week.',
+    ],
     type: 'work',
-    points: [
-      'Collected and transformed ERP business data into analysis-ready datasets.',
-      'Performed data cleaning and validation to improve reporting accuracy.',
-      'Built Excel and Power BI reports for business stakeholders.',
-      'Identified trends and anomalies that supported operational decisions.',
-      'Collaborated with business teams to translate questions into insights.',
-    ],
-    credential: '/assets/credentials/Sahil_Dresses.jpg',
+    credentialUrl: '/assets/credentials/Sahil_Dresses.jpg',
   },
   {
-    role: 'Independent AI & Data Science Development',
-    org: 'Personal Projects',
-    location: 'Remote',
-    period: 'Ongoing',
+    title: 'Independent AI & Data Science Development',
+    company: 'Personal Projects',
+    date: 'Ongoing',
+    description: 'Building practical, production-ready AI systems and automations.',
+    achievements: [
+      'Architected AGMIS, an academic data intelligence platform with secure PostgreSQL integration.',
+      'Developed a real-estate AI voice agent capable of autonomous lead qualification.',
+    ],
     type: 'project',
-    points: [
-      'Designed and built AGMIS, an academic data analytics and intelligence platform.',
-      'Developed an AI Voice Agent to automate real-estate lead qualification.',
-      'Explored RAG, sentiment analysis, and automation systems end to end.',
-    ],
-  },
-  {
-    role: 'BSc Data Science',
-    org: 'University',
-    location: 'India',
-    period: 'In Progress',
-    type: 'education',
-    points: [
-      'Foundations in statistics, machine learning, and data engineering.',
-      'Applied coursework toward real, deployable AI and data science projects.',
-    ],
-  },
-  {
-    role: 'National Cadet Corps (NCC)',
-    org: 'NCC',
-    location: 'India',
-    period: 'Cadet',
-    type: 'leadership',
-    points: [
-      'Developed discipline, structure, and a steady approach under pressure.',
-    ],
-  },
-  {
-    role: 'State-Level Basketball',
-    org: 'Competitive Athletics',
-    location: 'India',
-    period: 'Player',
-    type: 'leadership',
-    points: [
-      'Competed at state level — teamwork, consistency, and resilience.',
-    ],
-  },
+  }
 ]
 
-export type Certification = {
-  title: string
+export interface Education {
+  degree: string
+  institution: string
+  timeline: string
+  cgpi?: string
+  coursework?: string[]
+}
+
+export const educationTimeline: Education[] = [
+  {
+    degree: 'BSc in Data Science',
+    institution: 'University Placeholder',
+    timeline: '2022 - Present',
+    cgpi: '8.5',
+    coursework: ['Machine Learning', 'Database Management', 'Statistical Modeling', 'Data Structures'],
+  }
+]
+
+export interface Certification {
+  name: string
   issuer: string
-  image?: string
-  credential?: string
+  logoPath?: string
+  date?: string
+  credentialUrl?: string
 }
 
 export const certificationsTier1: Certification[] = [
-  { title: 'IBM SkillsBuild', issuer: 'IBM', credential: '/assets/credentials/Hamza_Siddiqui_AI_AWARE_CERTIFICATE.png' },
-  { title: 'Make Agentic AI Work for You', issuer: 'IBM', credential: '/assets/credentials/MakeAgenticAIWorkforYou_Badge20260407-30-d6j8n3.pdf' },
-  { title: 'Introduction to Retrieval-Augmented Generation', issuer: 'IBM', credential: '/assets/credentials/Digital_Sticker__Introduction_to_Retrieval-Augmented_Generation.png' },
-  { title: 'Unleashing the Power of AI Agents', issuer: 'IBM', credential: '/assets/credentials/Digital_Sticker_Unleashing_the_Power_of_AI_Agents.png' },
-  { title: 'The Rise of Multiagent Systems', issuer: 'IBM', credential: '/assets/credentials/Digital_Sticker_The_Rise_of_Multiagent_Systems.png' },
-  { title: 'Intel AI For All', issuer: 'Intel', credential: '/assets/credentials/Hamza_Siddiqui_AI_APPRECIATE_CERTIFICATE.png' },
-  { title: 'Microsoft Excel', issuer: 'Microsoft', credential: '/assets/credentials/Microsoft_Excel_-_Excel_from_Beginner_to_Advanced.pdf' },
-  { title: 'Power BI', issuer: 'Microsoft', credential: '/assets/credentials/PowerBI.pdf' },
+  { name: 'IBM SkillsBuild: AI Aware Certificate', issuer: 'IBM', credentialUrl: '/assets/credentials/Hamza_Siddiqui_AI_AWARE_CERTIFICATE.png', date: '2024' },
+  { name: 'IBM SkillsBuild: AI Appreciate Certificate', issuer: 'IBM', credentialUrl: '/assets/credentials/Hamza_Siddiqui_AI_APPRECIATE_CERTIFICATE.png', date: '2024' },
+  { name: 'Make Agentic AI Work for You', issuer: 'IBM', credentialUrl: '/assets/credentials/MakeAgenticAIWorkforYou_Badge20260407-30-d6j8n3.pdf', date: '2026' },
+  { name: 'IBM SkillsBuild: Introduction to Retrieval-Augmented Generation', issuer: 'IBM', credentialUrl: '/assets/credentials/Digital_Sticker__Introduction_to_Retrieval-Augmented_Generation.png', date: '2024' },
+  { name: 'IBM SkillsBuild: Unleashing the Power of AI Agents', issuer: 'IBM', credentialUrl: '/assets/credentials/Digital_Sticker_Unleashing_the_Power_of_AI_Agents.png', date: '2024' },
+  { name: 'IBM SkillsBuild: The Rise of Multiagent Systems', issuer: 'IBM', credentialUrl: '/assets/credentials/Digital_Sticker_The_Rise_of_Multiagent_Systems.png', date: '2024' },
+  { name: 'Microsoft Certified: Power BI', issuer: 'Microsoft', credentialUrl: '/assets/credentials/PowerBI.pdf', date: '2024' },
+  { name: 'Microsoft Excel: Excel from Beginner to Advanced', issuer: 'Microsoft', credentialUrl: '/assets/credentials/Microsoft_Excel_-_Excel_from_Beginner_to_Advanced.pdf', date: '2024' },
 ]
 
 export const certificationsTier2: Certification[] = [
-  { title: 'AI & Data Science Workshops', issuer: 'Various', credential: '/assets/credentials/Skill_Nation.jpg' },
-  { title: 'Participation Certificates', issuer: 'Various', credential: '/assets/credentials/certificate.jpg' },
-  { title: 'Supporting Learning Credentials', issuer: 'Various', credential: '/assets/credentials/Indrustry_traning_(Atharva).jpg' },
-  { title: 'GoGo A1 Vehicle Conversions', issuer: 'GoGo A1', credential: '/assets/credentials/GOGOA1.jpg' },
+  { name: 'Industrial Training: EV Conversion & Automotive Tech', issuer: 'GoGo A1', credentialUrl: '/assets/credentials/GOGOA1.jpg', date: '2023' },
+  { name: 'Industry Training (Atharva)', issuer: 'Atharva', credentialUrl: '/assets/credentials/Indrustry_traning_(Atharva).jpg', date: '2023' },
+  { name: 'Data Analyst Intern Certificate', issuer: 'Sahil Dresses', credentialUrl: '/assets/credentials/Sahil_Dresses.jpg', date: '2024' },
+  { name: 'AI & Data Science Workshops', issuer: 'Skill Nation', credentialUrl: '/assets/credentials/Skill_Nation.jpg', date: '2023' },
+  { name: 'Workshops Participation Certificate', issuer: 'Various', credentialUrl: '/assets/credentials/certificate.jpg', date: '2023' },
 ]

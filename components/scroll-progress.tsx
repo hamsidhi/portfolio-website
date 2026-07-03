@@ -14,7 +14,10 @@ export function ScrollProgress() {
     <motion.div
       aria-hidden
       style={{ scaleX }}
-      className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left bg-primary"
-    />
+      className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left"
+    >
+      <div className="h-full w-full bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 blur-sm opacity-60" />
+    </motion.div>
   )
 }

@@ -15,6 +15,9 @@ const issuerColors: Record<string, string> = {
   Intel: 'border-cyan-500/30 bg-cyan-500/10 text-cyan-400',
   Microsoft: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400',
   'GoGo A1': 'border-orange-500/30 bg-orange-500/10 text-orange-400',
+  Atharva: 'border-indigo-500/30 bg-indigo-500/10 text-indigo-400',
+  'Sahil Dresses': 'border-amber-500/30 bg-amber-500/10 text-amber-400',
+  'Skill Nation': 'border-purple-500/30 bg-purple-500/10 text-purple-400',
   Various: 'border-border bg-secondary/60 text-muted-foreground',
 }
 
@@ -48,8 +51,8 @@ export default function CertificationsPage() {
                     {c.issuer}
                   </span>
                 </div>
-                <h3 className="mt-4 text-sm font-semibold leading-snug">{c.title}</h3>
-                {c.credential && (
+                <h3 className="mt-4 text-sm font-semibold leading-snug">{c.name}</h3>
+                {c.credentialUrl && (
                   <div className="mt-3 flex items-center gap-1 text-[10px] text-primary opacity-0 transition-opacity group-hover:opacity-100">
                     <ExternalLink className="size-3" />
                     View credential
@@ -59,9 +62,9 @@ export default function CertificationsPage() {
             )
 
             return (
-              <StaggerItem key={c.title}>
-                {c.credential ? (
-                  <a href={c.credential} target="_blank" rel="noopener noreferrer" className="block h-full">
+              <StaggerItem key={c.name}>
+                {c.credentialUrl ? (
+                  <a href={c.credentialUrl} target="_blank" rel="noopener noreferrer" className="block h-full">
                     {Card}
                   </a>
                 ) : (
@@ -82,9 +85,9 @@ export default function CertificationsPage() {
           {certificationsTier2.map((c) => {
             const Card = (
               <div className="h-full rounded-2xl glass-panel p-5 antigravity-hover hover:border-primary/40 group transition-colors hover:bg-card">
-                <h3 className="text-sm font-semibold leading-snug">{c.title}</h3>
+                <h3 className="text-sm font-semibold leading-snug">{c.name}</h3>
                 <p className="mt-1 text-xs text-muted-foreground">{c.issuer}</p>
-                {c.credential && (
+                {c.credentialUrl && (
                   <div className="mt-3 flex items-center gap-1 text-[10px] text-primary opacity-0 transition-opacity group-hover:opacity-100">
                     <ExternalLink className="size-3" />
                     View credential
@@ -93,9 +96,9 @@ export default function CertificationsPage() {
               </div>
             )
             return (
-              <StaggerItem key={c.title}>
-                {c.credential ? (
-                  <a href={c.credential} target="_blank" rel="noopener noreferrer" className="block h-full">
+              <StaggerItem key={c.name}>
+                {c.credentialUrl ? (
+                  <a href={c.credentialUrl} target="_blank" rel="noopener noreferrer" className="block h-full">
                     {Card}
                   </a>
                 ) : (

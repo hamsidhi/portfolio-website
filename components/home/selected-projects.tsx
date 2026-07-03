@@ -15,7 +15,7 @@ export function SelectedProjects() {
         />
         <Link
           href="/projects"
-          className="group inline-flex shrink-0 items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-card"
+          className="group inline-flex shrink-0 items-center gap-2 rounded-lg glass-panel px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary/30"
         >
           View all projects
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />

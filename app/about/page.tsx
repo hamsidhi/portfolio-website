@@ -8,12 +8,12 @@ import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Hamza Siddiqui — AI Engineer, Data Analyst, and Automation Builder. From curiosity in data science to building practical, production-ready AI systems.',
+    'Hamza Siddiqui — Data Science Graduate, Data Analyst, and Automation Builder. Dedicated to building practical, data-driven systems and automations.',
 }
 
 const stats = [
   { value: '5+', label: 'Projects Built' },
-  { value: '8+', label: 'Certifications' },
+  { value: '10+', label: 'Certifications' },
   { value: '6mo', label: 'Industry Experience' },
   { value: '2', label: 'Flagship Products' },
 ]
@@ -22,19 +22,19 @@ const journey = [
   { year: '2023', title: 'Curiosity Begins', body: 'Started exploring Data Science, statistics, and the fundamentals of machine learning.' },
   { year: '2023–24', title: 'First Industry Experience', body: 'Interned as a Data Analyst at Sahil Dresses — transforming ERP data into Power BI dashboards.' },
   { year: '2024', title: 'Building AGMIS', body: 'Designed and built a full academic intelligence platform from the ground up.' },
-  { year: '2025', title: 'AI Voice Agent', body: 'Created an intelligent voice agent for real estate lead qualification using prompt engineering.' },
-  { year: 'Now', title: 'Shipping Production AI', body: 'Building practical AI systems, automation, and analytics solutions that businesses can use.' },
+  { year: '2025', title: 'Voice Agent Automation', body: 'Created a conversational agent for real estate lead qualification using prompt engineering.' },
+  { year: 'Now', title: 'Building Practical Automations', body: 'Building practical data systems, automation pipelines, and analytics solutions that businesses can use.' },
 ]
 
 const focus = [
-  { icon: HeartPulse, title: 'Healthcare AI', body: 'Turning clinical and operational data into earlier, safer decisions.' },
+  { icon: HeartPulse, title: 'Healthcare Intelligence', body: 'Turning clinical and operational data into earlier, safer decisions.' },
   { icon: BarChart3, title: 'Business Intelligence', body: 'Making data understandable and actionable for the people who decide.' },
   { icon: Workflow, title: 'Automation', body: 'Removing repetitive manual work so people can focus on what matters.' },
 ]
 
 const principles = [
   { icon: Compass, title: 'Solve real problems', body: 'Technology should serve a clear purpose, not exist for its own sake.' },
-  { icon: Shield, title: 'Empower, not replace', body: 'AI should make people more capable — not push them out.' },
+  { icon: Shield, title: 'Empower, not replace', body: 'Technology should make people more capable — not push them out.' },
   { icon: Trophy, title: 'Discipline & consistency', body: 'NCC and state-level basketball shaped how I show up and follow through.' },
 ]
 
@@ -43,8 +43,8 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About"
-        title="I build data-driven systems that solve real problems — and empower people"
-        description="From curiosity in Data Science to shipping production-ready AI systems that businesses can actually use."
+        title="I build data-driven systems and practical automations"
+        description="From curiosity in Data Science to building functional analytics pipelines and automations that businesses can actually use."
       />
 
       {/* Profile + Bio */}
@@ -63,7 +63,7 @@ export default function AboutPage() {
               </div>
               <div className="text-center">
                 <p className="font-semibold">Hamza Siddiqui</p>
-                <p className="text-sm text-muted-foreground">AI Engineer · Data Analyst</p>
+                <p className="text-sm text-muted-foreground">Data Science Graduate · Data Analyst</p>
                 <span className="mt-2 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
                   <MapPin className="size-3 text-primary" />
                   UAE · India · Remote
@@ -75,16 +75,16 @@ export default function AboutPage() {
           <Reveal className="space-y-5 text-pretty text-lg leading-relaxed text-muted-foreground" delay={0.1}>
             <p>
               I started with a simple curiosity about data — how numbers could explain behavior and
-              guide better decisions. That curiosity grew into a conviction: the real value of AI
-              isn&apos;t in complex algorithms, it&apos;s in the problems they solve for people and businesses.
+              guide better decisions. That curiosity grew into a conviction: the real value of technology
+              isn&apos;t in complex algorithms, it&apos;s in the problems it solves for people and businesses.
             </p>
             <p>
-              So I stopped just studying Data Science and started building it. I now build AI-driven
-              applications, intelligent automation, and analytics dashboards — from voice agents to
+              So I stopped just studying Data Science and started building it. I now build data-driven
+              applications, practical automation workflows, and analytics dashboards — from voice automations to
               academic intelligence platforms — always anchored to a practical outcome.
             </p>
             <p>
-              I believe technology should solve real problems and that AI should empower people, not
+              I believe technology should solve real problems and that technology should empower people, not
               replace them. I&apos;m calm, honest, and business-minded — more interested in shipping
               something useful than in chasing hype.
             </p>
@@ -197,7 +197,7 @@ export default function AboutPage() {
               Want to work together?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-              I&apos;m always open to discussing AI, data, automation, and interesting problems.
+              I&apos;m always open to discussing Data Science, data systems, automation, and interesting problems.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Link

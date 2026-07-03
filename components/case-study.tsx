@@ -102,7 +102,7 @@ export function CaseCardGrid({
       {items.map((item) => (
         <div
           key={item.title}
-          className="rounded-2xl border border-border bg-card/50 p-5 transition-colors hover:border-primary/40"
+          className="rounded-2xl glass-panel p-5 antigravity-hover hover:border-primary/40"
         >
           <p className="text-sm font-semibold text-foreground">{item.title}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>

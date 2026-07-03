@@ -6,19 +6,19 @@ import { PageHero } from '@/components/section'
 import { Reveal } from '@/components/reveal'
 import { ResumeActions } from '@/components/resume-actions'
 import { site } from '@/lib/site'
-import { timeline, certificationsTier1, techSkills } from '@/lib/content'
+import { experienceTimeline, certificationsTier1, techSkills } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Resume',
   description:
-    'Interactive resume of Hamza Siddiqui — AI Engineer, Data Analyst, and Automation Builder. Download or print a clean copy.',
+    'Interactive resume of Hamza Siddiqui — Data Science Graduate, Data Analyst, and Automation Builder. Download or print a clean copy.',
 }
 
 const summary =
-  'AI Engineer and Automation Builder who builds practical AI products, intelligent voice agents, and data analytics platforms. I translate business problems into production-ready AI solutions across applied ML, RAG systems, prompt engineering, and business intelligence.'
+  'BSc Data Science graduate and Automation Builder who builds functional data pipelines, conversational automation, and analytics dashboards. Experienced in translating business objectives into data-driven systems using machine learning, workflow automation, and analytics tools.'
 
 const technicalAreas = [
-  { label: 'AI & ML', items: 'Applied AI, Prompt Engineering, RAG, Agents, NLP' },
+  { label: 'Data & Intelligent Systems', items: 'Conversational Automation, RAG, Prompt Engineering, Applied ML' },
   { label: 'Data & Analytics', items: 'Power BI, Excel, Data Cleaning, ERP Data' },
   { label: 'Engineering', items: 'Python, FastAPI, PostgreSQL, GitHub' },
   { label: 'Practice', items: 'Automation, Product Thinking, Business Intelligence' },
@@ -77,16 +77,16 @@ export default function ResumePage() {
                 Experience &amp; Journey
               </h3>
               <div className="mt-4 flex flex-col gap-5">
-                {timeline.map((item) => (
-                  <div key={`${item.role}-${item.org}`}>
+                {experienceTimeline.map((item) => (
+                  <div key={`${item.title}-${item.company}`}>
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                       <p className="font-medium text-foreground">
-                        {item.role} <span className="text-muted-foreground">· {item.org}</span>
+                        {item.title} <span className="text-muted-foreground">· {item.company}</span>
                       </p>
-                      <p className="text-sm text-muted-foreground">{item.period}</p>
+                      <p className="text-sm text-muted-foreground">{item.date}</p>
                     </div>
                     <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
-                      {item.points.map((point) => (
+                      {item.achievements.map((point) => (
                         <li key={point}>{point}</li>
                       ))}
                     </ul>
@@ -127,8 +127,8 @@ export default function ResumePage() {
               </h3>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {certificationsTier1.map((cert) => (
-                  <li key={cert.title} className="text-sm text-muted-foreground">
-                    <span className="text-foreground">{cert.title}</span> · {cert.issuer}
+                  <li key={cert.name} className="text-sm text-muted-foreground">
+                    <span className="text-foreground">{cert.name}</span> · {cert.issuer}
                   </li>
                 ))}
               </ul>
@@ -138,7 +138,7 @@ export default function ResumePage() {
 
         <Reveal className="mt-10 flex flex-col items-center gap-3 text-center print:hidden">
           <p className="text-sm text-muted-foreground">
-            Prefer to talk it through? I&apos;m open to AI Engineering opportunities.
+            Prefer to talk it through? I&apos;m open to Data Science, Data Analyst, and Automation opportunities.
           </p>
           <Link
             href="/contact"

@@ -61,7 +61,7 @@ export default function ContactPage() {
               Let&apos;s connect
             </h1>
             <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              Interested in discussing AI Engineering, Data Analytics, Business Intelligence, or Automation? I&apos;d be happy to connect.
+              Interested in discussing Data Science, Data Analytics, Business Intelligence, or Automation? I&apos;d be happy to connect.
             </p>
           </motion.div>
         </div>

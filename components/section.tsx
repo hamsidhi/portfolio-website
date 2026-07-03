@@ -3,8 +3,8 @@ import { Reveal } from '@/components/reveal'
 
 export function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-primary">
-      <span className="h-px w-6 bg-primary/50" />
+    <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-blue-400">
+      <span className="h-px w-6 bg-blue-500/50" />
       {children}
     </span>
   )
@@ -32,7 +32,7 @@ export function SectionHeading({
       )}
     >
       {label && <SectionLabel>{label}</SectionLabel>}
-      <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h2 className="text-balance text-3xl font-semibold tracking-[-0.02em] sm:text-4xl text-foreground">
         {title}
       </h2>
       {description && (
@@ -61,11 +61,11 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden border-b border-border">
       <div aria-hidden className="glow-blue absolute -top-40 left-1/2 size-[520px] -translate-x-1/2 rounded-full" />
-      <div className="bg-grid absolute inset-0 opacity-40" aria-hidden />
+      <div className="bg-grid absolute inset-0 opacity-20" aria-hidden />
       <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-32 lg:px-8 lg:pt-36">
         <Reveal className="flex flex-col gap-5">
           <SectionLabel>{label}</SectionLabel>
-          <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-[-0.02em] sm:text-5xl text-foreground">
             {title}
           </h1>
           {description && (

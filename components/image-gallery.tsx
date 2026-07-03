@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'motion/react'
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react'
 
+import { BrowserFrame } from '@/components/browser-frame'
+
 type GalleryImage = {
   src: string
   alt: string
@@ -31,7 +33,7 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
 
   return (
     <>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {images.map((img, i) => (
           <motion.button
             key={img.src}
@@ -41,25 +43,27 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="group image-showcase cursor-pointer text-left"
+            className="group cursor-pointer text-left w-full"
           >
-            <div className="relative overflow-hidden">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={600}
-                height={400}
-                className="aspect-video w-full object-cover object-top"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-background/0 opacity-0 transition-all duration-300 group-hover:bg-background/30 group-hover:opacity-100">
-                <span className="rounded-full bg-background/80 p-2.5 backdrop-blur-sm">
-                  <ZoomIn className="size-5 text-foreground" />
-                </span>
+            <BrowserFrame url={img.alt.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.local'}>
+              <div className="relative overflow-hidden">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={600}
+                  height={400}
+                  className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-background/0 opacity-0 transition-all duration-300 group-hover:bg-background/25 group-hover:opacity-100">
+                  <span className="rounded-full bg-background/80 p-2.5 backdrop-blur-sm">
+                    <ZoomIn className="size-5 text-foreground" />
+                  </span>
+                </div>
               </div>
-            </div>
+            </BrowserFrame>
             {img.caption && (
-              <p className="border-t border-border bg-card/50 px-3 py-2 text-xs text-muted-foreground">
+              <p className="mt-2 px-1 text-xs text-muted-foreground">
                 {img.caption}
               </p>
             )}

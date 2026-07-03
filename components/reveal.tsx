@@ -4,7 +4,7 @@ import { motion, type Variants } from 'motion/react'
 import type { ReactNode } from 'react'
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 18 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 }
 
@@ -24,7 +24,7 @@ export function Reveal({ children, className, delay = 0, as = 'div' }: RevealPro
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.55, delay, ease: [0.21, 0.5, 0.25, 1] }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </MotionTag>
@@ -65,7 +65,7 @@ export function StaggerItem({
     <motion.div
       className={className}
       variants={variants}
-      transition={{ duration: 0.5, ease: [0.21, 0.5, 0.25, 1] }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>

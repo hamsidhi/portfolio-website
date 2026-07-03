@@ -39,10 +39,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
+        'fixed inset-x-0 top-[3px] z-50 transition-all duration-500',
         scrolled
-          ? 'border-b border-border/50 bg-background/60 backdrop-blur-md'
-          : 'border-b border-transparent bg-transparent',
+          ? 'bg-background/60 backdrop-blur-xl border-b border-border'
+          : 'bg-transparent border-b border-transparent',
       )}
     >
       <nav
@@ -51,21 +51,21 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="group flex items-center gap-2 text-sm font-semibold tracking-tight"
+          className="group flex items-center gap-2.5 text-sm font-semibold tracking-tight"
         >
-          <span className="grid size-8 place-items-center rounded-md border border-border bg-card/60 p-1">
+          <span className="grid size-8 place-items-center rounded-lg border border-border bg-secondary/30 p-1 backdrop-blur-sm">
             <Image src="/logo/logo.png" alt="Logo" width={24} height={24} className="h-auto w-auto" />
           </span>
-          <span className="hidden sm:inline">{site.name}</span>
+          <span className="hidden sm:inline text-foreground">{site.name}</span>
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-0.5 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'relative rounded-md px-3 py-2 text-sm transition-colors',
+                'relative rounded-lg px-3.5 py-2 text-sm transition-colors',
                 isActive(link.href)
                   ? 'text-foreground'
                   : 'text-muted-foreground hover:text-foreground',
@@ -75,7 +75,7 @@ export function Navbar() {
               {isActive(link.href) && (
                 <motion.span
                   layoutId="nav-active"
-                  className="absolute inset-x-2 -bottom-px h-px bg-primary"
+                  className="absolute inset-x-2 -bottom-px h-[2px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"
                   transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                 />
               )}
@@ -87,7 +87,7 @@ export function Navbar() {
           <ThemeToggle />
           <Link
             href="/resume"
-            className="hidden items-center gap-1.5 rounded-lg border border-primary/40 bg-primary/10 px-3.5 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20 md:inline-flex"
+            className="hidden items-center gap-1.5 rounded-lg border border-blue-500/30 bg-blue-500/10 px-3.5 py-2 text-sm font-medium text-blue-400 transition-all hover:bg-blue-500/20 hover:border-blue-500/40 md:inline-flex btn-glow"
           >
             <Download className="size-3.5" />
             Resume
@@ -98,7 +98,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
-            className="grid size-9 place-items-center rounded-lg border border-border bg-card text-foreground md:hidden"
+            className="grid size-9 place-items-center rounded-lg border border-border bg-secondary/30 text-foreground md:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -122,8 +122,8 @@ export function Navbar() {
                   className={cn(
                     'rounded-lg px-3 py-3 text-base transition-colors',
                     isActive(link.href)
-                      ? 'bg-card text-foreground'
-                      : 'text-muted-foreground hover:bg-card hover:text-foreground',
+                      ? 'bg-secondary/30 text-foreground'
+                      : 'text-muted-foreground hover:bg-secondary/30 hover:text-foreground',
                   )}
                 >
                   {link.label}
@@ -131,7 +131,7 @@ export function Navbar() {
               ))}
               <Link
                 href="/resume"
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-4 py-3 text-base font-medium text-primary"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg border border-blue-500/30 bg-blue-500/10 px-4 py-3 text-base font-medium text-blue-400"
               >
                 <Download className="size-4" />
                 Resume

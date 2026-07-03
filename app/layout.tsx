@@ -6,6 +6,7 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ScrollProgress } from '@/components/scroll-progress'
+import { CursorGlow } from '@/components/cursor-glow'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({
@@ -18,19 +19,22 @@ const siteUrl = 'https://hamsidhi.me'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Hamza Siddiqui | AI Engineer | Data Analyst | Automation Builder',
+    default: 'Hamza Siddiqui | Data Science Graduate | Data Analyst | Automation Builder',
     template: '%s | Hamza Siddiqui',
   },
   description:
-    'AI Engineer building intelligent systems, data analytics platforms, and production-ready automation solutions.',
+    'BSc Data Science graduate building data-driven systems, practical automations, healthcare intelligence solutions, and analytics platforms.',
   keywords: [
-    'AI Engineer',
-    'Data Analyst',
-    'Automation Builder',
-    'Applied AI',
-    'Machine Learning',
+    'Data Science Graduate',
+    'Healthcare Analytics',
+    'Business Intelligence',
+    'Automation',
     'Data Analytics',
-    'Hamza Siddiqui',
+    'Machine Learning',
+    'Prompt Engineering',
+    'FastAPI',
+    'Python',
+    'Power BI',
   ],
   authors: [{ name: 'Hamza Siddiqui', url: siteUrl }],
   creator: 'Hamza Siddiqui',
@@ -38,22 +42,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Hamza Siddiqui | AI Engineer | Data Analyst | Automation Builder',
+    title: 'Hamza Siddiqui | Data Science Graduate | Data Analyst | Automation Builder',
     description:
-      'AI Engineer building intelligent systems, data analytics platforms, and production-ready automation solutions.',
+      'BSc Data Science graduate building data-driven systems, practical automations, healthcare intelligence solutions, and analytics platforms.',
     siteName: 'Hamza Siddiqui',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hamza Siddiqui | AI Engineer',
+    title: 'Hamza Siddiqui | Data Science Graduate | Data Analyst | Automation Builder',
     description:
-      'Building data-driven systems and production-ready software that solves real business problems.',
+      'BSc Data Science graduate building data-driven systems, practical automations, healthcare intelligence solutions, and analytics platforms.',
   },
 }
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#0A0A0A',
+  themeColor: '#0A0A0F',
   width: 'device-width',
   initialScale: 1,
 }
@@ -70,6 +74,20 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} bg-background`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Hamza Siddiqui",
+              "jobTitle": "Data Science Graduate & Automation Builder",
+              "url": "https://hamsidhi.me"
+            })
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
@@ -77,9 +95,14 @@ export default function RootLayout({
           themes={['dark', 'beige']}
           disableTransitionOnChange
         >
-        <ScrollProgress />
-        <Navbar />
-        <main id="main">{children}</main>
+          {/* Fixed background layers */}
+          <div className="bg-grid-fixed" aria-hidden />
+          <div className="noise-overlay" aria-hidden />
+          <CursorGlow />
+          
+          <ScrollProgress />
+          <Navbar />
+          <main id="main" className="relative z-10">{children}</main>
           <Footer />
           {process.env.NODE_ENV === 'production' && <Analytics />}
         </ThemeProvider>

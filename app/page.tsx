@@ -1,11 +1,9 @@
 import { Hero } from '@/components/home/hero'
-import { TrustBar } from '@/components/home/trust-bar'
 import { VoiceAgentFeature } from '@/components/home/voice-agent-feature'
 import { AgmisFeature } from '@/components/home/agmis-feature'
+import { WhyHireMe } from '@/components/home/why-hire-me'
 import { SelectedProjects } from '@/components/home/selected-projects'
 import {
-  WhoIAm,
-  WhyWorkWithMe,
   ExperienceHighlight,
   CertificationsHighlight,
   AboutPreview,
@@ -16,11 +14,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <TrustBar />
-      <AgmisFeature />
-      <WhoIAm />
-      <WhyWorkWithMe />
       <VoiceAgentFeature />
+      <AgmisFeature />
+      <WhyHireMe />
       <SelectedProjects />
       <ExperienceHighlight />
       <CertificationsHighlight />
