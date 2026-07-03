@@ -7,6 +7,7 @@
   --font-heading: var(--font-sans);
   --font-sans: var(--font-geist-sans), 'Geist Fallback';
   --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  --font-serif: var(--font-serif);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -27,6 +28,12 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  --color-accent-1: var(--accent-1);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-accent-warn: var(--accent-warn);
+  --color-accent-danger: var(--accent-danger);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -35,111 +42,88 @@
   --radius-3xl: calc(var(--radius) * 2.2);
 }
 
-/* ─── Deep Space Dark Theme ─── */
-:root {
+/* ─── Mode A: Obsidian Theme (mapped to root and root.dark) ─── */
+:root, :root.dark {
   color-scheme: dark;
-  --background: #0A0A0F;
-  --foreground: #F8FAFC;
-  --card: #0E0E15;
-  --card-foreground: #F8FAFC;
-  --popover: #0C0C12;
-  --popover-foreground: #F8FAFC;
+  --background: #0A0A0A;
+  --foreground: #EDEDED;
+  --card: #1A1A1E;
+  --card-foreground: #EDEDED;
+  --popover: #111113;
+  --popover-foreground: #EDEDED;
   --primary: #3B82F6;
-  --primary-foreground: #F8FAFC;
-  --secondary: #12121A;
-  --secondary-foreground: #F8FAFC;
-  --muted: #16161F;
-  --muted-foreground: #94A3B8;
-  --accent: #22D3EE;
-  --accent-foreground: #050507;
+  --primary-foreground: #EDEDED;
+  --secondary: #111113;
+  --secondary-foreground: #EDEDED;
+  --muted: #1A1A1E;
+  --muted-foreground: #8A8A93;
+  --accent: #8B5CF6;
+  --accent-foreground: #EDEDED;
   --destructive: #EF4444;
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.06);
   --ring: rgba(59, 130, 246, 0.5);
   --radius: 0.75rem;
   --glow: rgba(59, 130, 246, 0.15);
-  --cyan: #22D3EE;
-  --teal: #2DD4BF;
+
+  /* Task 1 Variable Specifications */
+  --accent-1: #3B82F6;       /* Electric Blue */
+  --accent-2: #8B5CF6;       /* Violet */
+  --accent-3: #10B981;       /* Emerald */
+  --accent-warn: #F59E0B;    /* Amber */
+  --accent-danger: #EF4444;  /* Red */
 
   /* Theme-specific graphic variables */
-  --grid-color: rgba(255, 255, 255, 0.03);
-  --dot-color: rgba(255, 255, 255, 0.06);
-  --outline-color: rgba(255, 255, 255, 0.15);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-bg-hover: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-border-hover: rgba(255, 255, 255, 0.15);
-  --glass-inset: rgba(255, 255, 255, 0.04);
+  --grid-color: rgba(255, 255, 255, 0.02);
+  --dot-color: rgba(255, 255, 255, 0.04);
+  --outline-color: rgba(255, 255, 255, 0.12);
+  --glass-bg: rgba(26, 26, 30, 0.55);
+  --glass-bg-hover: rgba(26, 26, 30, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.12);
+  --glass-inset: rgba(255, 255, 255, 0.02);
 }
 
-:root.dark {
-  color-scheme: dark;
-  --background: #0A0A0F;
-  --foreground: #F8FAFC;
-  --card: #0E0E15;
-  --card-foreground: #F8FAFC;
-  --popover: #0C0C12;
-  --popover-foreground: #F8FAFC;
-  --primary: #3B82F6;
-  --primary-foreground: #F8FAFC;
-  --secondary: #12121A;
-  --secondary-foreground: #F8FAFC;
-  --muted: #16161F;
-  --muted-foreground: #94A3B8;
-  --accent: #22D3EE;
-  --accent-foreground: #050507;
-  --destructive: #EF4444;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.06);
-  --ring: rgba(59, 130, 246, 0.5);
-  --radius: 0.75rem;
-  --glow: rgba(59, 130, 246, 0.15);
-  --cyan: #22D3EE;
-  --teal: #2DD4BF;
-
-  /* Theme-specific graphic variables */
-  --grid-color: rgba(255, 255, 255, 0.03);
-  --dot-color: rgba(255, 255, 255, 0.06);
-  --outline-color: rgba(255, 255, 255, 0.15);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-bg-hover: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-border-hover: rgba(255, 255, 255, 0.15);
-  --glass-inset: rgba(255, 255, 255, 0.04);
-}
-
+/* ─── Mode B: Dune Theme (mapped to root.beige) ─── */
 :root.beige {
-  color-scheme: light;
-  --background: oklch(0.96 0.02 85);
-  --foreground: oklch(0.2 0.02 60);
-  --card: oklch(0.94 0.02 85);
-  --card-foreground: oklch(0.2 0.02 60);
-  --popover: oklch(0.96 0.02 85);
-  --popover-foreground: oklch(0.2 0.02 60);
-  --primary: oklch(0.5 0.12 35);
-  --primary-foreground: oklch(0.96 0.02 85);
-  --secondary: oklch(0.9 0.02 85);
-  --secondary-foreground: oklch(0.2 0.02 60);
-  --muted: oklch(0.9 0.02 85);
-  --muted-foreground: oklch(0.4 0.02 60);
-  --accent: oklch(0.5 0.12 35);
-  --accent-foreground: oklch(0.96 0.02 85);
-  --destructive: oklch(0.62 0.21 25);
-  --border: oklch(0.2 0.02 60 / 12%);
-  --input: oklch(0.2 0.02 60 / 15%);
-  --ring: oklch(0.5 0.12 35 / 55%);
+  color-scheme: dark; /* MAINTAINS dark-mode contrast as per instructions */
+  --background: #1C1712;
+  --foreground: #EDE4D3;
+  --card: #2D2519;
+  --card-foreground: #EDE4D3;
+  --popover: #241E17;
+  --popover-foreground: #EDE4D3;
+  --primary: #D4A574;
+  --primary-foreground: #EDE4D3;
+  --secondary: #241E17;
+  --secondary-foreground: #EDE4D3;
+  --muted: #2D2519;
+  --muted-foreground: #A89A82;
+  --accent: #C97B5A;
+  --accent-foreground: #EDE4D3;
+  --destructive: #C65D4A;
+  --border: rgba(237, 228, 211, 0.08);
+  --input: rgba(237, 228, 211, 0.06);
+  --ring: rgba(212, 165, 116, 0.5);
   --radius: 0.75rem;
-  --glow: oklch(0.5 0.12 35 / 15%);
+  --glow: rgba(212, 165, 116, 0.15);
+
+  /* Task 1 Variable Specifications */
+  --accent-1: #D4A574;       /* Warm Sand / Camel */
+  --accent-2: #C97B5A;       /* Burnt Sienna */
+  --accent-3: #6B8E7F;       /* Sage Teal */
+  --accent-warn: #E8A87C;    /* Peach */
+  --accent-danger: #C65D4A;  /* Terracotta */
 
   /* Theme-specific graphic variables */
-  --grid-color: rgba(0, 0, 0, 0.03);
-  --dot-color: rgba(0, 0, 0, 0.06);
-  --outline-color: rgba(0, 0, 0, 0.2);
-  --glass-bg: rgba(0, 0, 0, 0.02);
-  --glass-bg-hover: rgba(0, 0, 0, 0.04);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-border-hover: rgba(0, 0, 0, 0.12);
-  --glass-inset: rgba(0, 0, 0, 0.02);
+  --grid-color: rgba(237, 228, 211, 0.02);
+  --dot-color: rgba(237, 228, 211, 0.04);
+  --outline-color: rgba(237, 228, 211, 0.12);
+  --glass-bg: rgba(45, 37, 25, 0.55);
+  --glass-bg-hover: rgba(45, 37, 25, 0.75);
+  --glass-border: rgba(237, 228, 211, 0.08);
+  --glass-border-hover: rgba(237, 228, 211, 0.12);
+  --glass-inset: rgba(237, 228, 211, 0.02);
 }
 
 @layer base {
@@ -156,7 +140,7 @@
     letter-spacing: -0.01em;
   }
   ::selection {
-    background: rgba(59, 130, 246, 0.3);
+    background: color-mix(in srgb, var(--accent-2) 30%, transparent);
   }
   h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
@@ -201,6 +185,11 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
+  transition: opacity 0.4s ease;
+}
+
+html.beige .noise-overlay {
+  opacity: 0.075;
 }
 
 /* ─── Dot Grid Pattern ─── */
@@ -219,10 +208,10 @@
 /* ─── Cursor Glow ─── */
 .cursor-glow {
   position: fixed;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.08), transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent-1) 12%, transparent), transparent 70%);
   pointer-events: none;
   z-index: 2;
   transform: translate(-50%, -50%);
@@ -510,13 +499,13 @@
   transition: all 0.6s ease;
 }
 
-.text-outline:hover {
+/* .text-outline:hover {
   -webkit-text-stroke: 2px rgba(59, 130, 246, 0.4);
   background: linear-gradient(135deg, #3B82F6, #22D3EE);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
+} */
 
 /* ─── Particle Float ─── */
 @keyframes particle-float {
@@ -588,14 +577,229 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050507;
+  background: var(--secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.3);
+  background: var(--accent-1);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.5);
+  background: var(--accent-2);
+}
+
+/* ─── View Transitions API ─── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Trust Card Hover Particles & Glow ─── */
+.trust-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trust-card:hover {
+  border-color: rgba(var(--accent-1), 0.4);
+  background-color: color-mix(in srgb, var(--accent-1) 8%, transparent);
+  box-shadow: 0 0 25px var(--glow);
+}
+
+.trust-card::before,
+.trust-card::after,
+.trust-card .particle-1,
+.trust-card .particle-2 {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-1);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  z-index: 5;
+}
+
+.trust-card:hover::before {
+  transform: translate(-220%, -220%) scale(1.2);
+  opacity: 0.8;
+}
+.trust-card:hover::after {
+  transform: translate(120%, -220%) scale(1.2);
+  opacity: 0.8;
+}
+.trust-card:hover .particle-1 {
+  transform: translate(-220%, 120%) scale(1.2);
+  opacity: 0.8;
+}
+.trust-card:hover .particle-2 {
+  transform: translate(120%, 120%) scale(1.2);
+  opacity: 0.8;
+}
+
+/* Scroll-driven stroke drawing for stroked icons */
+@supports (animation-timeline: view()) {
+  .trust-card svg path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: draw-strokes linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+  }
+}
+
+@keyframes draw-strokes {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ─── Scroll-Linked Timeline Progress Line & Card Reveal ─── */
+@supports (animation-timeline: view()) {
+  .timeline-growth-line {
+    animation: grow-timeline-line linear both;
+    animation-timeline: view();
+    animation-range: entry 20% exit 80%;
+  }
+
+  .timeline-card {
+    animation: timeline-card-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 45%;
+  }
+}
+
+@keyframes grow-timeline-line {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes timeline-card-reveal {
+  from {
+    clip-path: circle(0% at 0% 50%);
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    clip-path: circle(150% at 0% 50%);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ─── Flowing Border Gradient ─── */
+.flowing-border {
+  position: relative;
+  background: var(--card);
+  background-clip: padding-box;
+  border: 1px solid transparent !important;
+}
+
+.flowing-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
+  background-size: 300% 300%;
+  border-radius: inherit;
+  animation: flowing-gradient 5s linear infinite;
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.flowing-border:hover::before {
+  opacity: 1;
+}
+
+@keyframes flowing-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Dialog Modal styles ─── */
+dialog.dialog-modal {
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+dialog.dialog-modal[open] {
+  transform: scale(1);
+  opacity: 1;
+}
+
+dialog.dialog-modal::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+/* ─── Shimmer Underline Focus ─── */
+@keyframes shimmer-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.animate-shimmer {
+  animation: shimmer-move 3s linear infinite;
+}
+
+/* ─── Map Path Glow flow ─── */
+@keyframes map-flow {
+  0% {
+    stroke-dashoffset: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-map-path {
+  stroke-dasharray: 10, 12;
+  animation: map-flow 8s linear infinite;
+}
+
+/* ─── Easter Egg CSS Confetti Particles ─── */
+@keyframes particle-burst-1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0.2) rotate(var(--r));
+    opacity: 0;
+  }
+}
+
+.confetti-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: var(--br);
+  background-color: var(--c);
+  width: var(--size);
+  height: var(--size);
+  pointer-events: none;
+  z-index: 50;
+  animation: particle-burst-1 var(--duration) cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
 }

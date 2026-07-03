@@ -6,6 +6,7 @@ import { PlayCircle, GitBranch, FileText, ArrowRight } from 'lucide-react'
 import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
 import { SectionLabel } from '@/components/section'
 import { businessValue } from '@/lib/content'
+import { VoiceDemo } from '@/components/voice-demo'
 
 const tags = ['AI Voice', 'Automation', 'Lead Qualification', 'Prompt Engineering', 'Business']
 
@@ -22,8 +23,8 @@ function AnimatedWaveform() {
             className="w-[3px] rounded-full"
             style={{
               background: isBlue
-                ? 'linear-gradient(to top, #3B82F6, #60A5FA)'
-                : 'linear-gradient(to top, #22D3EE, #67E8F9)',
+                ? 'linear-gradient(to top, var(--accent-1), var(--accent-2))'
+                : 'linear-gradient(to top, var(--accent-2), var(--accent-3))',
             }}
             animate={{
               height: [
@@ -82,7 +83,7 @@ export function VoiceAgentFeature() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/projects/ai-voice-agent#demo"
-                className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white transition-all hover:bg-blue-600 shadow-lg shadow-blue-500/20 btn-glow"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent-1 px-5 py-3 text-sm font-medium text-white transition-all hover:bg-accent-1/90 shadow-lg shadow-accent-1/25 btn-glow cursor-pointer"
               >
                 <PlayCircle className="size-4" />
                 Try Live Demo
@@ -104,29 +105,47 @@ export function VoiceAgentFeature() {
             </div>
           </Reveal>
 
-          {/* Waveform showcase card */}
+          {/* Voice Simulator 3D Laptop Frame */}
           <Reveal delay={0.15}>
-            <div className="space-y-4">
-              {/* Floating glass card with waveform */}
-              <div className="relative rounded-2xl glass-panel p-6 animate-breathe overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5" aria-hidden />
-                <div className="relative">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="size-3 rounded-full bg-blue-500 animate-pulse" />
-                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Live Audio Waveform</span>
+            <div className="space-y-6">
+              
+              <div className="relative border-none" style={{ perspective: '1000px' }}>
+                <motion.div
+                  initial={{ rotateY: -3, rotateX: 1.5 }}
+                  whileHover={{ rotateY: -6, rotateX: 3 }}
+                  transition={{ type: 'spring', stiffness: 100, damping: 15 }}
+                  className="relative"
+                  style={{ transformStyle: 'preserve-3d' }}
+                >
+                  <div className="relative mx-auto max-w-[580px]">
+                    {/* Screen Frame */}
+                    <div className="relative rounded-t-2xl border-4 border-muted/80 bg-background/30 p-2 shadow-2xl backdrop-blur-sm overflow-hidden">
+                      {/* Camera dot */}
+                      <div className="absolute top-1 left-1/2 -translate-x-1/2 size-1.5 rounded-full bg-muted-foreground/30 z-20" />
+                      
+                      {/* Interactive Voice Demo */}
+                      <VoiceDemo />
+                    </div>
+                    {/* Keyboard Base hinge */}
+                    <div className="relative h-3.5 w-full rounded-b-2xl bg-muted/80 border-t border-muted-foreground/20 shadow-xl flex justify-center">
+                      <div className="w-20 h-1 rounded-full bg-muted-foreground/15 mt-0.5" />
+                    </div>
                   </div>
-                  <AnimatedWaveform />
-                </div>
+                </motion.div>
               </div>
 
               {/* Business value cards */}
               <Stagger className="grid grid-cols-2 gap-3">
                 {businessValue.slice(0, 4).map((v) => (
                   <StaggerItem key={v.title}>
-                    <div className="h-full rounded-xl glass-panel p-4 transition-all hover:border-blue-500/30 antigravity-hover">
+                    <motion.div 
+                      className="h-full rounded-xl glass-panel p-4 transition-all hover:border-accent-1/30 antigravity-hover"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                    >
                       <p className="text-xs font-semibold text-foreground">{v.title}</p>
                       <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">{v.body}</p>
-                    </div>
+                    </motion.div>
                   </StaggerItem>
                 ))}
               </Stagger>

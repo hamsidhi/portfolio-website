@@ -58,14 +58,14 @@ export default function AboutPage() {
                   alt="Hamza Siddiqui"
                   width={200}
                   height={200}
-                  className="rounded-full border-2 border-primary/20 object-cover shadow-2xl"
+                  className="rounded-full border-2 border-accent-1/20 object-cover shadow-2xl"
                 />
               </div>
               <div className="text-center">
-                <p className="font-semibold">Hamza Siddiqui</p>
+                <p className="font-semibold text-foreground">Hamza Siddiqui</p>
                 <p className="text-sm text-muted-foreground">Data Science Graduate · Data Analyst</p>
                 <span className="mt-2 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <MapPin className="size-3 text-primary" />
+                  <MapPin className="size-3 text-accent-1" />
                   UAE · India · Remote
                 </span>
               </div>
@@ -111,30 +111,32 @@ export default function AboutPage() {
       {/* Journey Timeline */}
       <section className="mx-auto max-w-4xl px-5 py-16 lg:px-8">
         <Reveal>
-          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground font-semibold">
             My Journey
           </h2>
         </Reveal>
         <div className="relative mt-8">
           <div aria-hidden className="absolute left-[19px] top-2 bottom-2 w-px bg-border" />
+          <div
+            aria-hidden
+            className="timeline-growth-line absolute left-[19px] top-2 w-px bg-gradient-to-b from-accent-1 via-accent-2 to-transparent"
+          />
           <div className="space-y-6">
             {journey.map((step, i) => (
-              <Reveal key={step.year} delay={i * 0.06}>
-                <div className="relative flex gap-5">
-                  <span className="relative z-[1] grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-card text-xs font-bold text-primary">
-                    {step.year.length > 4 ? '→' : step.year.slice(-2)}
-                  </span>
-                  <div className="flex-1 rounded-2xl glass-panel p-5 antigravity-hover hover:border-primary/40">
-                    <div className="flex flex-wrap items-baseline gap-3">
-                      <h3 className="text-base font-semibold">{step.title}</h3>
-                      <span className="rounded-full border border-border bg-secondary px-2.5 py-0.5 text-[10px] text-muted-foreground">
-                        {step.year}
-                      </span>
-                    </div>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
+              <div key={step.year} className="timeline-card relative flex gap-5">
+                <span className="relative z-[1] grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-card text-xs font-bold text-accent-1">
+                  {step.year.length > 4 ? '→' : step.year.slice(-2)}
+                </span>
+                <div className="flex-1 rounded-2xl glass-panel p-5 antigravity-hover hover:border-accent-1/30">
+                  <div className="flex flex-wrap items-baseline gap-3">
+                    <h3 className="text-base font-semibold text-foreground">{step.title}</h3>
+                    <span className="rounded-full border border-border bg-secondary px-2.5 py-0.5 text-[10px] text-muted-foreground">
+                      {step.year}
+                    </span>
                   </div>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
                 </div>
-              </Reveal>
+              </div>
             ))}
           </div>
         </div>
@@ -143,7 +145,7 @@ export default function AboutPage() {
       {/* Focus areas */}
       <section className="border-y border-border bg-card/30">
         <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
-          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground font-semibold">
             Where I focus
           </h2>
           <Stagger className="mt-8 grid gap-5 sm:grid-cols-3">
@@ -151,11 +153,11 @@ export default function AboutPage() {
               const Icon = f.icon
               return (
                 <StaggerItem key={f.title}>
-                  <div className="h-full rounded-2xl glass-panel p-6 antigravity-hover hover:border-primary/40">
-                    <span className="grid size-10 place-items-center rounded-xl border border-border bg-secondary text-primary">
+                  <div className="h-full rounded-2xl glass-panel p-6 antigravity-hover hover:border-accent-1/30">
+                    <span className="grid size-10 place-items-center rounded-xl border border-border bg-secondary text-accent-1">
                       <Icon className="size-5" />
                     </span>
-                    <h3 className="mt-5 text-base font-semibold">{f.title}</h3>
+                    <h3 className="mt-5 text-base font-semibold text-foreground">{f.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
                   </div>
                 </StaggerItem>
@@ -167,7 +169,7 @@ export default function AboutPage() {
 
       {/* Principles */}
       <section className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
-        <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+        <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground font-semibold">
           What I believe
         </h2>
         <Stagger className="mt-8 grid gap-5 sm:grid-cols-3">
@@ -175,11 +177,11 @@ export default function AboutPage() {
             const Icon = p.icon
             return (
               <StaggerItem key={p.title}>
-                <div className="h-full rounded-2xl glass-panel p-6 antigravity-hover hover:border-primary/40">
-                  <span className="grid size-10 place-items-center rounded-xl border border-border bg-secondary text-primary">
+                <div className="h-full rounded-2xl glass-panel p-6 antigravity-hover hover:border-accent-1/30">
+                  <span className="grid size-10 place-items-center rounded-xl border border-border bg-secondary text-accent-1">
                     <Icon className="size-5" />
                   </span>
-                  <h3 className="mt-5 text-base font-semibold">{p.title}</h3>
+                  <h3 className="mt-5 text-base font-semibold text-foreground">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
               </StaggerItem>
@@ -190,10 +192,10 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-5 pb-16 lg:px-8">
-        <Reveal className="relative overflow-hidden rounded-3xl border border-primary/30 bg-primary/10 p-10 text-center sm:p-12">
-          <div aria-hidden className="glow-blue absolute inset-0" />
+        <Reveal className="relative overflow-hidden rounded-3xl border border-accent-1/20 bg-accent-1/5 p-10 text-center sm:p-12">
+          <div aria-hidden className="glow-accent-1 absolute inset-0" />
           <div className="relative">
-            <h2 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl text-foreground">
               Want to work together?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-pretty leading-relaxed text-muted-foreground">
@@ -202,14 +204,14 @@ export default function AboutPage() {
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                className="group inline-flex items-center gap-2 rounded-lg bg-accent-1 px-5 py-3 text-sm font-medium text-white transition-all hover:bg-accent-1/90 shadow-lg shadow-accent-1/25 btn-glow cursor-pointer"
               >
                 Get in touch
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-background/60 px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-card"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-background/60 px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-card cursor-pointer"
               >
                 View my work
               </Link>

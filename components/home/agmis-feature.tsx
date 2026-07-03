@@ -1,11 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'motion/react'
 import { ArrowRight } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { SectionLabel } from '@/components/section'
+import { AgmisDashboard } from './agmis-dashboard'
 
 /* ─── SVG Data Pipeline Flow Lines ─── */
 function DataPipelineLines() {
@@ -60,7 +60,7 @@ function DataPipelineLines() {
           cx={dot.cx}
           cy={dot.cy}
           r="4"
-          fill="#3B82F6"
+          fill="var(--accent-1)"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 0.8, scale: 1 }}
           viewport={{ once: true }}
@@ -69,16 +69,16 @@ function DataPipelineLines() {
       ))}
       <defs>
         <linearGradient id="pipeline-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0" />
-          <stop offset="30%" stopColor="#3B82F6" />
-          <stop offset="70%" stopColor="#22D3EE" />
-          <stop offset="100%" stopColor="#22D3EE" stopOpacity="0" />
+          <stop offset="0%" stopColor="var(--accent-1)" stopOpacity="0" />
+          <stop offset="30%" stopColor="var(--accent-1)" />
+          <stop offset="70%" stopColor="var(--accent-2)" />
+          <stop offset="100%" stopColor="var(--accent-2)" stopOpacity="0" />
         </linearGradient>
         <linearGradient id="pipeline-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#22D3EE" stopOpacity="0" />
-          <stop offset="30%" stopColor="#22D3EE" />
-          <stop offset="70%" stopColor="#2DD4BF" />
-          <stop offset="100%" stopColor="#2DD4BF" stopOpacity="0" />
+          <stop offset="0%" stopColor="var(--accent-2)" stopOpacity="0" />
+          <stop offset="30%" stopColor="var(--accent-2)" />
+          <stop offset="70%" stopColor="var(--accent-3)" />
+          <stop offset="100%" stopColor="var(--accent-3)" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
@@ -93,51 +93,35 @@ export function AgmisFeature() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           {/* Left: Dashboard with 3D tilt and pipeline lines */}
           <Reveal className="order-2 lg:order-1">
-            <div className="relative" style={{ perspective: '1000px' }}>
+            <div className="relative border-none" style={{ perspective: '1000px' }}>
               <motion.div
                 initial={{ rotateY: 0, rotateX: 0 }}
-                whileInView={{ rotateY: -4, rotateX: 2 }}
+                whileHover={{ rotateY: -3, rotateX: 1.5 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.2, ease: 'easeOut' }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
                 className="relative"
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                <div className="relative rounded-2xl glass-panel overflow-hidden shadow-2xl shadow-blue-500/10">
-                  <DataPipelineLines />
-                  <Image
-                    src="/assets/agmis/1.jpg"
-                    alt="AGMIS Dashboard overview"
-                    width={600}
-                    height={400}
-                    className="w-full object-cover object-top"
-                    loading="lazy"
-                  />
+                {/* 3D Glassmorphic Laptop Frame Mockup */}
+                <div className="relative mx-auto max-w-[620px]">
+                  {/* Screen Frame */}
+                  <div className="relative rounded-t-2xl border-4 border-muted/80 bg-background/30 p-2 shadow-2xl backdrop-blur-sm overflow-hidden">
+                    {/* Camera dot */}
+                    <div className="absolute top-1 left-1/2 -translate-x-1/2 size-1.5 rounded-full bg-muted-foreground/30 z-20" />
+                    
+                    {/* Data Pipeline Lines behind dashboard */}
+                    <DataPipelineLines />
+
+                    {/* The Interactive Dashboard Playground */}
+                    <AgmisDashboard />
+                  </div>
+                  {/* Keyboard/Base hinge */}
+                  <div className="relative h-3.5 w-full rounded-b-2xl bg-muted/80 border-t border-muted-foreground/20 shadow-xl flex justify-center">
+                    {/* Trackpad notch */}
+                    <div className="w-20 h-1 rounded-full bg-muted-foreground/15 mt-0.5" />
+                  </div>
                 </div>
               </motion.div>
-
-              {/* Secondary images */}
-              <div className="grid grid-cols-2 gap-3 mt-4">
-                <div className="image-showcase overflow-hidden rounded-xl">
-                  <Image
-                    src="/assets/agmis/2.jpg"
-                    alt="AGMIS Analytics"
-                    width={300}
-                    height={200}
-                    className="aspect-video w-full object-cover object-top"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="image-showcase overflow-hidden rounded-xl">
-                  <Image
-                    src="/assets/agmis/3.jpg"
-                    alt="AGMIS Charts"
-                    width={300}
-                    height={200}
-                    className="aspect-video w-full object-cover object-top"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
             </div>
           </Reveal>
 
@@ -171,7 +155,7 @@ export function AgmisFeature() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/projects/agmis"
-                className="group inline-flex items-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white transition-all hover:bg-blue-600 shadow-lg shadow-blue-500/20 btn-glow"
+                className="group inline-flex items-center gap-2 rounded-lg bg-accent-1 px-5 py-3 text-sm font-medium text-white transition-all hover:bg-accent-1/90 shadow-lg shadow-accent-1/25 btn-glow"
               >
                 View Case Study
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />

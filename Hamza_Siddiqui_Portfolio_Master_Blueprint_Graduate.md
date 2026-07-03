@@ -49,14 +49,15 @@ portfolio-website-build/
 │       └── page.tsx
 ├── components/                # Reusable UI Components
 │   ├── home/                 # Homepage sections
-│   │   ├── hero.tsx          # Center-aligned 3D SVG sphere & headline reveal
-│   │   ├── voice-agent-feature.tsx # Waveform animation & feature summary
-│   │   ├── agmis-feature.tsx # 3D perspective dashboard & SVG drawing pipeline
-│   │   ├── why-hire-me.tsx   # Bento grid, counting stats (easeOutExpo counters)
+│   │   ├── hero.tsx          # Center-aligned typography & overlay layers
+│   │   ├── hero-canvas.tsx   # Three.js fiber canvas rendering interactive icosphere
+│   │   ├── why-hire-me.tsx   # Bento grid, counting stats, typewriter terminal
 │   │   ├── selected-projects.tsx # Preview cards of flagship projects
 │   │   └── sections.tsx      # Stripe vertical timeline, scrolling credentials marquee
+│   ├── voice-demo.tsx        # Audio context oscillator oscillator visualizer mockup
 │   ├── navbar.tsx            # Floating glass header with active link states
-│   ├── footer.tsx            # Dynamic outline typography with hover gradient fill
+│   ├── footer.tsx            # Spotlight reveal signature text & CSS confetti particles
+│   ├── magnetic-button.tsx   # 6px cursor-pull spring motion wrapper
 │   ├── cursor-glow.tsx       # Mouse-tracking radial gradient glow (lerped)
 │   ├── scroll-progress.tsx   # Top gradient progress bar with glow shadow
 │   ├── case-study.tsx        # Primitive components for case study rendering
@@ -82,43 +83,36 @@ Design DNA matches a blend of Apple (premium minimal typography), Stripe (fluid 
 
 The website supports two main themes by changing CSS root variables dynamically:
 
-#### 1. Deep Space Dark Theme (`:root` / `dark` class)
-*   **Background:** `#0A0A0F` to `#050507` (rich space dark gray)
-*   **Foreground:** `#F8FAFC` (clean off-white)
-*   **Primary Accent:** `#3B82F6` (Electric Blue)
-*   **Secondary Accent:** `#22D3EE` (Teal/Cyan)
-*   **Cards:** `#0E0E15` (semi-transparent glassmorphism with `border-white/6%`)
+#### 1. Obsidian Theme (`html.dark`)
+*   **Background:** `#0A0A0A`
+*   **Accent 1:** `#3B82F6` (Electric Blue)
+*   **Accent 2:** `#8B5CF6` (Purple/Violet)
+*   **Accent 3:** `#10B981` (Emerald Green)
 
-#### 2. Light Beige Theme (`.beige` class)
-*   **Background:** `oklch(0.95 0.01 60)` (warm premium beige)
-*   **Foreground:** `oklch(0.2 0.02 60)` (dark graphite for high contrast)
-*   **Primary Accent:** `#3B82F6` (Electric Blue)
-*   **Cards:** `oklch(0.92 0.01 60)` with warm glass inset shadow and `border-black/6%`
-
-To support seamless transitions, `globals.css` implements dynamic variables:
-*   `--grid-color`: Controls the color of the fixed space grid layout.
-*   `--dot-color`: Controls the ambient background dot matrix.
-*   `--glass-bg`: Adapts background card transparency for both themes.
-*   `--outline-color`: Controls the large outlined name stroke in the footer.
+#### 2. Dune Theme (`html.beige`)
+*   **Background:** `#1C1712` (rich, dark warm sand) with a `0.075` opacity grain overlay texture.
+*   **Accent 1:** `#D4A574` (Sand/Gold)
+*   **Accent 2:** `#C07A60` (Terracotta)
+*   **Accent 3:** `#8F9D7B` (Sage/Olive)
 
 ---
 
 ## Part 4 – Component & Feature Details
 
 ### 1. CursorGlow (`components/cursor-glow.tsx`)
-A client-side utility that listens to mouse movements and positions a large blurred radial gradient glowing circle. To ensure optimal rendering, it uses `requestAnimationFrame` (RAF) and a linear interpolation (lerp) smoothing algorithm to follow the mouse without stuttering.
+A client-side utility that listens to mouse movements and positions a blurred radial gradient glowing circle using `requestAnimationFrame` (RAF) and a linear interpolation (lerp) smoothing algorithm.
 
-### 2. Hero Section (`components/home/hero.tsx`)
-Displays a custom SVG 3D wireframe sphere rotating at `0.05rad` per second. Text uses a letter-by-letter and word-by-word mask reveal using Framer Motion (`easeOut`, `600ms` duration). The title dynamically introduces Hamza as a **Data Science Graduate & Automation Builder**.
+### 2. Interactive Hero Sphere (`components/home/hero-canvas.tsx`)
+Renders an interactive, GPU-accelerated 350-particle icosphere in WebGL. Utilizes an ambient breathing scale cycle and responds to cursor coordinates with dampened parallax tilt. Includes an automatic fade-out handler linked to the viewport scroll position.
 
-### 3. Voice Agent Feature (`components/home/voice-agent-feature.tsx`)
-Includes a dynamic animated audio waveform that expands and contracts continuously, representing a live voice call in progress. Surrounded by an `animate-breathe` box-shadow glow.
+### 3. Voice Agent Simulator (`components/voice-demo.tsx`)
+Includes a 3D tilted laptop frame mockup holding a simulated dialogue console. Connects a silent Web Audio API oscillator node to draw a real-time wave frequency canvas feed. Refactored context management prevents thread blocks.
 
-### 4. AGMIS Feature (`components/home/agmis-feature.tsx`)
-Displays a mock academic guidance intelligence dashboard tilted on a 3D plane using CSS perspective. Includes SVG flow lines simulating a real-time data processing pipeline that draws itself on scroll.
+### 4. AGMIS Dashboard (`components/home/agmis-feature.tsx`)
+Features a 3D-angled mock academic performance dashboard. Implements client-side role toggle controls (Student, Faculty, Principal) that trigger smooth document view transitions to morph layout cards and Recharts graphs.
 
-### 5. Why Hire Me Bento Grid (`components/home/why-hire-me.tsx`)
-Features value cards arranged in a bento-style layout. When scrolled into viewport, it triggers rapid animated statistic counters (counting from `0` to `10+` and `6mo` using an `easeOutExpo` curve).
+### 5. Spotlight Signature Text (`components/footer.tsx`)
+Positions two overlapping copies of the signature text. Uses mouse coordinate tracking to apply a `radial-gradient` mask to the foreground layer, creating a 100px spotlight radius that reveals the filled text underneath the cursor.
 
 ---
 
@@ -156,31 +150,3 @@ The certifications are fully populated with 13+ verified credentials, linked dir
 10. **Industry Training:** Atharva Engineering Certificate
 11. **Data Analyst Intern:** Sahil Dresses Internship Certificate
 12. **AI & Data Science Workshops:** Skill Nation Certificate
-
----
-
-## Part 7 – Stack Capabilities & Peak Features
-
-The website is fully optimized and features next-generation design capabilities:
-*   **Lerped Smooth Animations:** Custom cursor and visual progress layers track mouse coordinates smoothly.
-*   **True Responsive Fluidity:** Fully adapted grid scaling, layouts, and cards from small mobile viewports up to ultra-wide desktop monitors.
-*   **Extreme Performance:** Achieves Lighthouse scores of 95+ due to minimal dependencies, local font imports, custom SVG asset generation, and Next.js image loading optimizations.
-*   **SEO Readiness:** Complete semantic HTML tags, XML sitemap generation, structured JSON-LD Person/Job schema, and custom search engine previews.
-
----
-
-## Part 8 – Guidelines for Z.ai (v0 / Bolt / Cursor) UI Enhancement
-
-When transferring this project to Z.ai for further UI/UX and feature enhancements, use the following directives:
-
-### 1. Enhance the AI Voice Agent Demo Page Widget
-*   **Issue:** The current iframe load to `vapi.ai?demo=true` renders Vapi's default public share page with Vapi headers, looking unintegrated on our premium dark space theme.
-*   **Directive:** Replace the iframe container in `app/projects/[slug]/page.tsx` (around lines 115-136) with a custom React component using the official `@vapi-ai/web` npm package. Build a gorgeous, floating sound wave visualizer button that initializes the call dynamically on click and shows active speaker transcripts.
-
-### 2. Upgrade the 3D Sphere in Hero Section
-*   **Issue:** The current rotating wireframe is a static SVG ellipse group rotation.
-*   **Directive:** Replace the SVG `WireframeSphere` in `components/home/hero.tsx` with a Three.js / React Three Fiber (R3F) canvas. Render a fluid, interactive particle-based 3D sphere that responds to mouse hover and scroll speed.
-
-### 3. Advanced Theme Transition Animation
-*   **Issue:** Theme switching between dark space and beige triggers a quick CSS re-render.
-*   **Directive:** Implement an SVG morphing clip-path transition circle that expands from the toggle button coordinates, giving a seamless "wave" transition effect across the screen when themes are toggled.

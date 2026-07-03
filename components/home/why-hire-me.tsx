@@ -134,9 +134,9 @@ export function WhyHireMe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: i * 0.06, duration: 0.5, ease: [0.21, 0.5, 0.25, 1] }}
-                className={`${item.span || 'col-span-1'} rounded-2xl glass-panel p-6 antigravity-hover hover:border-blue-500/30 group`}
+                className={`${item.span || 'col-span-1'} rounded-2xl glass-panel p-6 antigravity-hover hover:border-accent-1/30 group`}
               >
-                <span className="grid size-11 place-items-center rounded-xl border border-border bg-secondary/30 text-blue-400 transition-colors group-hover:bg-blue-500/10 group-hover:border-blue-500/30">
+                <span className="grid size-11 place-items-center rounded-xl border border-border bg-secondary/30 text-accent-1 transition-colors group-hover:bg-accent-1/10 group-hover:border-accent-1/30">
                   <Icon className="size-5" />
                 </span>
                 <h3 className="mt-5 text-base font-semibold text-foreground">{item.title}</h3>
@@ -145,7 +145,93 @@ export function WhyHireMe() {
             )
           })}
         </div>
+
+        {/* ─── Philosophy Terminal & Blockquote Section ─── */}
+        <div className="mt-20 grid gap-8 lg:grid-cols-2 lg:items-center border-t border-border/40 pt-16">
+          {/* Left: Interactive Typewriter Terminal */}
+          <TerminalFramework />
+          
+          {/* Right: Display Serif Blockquote */}
+          <div className="text-center lg:text-left lg:pl-6">
+            <motion.blockquote
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: 'easeOut' }}
+              className="font-serif text-3xl sm:text-4xl italic text-foreground leading-relaxed tracking-tight"
+            >
+              &ldquo;Data is not just numbers on a screen; it is the digital footprint of real actions, and our job is to translate those footprints into clear, human guidance.&rdquo;
+            </motion.blockquote>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 0.6 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8, duration: 1 }}
+              className="mt-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground"
+            >
+              — Hamza Siddiqui
+            </motion.p>
+          </div>
+        </div>
+
       </div>
     </section>
+  )
+}
+
+function TerminalFramework() {
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const [text, setText] = useState('')
+  
+  const lines = [
+    '> Initializing 5-Question Data Framework...',
+    '1. What is the core business problem to solve?',
+    '2. Where does the primary data originate and flow?',
+    '3. How do we automate processing and validation?',
+    '4. What visual metric drives immediate action?',
+    '5. How do we measure impact and continuously iterate?',
+    '> Framework loaded successfully. Ready to build.'
+  ]
+
+  useEffect(() => {
+    if (!isInView) return
+    let currentLine = 0
+    let currentChar = 0
+    let interval: ReturnType<typeof setInterval>
+
+    const type = () => {
+      if (currentLine < lines.length) {
+        const line = lines[currentLine]
+        if (currentChar < line.length) {
+          setText((prev) => prev + line.charAt(currentChar))
+          currentChar++
+        } else {
+          setText((prev) => prev + '\n')
+          currentLine++
+          currentChar = 0
+        }
+      } else {
+        clearInterval(interval)
+      }
+    }
+
+    interval = setInterval(type, 18)
+    return () => clearInterval(interval)
+  }, [isInView])
+
+  return (
+    <div ref={ref} className="w-full rounded-2xl border border-border bg-black/60 p-4 font-mono text-[11px] sm:text-xs text-emerald-400/90 shadow-2xl backdrop-blur-md">
+      <div className="flex items-center gap-1.5 border-b border-border/55 pb-2.5 mb-3.5 select-none">
+        <div className="size-2.5 rounded-full bg-red-500/80" />
+        <div className="size-2.5 rounded-full bg-yellow-500/80" />
+        <div className="size-2.5 rounded-full bg-green-500/80" />
+        <span className="ml-2 text-[10px] text-muted-foreground">hamza@framework: ~</span>
+      </div>
+      <pre className="whitespace-pre-wrap leading-relaxed h-[165px] overflow-hidden select-none">
+        {text}
+        <span className="inline-block w-1.5 h-3 ml-0.5 bg-emerald-400 animate-pulse" />
+      </pre>
+    </div>
   )
 }
