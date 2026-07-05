@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { Search, Moon, Download, ArrowRight, CornerDownLeft, Sparkles } from 'lucide-react'
+import { Search, Moon, Download, ArrowRight, CornerDownLeft, Sparkles, X } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
 

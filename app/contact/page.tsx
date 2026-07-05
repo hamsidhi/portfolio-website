@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Copy, Check, Download, ExternalLink } from 'lucide-react'
+import { Mail, Phone, MapPin, Copy, Check, Download, ExternalLink, Eye, FileText } from 'lucide-react'
 import { Github, Linkedin } from '@/components/icons'
 import { ContactForm } from '@/components/contact-form'
 import { motion } from 'motion/react'
@@ -132,40 +132,75 @@ export default function ContactPage() {
 
               {/* Resume download */}
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <a
-                  href="/resume/Hamza_Siddiqui_UAE_CV.pdf"
-                  download="Hamza_Siddiqui_UAE_CV.pdf"
-                  className="group flex items-center gap-3 rounded-2xl glass-panel p-4 antigravity-hover hover:border-accent-1/30 cursor-pointer"
-                >
-                  <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-accent-1/10 text-accent-1">
-                    <Download className="size-5" />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-xs uppercase tracking-wide text-muted-foreground">
+                <div className="flex flex-col gap-3 rounded-2xl glass-panel p-4">
+                  <div className="flex items-center gap-3">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-accent-1/10 text-accent-1">
+                      <FileText className="size-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <span className="block text-xs uppercase tracking-wide text-muted-foreground">
+                        UAE Option
+                      </span>
+                      <span className="block text-sm font-medium text-foreground">
+                        UAE Resume
+                      </span>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href="/resume/Hamza_Siddiqui_UAE_CV.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-8 items-center justify-center gap-1 rounded-xl border border-border bg-background/50 text-xs font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
+                    >
+                      <Eye className="size-3.5" />
+                      View
+                    </a>
+                    <a
+                      href="/resume/Hamza_Siddiqui_UAE_CV.pdf"
+                      download="Hamza_Siddiqui_UAE_CV.pdf"
+                      className="inline-flex h-8 items-center justify-center gap-1 rounded-xl bg-primary text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer"
+                    >
+                      <Download className="size-3.5" />
                       Download
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3 rounded-2xl glass-panel p-4">
+                  <div className="flex items-center gap-3">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-accent-2/10 text-accent-2">
+                      <FileText className="size-5" />
                     </span>
-                    <span className="block text-sm font-medium text-foreground">
-                      UAE Resume
-                    </span>
-                  </span>
-                </a>
-                <a
-                  href="/resume/Hamza_Siddiqui_India_CV.pdf"
-                  download="Hamza_Siddiqui_India_CV.pdf"
-                  className="group flex items-center gap-3 rounded-2xl glass-panel p-4 antigravity-hover hover:border-accent-1/30 cursor-pointer"
-                >
-                  <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-accent-1/10 text-accent-1">
-                    <Download className="size-5" />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-xs uppercase tracking-wide text-muted-foreground">
+                    <div className="min-w-0">
+                      <span className="block text-xs uppercase tracking-wide text-muted-foreground">
+                        India Option
+                      </span>
+                      <span className="block text-sm font-medium text-foreground">
+                        India Resume
+                      </span>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href="/resume/Hamza_Siddiqui_India_CV.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-8 items-center justify-center gap-1 rounded-xl border border-border bg-background/50 text-xs font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
+                    >
+                      <Eye className="size-3.5" />
+                      View
+                    </a>
+                    <a
+                      href="/resume/Hamza_Siddiqui_India_CV.pdf"
+                      download="Hamza_Siddiqui_India_CV.pdf"
+                      className="inline-flex h-8 items-center justify-center gap-1 rounded-xl bg-primary text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer"
+                    >
+                      <Download className="size-3.5" />
                       Download
-                    </span>
-                    <span className="block text-sm font-medium text-foreground">
-                      India Resume
-                    </span>
-                  </span>
-                </a>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
