@@ -79,8 +79,8 @@ export function CommandPalette() {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a')
-    link.href = '/resume/Hamza_Siddiqui_UAE_CV.pdf'
-    link.download = 'Hamza_Siddiqui_UAE_CV.pdf'
+    link.href = '/resume/Hamza_Siddiqui_.pdf'
+    link.download = 'Hamza_Siddiqui_.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)

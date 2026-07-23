@@ -131,75 +131,31 @@ export default function ContactPage() {
               </div>
 
               {/* Resume download */}
-              <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="pt-2">
                 <div className="flex flex-col gap-3 rounded-2xl glass-panel p-4">
                   <div className="flex items-center gap-3">
                     <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-accent-1/10 text-accent-1">
                       <FileText className="size-5" />
                     </span>
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <span className="block text-xs uppercase tracking-wide text-muted-foreground">
-                        UAE Option
+                        Resume
                       </span>
                       <span className="block text-sm font-medium text-foreground">
-                        UAE Resume
+                        Hamza Siddiqui Resume
                       </span>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    <a
-                      href="/resume/Hamza_Siddiqui_UAE_CV.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-8 items-center justify-center gap-1 rounded-xl border border-border bg-background/50 text-xs font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
-                    >
-                      <Eye className="size-3.5" />
-                      View
-                    </a>
-                    <a
-                      href="/resume/Hamza_Siddiqui_UAE_CV.pdf"
-                      download="Hamza_Siddiqui_UAE_CV.pdf"
-                      className="inline-flex h-8 items-center justify-center gap-1 rounded-xl bg-primary text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer"
-                    >
-                      <Download className="size-3.5" />
-                      Download
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-3 rounded-2xl glass-panel p-4">
-                  <div className="flex items-center gap-3">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-accent-2/10 text-accent-2">
-                      <FileText className="size-5" />
-                    </span>
-                    <div className="min-w-0">
-                      <span className="block text-xs uppercase tracking-wide text-muted-foreground">
-                        India Option
-                      </span>
-                      <span className="block text-sm font-medium text-foreground">
-                        India Resume
-                      </span>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    <a
-                      href="/resume/Hamza_Siddiqui_India_CV.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-8 items-center justify-center gap-1 rounded-xl border border-border bg-background/50 text-xs font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
-                    >
-                      <Eye className="size-3.5" />
-                      View
-                    </a>
-                    <a
-                      href="/resume/Hamza_Siddiqui_India_CV.pdf"
-                      download="Hamza_Siddiqui_India_CV.pdf"
-                      className="inline-flex h-8 items-center justify-center gap-1 rounded-xl bg-primary text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer"
-                    >
-                      <Download className="size-3.5" />
-                      Download
-                    </a>
-                  </div>
+                  <a
+                    href="/resume/Hamza_Siddiqui_.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer"
+                  >
+                    <Eye className="size-3.5" />
+                    <Download className="size-3.5" />
+                    Review and Download Resume
+                  </a>
                 </div>
               </div>
             </div>
