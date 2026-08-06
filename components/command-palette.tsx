@@ -6,6 +6,8 @@ import { Search, Moon, Download, ArrowRight, CornerDownLeft, Sparkles, X } from 
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
 
+import { site } from '@/lib/site'
+
 const chatAnswers: Record<string, string> = {
   "What is AGMIS?": "AGMIS (Academic Guidance & Monitoring Intelligence System) is a data intelligence platform that converts educational performance data into actionable metrics. It features multi-role dashboards for students, faculty, and principals to improve academic monitoring and detect performance risks early.",
   "Explain the Voice Agent": "The AI Voice Agent is an automated real-estate voice system integrated with Web Audio API analyzers. It helps real estate businesses qualify leads, answer property inquiries, and schedule viewings 24/7 with realistic natural-language understanding.",
@@ -79,7 +81,7 @@ export function CommandPalette() {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a')
-    link.href = '/resume/Hamza_Siddiqui_.pdf'
+    link.href = site.resumePath
     link.download = 'Hamza_Siddiqui_.pdf'
     document.body.appendChild(link)
     link.click()

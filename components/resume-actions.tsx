@@ -3,11 +3,13 @@
 import { Download, Eye } from 'lucide-react'
 import { motion } from 'motion/react'
 
+import { site } from '@/lib/site'
+
 export function ResumeActions() {
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center print:hidden w-full sm:w-auto">
       <motion.a
-        href="/resume/Hamza_Siddiqui_.pdf"
+        href={site.resumePath}
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.02 }}
