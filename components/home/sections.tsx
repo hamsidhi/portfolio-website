@@ -22,13 +22,6 @@ import { experienceTimeline, certificationsTier1 } from '@/lib/content'
 /* ─── Experience Highlight with Glowing Timeline ─── */
 export function ExperienceHighlight() {
   const ref = useRef<HTMLElement>(null)
-  const [hasScrollTimeline, setHasScrollTimeline] = useState(false)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'CSS' in window) {
-      setHasScrollTimeline(CSS.supports('animation-timeline', 'view()'))
-    }
-  }, [])
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -52,21 +45,21 @@ export function ExperienceHighlight() {
             <div className="absolute left-0 top-0 bottom-0 w-px bg-border" aria-hidden />
             {/* Glowing progress line */}
             <motion.div
-              className="timeline-growth-line absolute left-0 top-0 w-px bg-gradient-to-b from-accent-1 to-accent-2"
-              style={hasScrollTimeline ? {} : { height: lineHeight }}
+              className="absolute left-0 top-0 w-px bg-gradient-to-b from-accent-1 to-accent-2"
+              style={{ height: lineHeight }}
               aria-hidden
             />
             {/* Dot */}
             <motion.div
-              initial={hasScrollTimeline ? {} : { scale: 0 }}
-              whileInView={hasScrollTimeline ? {} : { scale: 1 }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.4, type: 'spring' }}
               className="absolute left-[-5px] top-0 size-[11px] rounded-full bg-accent-1 border-2 border-background shadow-lg shadow-accent-1/50"
               aria-hidden
             />
 
-            <div className="timeline-card rounded-2xl glass-panel p-7 antigravity-hover hover:border-accent-1/30">
+            <div className="rounded-2xl glass-panel p-7 antigravity-hover hover:border-accent-1/30">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>

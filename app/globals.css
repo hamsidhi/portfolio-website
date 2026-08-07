@@ -661,18 +661,12 @@ html.beige .noise-overlay {
   }
 }
 
-/* ─── Scroll-Linked Timeline Progress Line & Card Reveal ─── */
+/* ─── Scroll-Linked Timeline Progress Line ─── */
 @supports (animation-timeline: view()) {
   .timeline-growth-line {
     animation: grow-timeline-line linear both;
     animation-timeline: view();
     animation-range: entry 20% exit 80%;
-  }
-
-  .timeline-card {
-    animation: timeline-card-reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 45%;
   }
 }
 
@@ -682,19 +676,6 @@ html.beige .noise-overlay {
   }
   to {
     height: 100%;
-  }
-}
-
-@keyframes timeline-card-reveal {
-  from {
-    clip-path: circle(0% at 0% 50%);
-    opacity: 0;
-    transform: translateX(-15px);
-  }
-  to {
-    clip-path: circle(150% at 0% 50%);
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 

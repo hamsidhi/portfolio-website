@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { Briefcase, GraduationCap, Rocket, Shield, ExternalLink } from 'lucide-react'
 import { experienceTimeline, type TimelineItem } from '@/lib/content'
@@ -20,21 +20,13 @@ const iconFor = (type: TimelineItem['type']) => {
 
 export function Timeline() {
   const ref = useRef<HTMLDivElement>(null)
-  const [hasScrollTimeline, setHasScrollTimeline] = useState(false)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'CSS' in window) {
-      setHasScrollTimeline(CSS.supports('animation-timeline', 'view()'))
-    }
-  }, [])
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   })
   
-  // Fallback animation transform if ScrollTimeline is unsupported
-  const lineHeight = useTransform(scrollYProgress, [0, 0.6], ['0%', '100%'])
+  const lineHeight = useTransform(scrollYProgress, [0, 0.7], ['0%', '100%'])
 
   return (
     <div ref={ref} className="relative">
@@ -46,8 +38,8 @@ export function Timeline() {
       {/* Glowing progress line */}
       <motion.div
         aria-hidden
-        className="timeline-growth-line absolute left-[19px] top-2 w-px bg-gradient-to-b from-accent-1 via-accent-2 to-transparent sm:left-[23px]"
-        style={hasScrollTimeline ? {} : { height: lineHeight }}
+        className="absolute left-[19px] top-2 w-px bg-gradient-to-b from-accent-1 via-accent-2 to-transparent sm:left-[23px]"
+        style={{ height: lineHeight }}
       />
 
       <ul className="space-y-8">
@@ -56,18 +48,18 @@ export function Timeline() {
           return (
             <motion.li
               key={`${item.title}-${i}`}
-              initial={hasScrollTimeline ? {} : { opacity: 0, x: -16 }}
-              whileInView={hasScrollTimeline ? {} : { opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.21, 0.5, 0.25, 1] }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.45, delay: i * 0.08, ease: [0.21, 0.5, 0.25, 1] }}
               className="relative flex gap-5"
             >
               {/* Timeline dot */}
               <motion.span
-                initial={hasScrollTimeline ? {} : { scale: 0 }}
-                whileInView={hasScrollTimeline ? {} : { scale: 1 }}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 + i * 0.1, type: 'spring', stiffness: 300 }}
+                transition={{ delay: 0.15 + i * 0.08, type: 'spring', stiffness: 300 }}
                 className="relative z-[1] grid size-10 shrink-0 place-items-center rounded-xl border border-border bg-card text-accent-1 sm:size-12 shadow-lg shadow-accent-1/10"
               >
                 <Icon className="size-5" />

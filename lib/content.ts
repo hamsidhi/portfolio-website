@@ -128,16 +128,50 @@ export const experienceTimeline: TimelineItem[] = [
     credentialUrl: '/assets/credentials/Sahil_Dresses.jpg',
   },
   {
-    title: 'Independent AI & Data Science Development',
+    title: 'AI & Data Science Development',
     company: 'Personal Projects',
-    date: 'Ongoing',
+    date: '2024 – Present',
     description: 'Building practical, production-ready AI systems and automations.',
     achievements: [
       'Architected AGMIS, an academic data intelligence platform with secure PostgreSQL integration.',
       'Developed a real-estate AI voice agent capable of autonomous lead qualification.',
+      'Designed automated workflow automations and RAG search pipelines.',
     ],
     type: 'project',
-  }
+  },
+  {
+    title: 'BSc in Data Science',
+    company: 'Atharva College of Engineering',
+    date: '2022 – 2025',
+    description: 'Academic foundation in Data Science, Machine Learning, Statistics, and Database Management.',
+    achievements: [
+      'Specialized in Python programming, machine learning models, and SQL/PostgreSQL databases.',
+      'Completed practical coursework in business intelligence and data visualization with Power BI.',
+    ],
+    type: 'education',
+  },
+  {
+    title: 'National Cadet Corps (NCC) Leadership',
+    company: 'NCC Unit',
+    date: '2022 – 2024',
+    description: 'Rigorous discipline, squad leadership, and teamwork in structured operational environments.',
+    achievements: [
+      'Developed strong leadership, communication, and decision-making under high-pressure scenarios.',
+      'Led cadet units in drill exercises and community outreach programs.',
+    ],
+    type: 'leadership',
+  },
+  {
+    title: 'State-Level Basketball Player',
+    company: 'State Sports Association',
+    date: '2021 – 2023',
+    description: 'Competitive athlete representing at state-level sports competitions.',
+    achievements: [
+      'Mastered teamwork, adaptability, composure under pressure, and relentless execution.',
+      'Fostered collaborative strategies and fast-paced communication in team settings.',
+    ],
+    type: 'leadership',
+  },
 ]
 
 export interface Education {
