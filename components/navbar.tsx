@@ -84,14 +84,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2.5">
-          {/* Live Indicator */}
-          <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-accent-3/20 bg-accent-3/5 px-2.5 py-1 text-[11px] font-medium text-accent-3 select-none">
-            <span className="relative flex size-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-3 opacity-75" />
-              <span className="relative inline-flex size-1.5 rounded-full bg-accent-3" />
-            </span>
-            Live · Jul 2026
-          </div>
           <ThemeToggle />
           <Link
             href="/resume"
