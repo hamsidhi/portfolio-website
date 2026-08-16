@@ -90,7 +90,21 @@ export function Timeline() {
                     </li>
                   ))}
                 </ul>
-                {item.credentialUrl && (
+                {item.credentials && item.credentials.length > 0 ? (
+                  <div className="mt-5 flex flex-wrap gap-2.5">
+                    {item.credentials.map((cred) => (
+                      <a
+                        key={cred.label}
+                        href={cred.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-accent-1/20 bg-accent-1/5 px-4 py-2 text-xs font-medium text-accent-1 transition-all hover:bg-accent-1 hover:text-white cursor-pointer"
+                      >
+                        {cred.label} <ExternalLink className="size-3" />
+                      </a>
+                    ))}
+                  </div>
+                ) : item.credentialUrl ? (
                   <div className="mt-5">
                     <a
                       href={item.credentialUrl}
@@ -101,7 +115,7 @@ export function Timeline() {
                       View Credential <ExternalLink className="size-3" />
                     </a>
                   </div>
-                )}
+                ) : null}
               </div>
             </motion.li>
           )

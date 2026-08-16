@@ -90,6 +90,32 @@ export default function ResumePage() {
                         <li key={point}>{point}</li>
                       ))}
                     </ul>
+                    {(item.credentials || item.credentialUrl) && (
+                      <div className="mt-2.5 flex flex-wrap gap-3 text-xs print:hidden">
+                        {item.credentials ? (
+                          item.credentials.map((cred) => (
+                            <a
+                              key={cred.label}
+                              href={cred.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 font-medium text-accent-1 hover:underline cursor-pointer"
+                            >
+                              {cred.label} ↗
+                            </a>
+                          ))
+                        ) : item.credentialUrl ? (
+                          <a
+                            href={item.credentialUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 font-medium text-accent-1 hover:underline cursor-pointer"
+                          >
+                            View Credential ↗
+                          </a>
+                        ) : null}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

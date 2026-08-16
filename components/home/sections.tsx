@@ -36,8 +36,8 @@ export function ExperienceHighlight() {
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           label="Experience"
-          title="Hands-on with real business data"
-          description="From ERP data to Power BI dashboards — turning raw data into decisions."
+          title="Hands-on with AI & business data"
+          description="From Artificial Intelligence workflows to Power BI dashboards — turning data into decisions."
         />
         <Reveal>
           <div className="relative pl-8">
@@ -77,6 +77,21 @@ export function ExperienceHighlight() {
                   </li>
                 ))}
               </ul>
+              {item.credentials && item.credentials.length > 0 && (
+                <div className="mt-5 flex flex-wrap gap-2.5">
+                  {item.credentials.map((cred) => (
+                    <a
+                      key={cred.label}
+                      href={cred.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-accent-1/20 bg-accent-1/5 px-3.5 py-1.5 text-xs font-medium text-accent-1 transition-all hover:bg-accent-1 hover:text-white cursor-pointer"
+                    >
+                      {cred.label} ↗
+                    </a>
+                  ))}
+                </div>
+              )}
               <Link
                 href="/experience"
                 className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent-1 cursor-pointer"

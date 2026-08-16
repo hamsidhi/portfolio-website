@@ -103,6 +103,11 @@ export const businessValue = [
   },
 ]
 
+export interface CredentialLink {
+  label: string
+  url: string
+}
+
 export interface TimelineItem {
   title: string
   company: string
@@ -111,9 +116,26 @@ export interface TimelineItem {
   achievements: string[]
   type: 'work' | 'education' | 'project' | 'leadership'
   credentialUrl?: string
+  credentials?: CredentialLink[]
 }
 
 export const experienceTimeline: TimelineItem[] = [
+  {
+    title: 'Artificial Intelligence Intern',
+    company: 'Codec Technologies',
+    date: 'Jul 2026 – Aug 2026',
+    description: 'Engineered AI workflows and intelligent solutions in an AICTE & ICAC approved internship program.',
+    achievements: [
+      'Gained hands-on industry experience building AI solutions and optimizing algorithmic performance under weekly supervisor evaluations.',
+      'Worked on real-world IT and business consultancy project deliverables across intelligent data pipelines and model implementations.',
+      'Earned high performance ratings for delivering quality project milestones ahead of deadlines.',
+    ],
+    type: 'work',
+    credentials: [
+      { label: 'View Offer Letter', url: '/assets/credentials/Codec_Technologies_AI_Intern_Offer_Letter.pdf' },
+      { label: 'View Certificate', url: '/assets/credentials/Codec_Technologies_AI_Intern_Certificate.pdf' },
+    ],
+  },
   {
     title: 'Data Analyst Intern',
     company: 'Sahil Dresses',
@@ -212,6 +234,7 @@ export const certificationsTier1: Certification[] = [
 ]
 
 export const certificationsTier2: Certification[] = [
+  { name: 'Artificial Intelligence Intern Certificate', issuer: 'Codec Technologies', credentialUrl: '/assets/credentials/Codec_Technologies_AI_Intern_Certificate.pdf', date: '2026' },
   { name: 'Industrial Training: EV Conversion & Automotive Tech', issuer: 'GoGo A1', credentialUrl: '/assets/credentials/GOGOA1.jpg', date: '2023' },
   { name: 'Industry Training (Atharva)', issuer: 'Atharva', credentialUrl: '/assets/credentials/Indrustry_traning_(Atharva).jpg', date: '2023' },
   { name: 'Data Analyst Intern Certificate', issuer: 'Sahil Dresses', credentialUrl: '/assets/credentials/Sahil_Dresses.jpg', date: '2024' },

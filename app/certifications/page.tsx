@@ -11,6 +11,7 @@ const issuerColors: Record<string, string> = {
   IBM: 'border-accent-1/30 bg-accent-1/5 text-accent-1',
   Intel: 'border-accent-2/30 bg-accent-2/5 text-accent-2',
   Microsoft: 'border-accent-3/30 bg-accent-3/5 text-accent-3',
+  'Codec Technologies': 'border-accent-1/30 bg-accent-1/5 text-accent-1',
   'GoGo A1': 'border-accent-warn/30 bg-accent-warn/5 text-accent-warn',
   Atharva: 'border-accent-1/30 bg-accent-1/5 text-accent-1',
   'Sahil Dresses': 'border-accent-3/30 bg-accent-3/5 text-accent-3',
