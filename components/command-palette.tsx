@@ -82,7 +82,7 @@ export function CommandPalette() {
   const handleDownloadResume = () => {
     const link = document.createElement('a')
     link.href = site.resumePath
-    link.download = 'Hamza_Siddiqui_.pdf'
+    link.download = 'Hamza_Siddiqui_August_2026.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)

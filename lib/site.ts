@@ -8,7 +8,7 @@ export const site = {
   phoneUae: '+971 50 804 2826',
   github: 'https://github.com/hamsidhi',
   linkedin: 'https://www.linkedin.com/in/hamza-siddiqui--/',
-  resumePath: '/resume/Hamza_Siddiqui_.pdf',
+  resumePath: '/resume/Hamza_Siddiqui_August_2026.pdf',
   location: 'Based in UAE · Available in UAE, India & Remote',
 }
 
