@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Copy, Check, Download, ExternalLink, Eye, FileText } from 'lucide-react'
+import { Mail, Phone, MapPin, Copy, Check, Download, Eye, FileText } from 'lucide-react'
 import { Github, Linkedin } from '@/components/icons'
 import { ContactForm } from '@/components/contact-form'
 import { motion } from 'motion/react'

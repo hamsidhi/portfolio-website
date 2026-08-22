@@ -1,0 +1,293 @@
+{
+  "total_assets": 36,
+  "assets": [
+    {
+      "filename": "1.jpg",
+      "path": "/assets/agmis/1.jpg",
+      "source": "Local Asset Audit",
+      "project": "AGMIS",
+      "usage": "Academic dashboard and analytical views",
+      "format": "jpg"
+    },
+    {
+      "filename": "2.jpg",
+      "path": "/assets/agmis/2.jpg",
+      "source": "Local Asset Audit",
+      "project": "AGMIS",
+      "usage": "Academic dashboard and analytical views",
+      "format": "jpg"
+    },
+    {
+      "filename": "3.jpg",
+      "path": "/assets/agmis/3.jpg",
+      "source": "Local Asset Audit",
+      "project": "AGMIS",
+      "usage": "Academic dashboard and analytical views",
+      "format": "jpg"
+    },
+    {
+      "filename": "4.jpg",
+      "path": "/assets/agmis/4.jpg",
+      "source": "Local Asset Audit",
+      "project": "AGMIS",
+      "usage": "Academic dashboard and analytical views",
+      "format": "jpg"
+    },
+    {
+      "filename": "5.jpg",
+      "path": "/assets/agmis/5.jpg",
+      "source": "Local Asset Audit",
+      "project": "AGMIS",
+      "usage": "Academic dashboard and analytical views",
+      "format": "jpg"
+    },
+    {
+      "filename": "6.jpg",
+      "path": "/assets/agmis/6.jpg",
+      "source": "Local Asset Audit",
+      "project": "AGMIS",
+      "usage": "Academic dashboard and analytical views",
+      "format": "jpg"
+    },
+    {
+      "filename": "1.png",
+      "path": "/assets/voice-agent/1.png",
+      "source": "Local Asset Audit",
+      "project": "AI Voice Agent",
+      "usage": "Voice agent interface and workflow previews",
+      "format": "png"
+    },
+    {
+      "filename": "2.png",
+      "path": "/assets/voice-agent/2.png",
+      "source": "Local Asset Audit",
+      "project": "AI Voice Agent",
+      "usage": "Voice agent interface and workflow previews",
+      "format": "png"
+    },
+    {
+      "filename": "3.png",
+      "path": "/assets/voice-agent/3.png",
+      "source": "Local Asset Audit",
+      "project": "AI Voice Agent",
+      "usage": "Voice agent interface and workflow previews",
+      "format": "png"
+    },
+    {
+      "filename": "1.png",
+      "path": "/assets/doc-summarizer/1.png",
+      "source": "Local Asset Audit",
+      "project": "Huntii Analyser",
+      "usage": "Multi-document analysis interface screenshots",
+      "format": "png"
+    },
+    {
+      "filename": "2.png",
+      "path": "/assets/doc-summarizer/2.png",
+      "source": "Local Asset Audit",
+      "project": "Huntii Analyser",
+      "usage": "Multi-document analysis interface screenshots",
+      "format": "png"
+    },
+    {
+      "filename": "3.png",
+      "path": "/assets/doc-summarizer/3.png",
+      "source": "Local Asset Audit",
+      "project": "Huntii Analyser",
+      "usage": "Multi-document analysis interface screenshots",
+      "format": "png"
+    },
+    {
+      "filename": "4.png",
+      "path": "/assets/doc-summarizer/4.png",
+      "source": "Local Asset Audit",
+      "project": "Huntii Analyser",
+      "usage": "Multi-document analysis interface screenshots",
+      "format": "png"
+    },
+    {
+      "filename": "5.png",
+      "path": "/assets/doc-summarizer/5.png",
+      "source": "Local Asset Audit",
+      "project": "Huntii Analyser",
+      "usage": "Multi-document analysis interface screenshots",
+      "format": "png"
+    },
+    {
+      "filename": "1.png",
+      "path": "/assets/n8n-restaurant-bot/1.png",
+      "source": "Local Asset Audit",
+      "project": "n8n AI Restaurant Agent",
+      "usage": "n8n workflow and canvas screenshots",
+      "format": "png"
+    },
+    {
+      "filename": "1.png",
+      "path": "/assets/spam-email-classifier/1.png",
+      "source": "Local Asset Audit",
+      "project": "Spam Classifier",
+      "usage": "Spam classifier UI and terminal benchmarks",
+      "format": "png"
+    },
+    {
+      "filename": "2.png",
+      "path": "/assets/spam-email-classifier/2.png",
+      "source": "Local Asset Audit",
+      "project": "Spam Classifier",
+      "usage": "Spam classifier UI and terminal benchmarks",
+      "format": "png"
+    },
+    {
+      "filename": "3.png",
+      "path": "/assets/spam-email-classifier/3.png",
+      "source": "Local Asset Audit",
+      "project": "Spam Classifier",
+      "usage": "Spam classifier UI and terminal benchmarks",
+      "format": "png"
+    },
+    {
+      "filename": "4.png",
+      "path": "/assets/spam-email-classifier/4.png",
+      "source": "Local Asset Audit",
+      "project": "Spam Classifier",
+      "usage": "Spam classifier UI and terminal benchmarks",
+      "format": "png"
+    },
+    {
+      "filename": "profile-main.jpg",
+      "path": "/assets/profile/profile-main.jpg",
+      "source": "Professional Headshot",
+      "project": "Personal Profile",
+      "usage": "Primary portfolio and about page profile picture",
+      "format": "jpg"
+    },
+    {
+      "filename": "logo.png",
+      "path": "/assets/logo/logo.png",
+      "source": "Brand Logo",
+      "project": "Personal Brand",
+      "usage": "Website header branding logo",
+      "format": "png"
+    },
+    {
+      "filename": "certificate.jpg",
+      "path": "/assets/credentials/certificate.jpg",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "jpg"
+    },
+    {
+      "filename": "Digital Sticker_ Introduction to Retrieval-Augmented Generation.png",
+      "path": "/assets/credentials/Digital Sticker_ Introduction to Retrieval-Augmented Generation.png",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "png"
+    },
+    {
+      "filename": "Digital Sticker_The Rise of Multiagent Systems.png",
+      "path": "/assets/credentials/Digital Sticker_The Rise of Multiagent Systems.png",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "png"
+    },
+    {
+      "filename": "Digital Sticker_Unleashing the Power of AI Agents.png",
+      "path": "/assets/credentials/Digital Sticker_Unleashing the Power of AI Agents.png",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "png"
+    },
+    {
+      "filename": "GOGOA1.jpg",
+      "path": "/assets/credentials/GOGOA1.jpg",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "jpg"
+    },
+    {
+      "filename": "Hamza Siddiqui_AI_APPRECIATE_BADGE.png",
+      "path": "/assets/credentials/Hamza Siddiqui_AI_APPRECIATE_BADGE.png",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "png"
+    },
+    {
+      "filename": "Hamza Siddiqui_AI_APPRECIATE_CERTIFICATE.png",
+      "path": "/assets/credentials/Hamza Siddiqui_AI_APPRECIATE_CERTIFICATE.png",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "png"
+    },
+    {
+      "filename": "Hamza Siddiqui_AI_AWARE_BADGE.png",
+      "path": "/assets/credentials/Hamza Siddiqui_AI_AWARE_BADGE.png",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "png"
+    },
+    {
+      "filename": "Hamza Siddiqui_AI_AWARE_CERTIFICATE.png",
+      "path": "/assets/credentials/Hamza Siddiqui_AI_AWARE_CERTIFICATE.png",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "png"
+    },
+    {
+      "filename": "Indrustry traning (Atharva).jpg",
+      "path": "/assets/credentials/Indrustry traning (Atharva).jpg",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "jpg"
+    },
+    {
+      "filename": "MakeAgenticAIWorkforYou_Badge20260407-30-d6j8n3.pdf",
+      "path": "/assets/credentials/MakeAgenticAIWorkforYou_Badge20260407-30-d6j8n3.pdf",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "pdf"
+    },
+    {
+      "filename": "Microsoft Excel - Excel from Beginner to Advanced.pdf",
+      "path": "/assets/credentials/Microsoft Excel - Excel from Beginner to Advanced.pdf",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "pdf"
+    },
+    {
+      "filename": "PowerBI.pdf",
+      "path": "/assets/credentials/PowerBI.pdf",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "pdf"
+    },
+    {
+      "filename": "Sahil Dresses.jpg",
+      "path": "/assets/credentials/Sahil Dresses.jpg",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "jpg"
+    },
+    {
+      "filename": "Skill Nation.jpg",
+      "path": "/assets/credentials/Skill Nation.jpg",
+      "source": "Local Asset Audit",
+      "project": "Credentials & Certificates",
+      "usage": "Verified professional credentials and badges",
+      "format": "jpg"
+    }
+  ]
+}

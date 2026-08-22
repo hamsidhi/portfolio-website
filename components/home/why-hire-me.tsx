@@ -39,7 +39,7 @@ function AnimatedCounter({ value, suffix = '', duration = 2000 }: { value: numbe
 interface CoreValue {
   title: string
   description: string
-  icon: React.ElementType
+  icon: React.ComponentType<{ className?: string }>
   span?: string
 }
 

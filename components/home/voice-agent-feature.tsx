@@ -8,43 +8,8 @@ import { SectionLabel } from '@/components/section'
 import { businessValue } from '@/lib/content'
 import { VoiceDemo } from '@/components/voice-demo'
 
-const tags = ['AI Voice', 'Automation', 'Lead Qualification', 'Prompt Engineering', 'Business']
 
-/* ─── Animated Waveform ─── */
-function AnimatedWaveform() {
-  const barCount = 32
-  return (
-    <div className="flex items-end justify-center gap-[3px] h-40 px-6">
-      {Array.from({ length: barCount }).map((_, i) => {
-        const isBlue = i % 3 !== 0
-        return (
-          <motion.div
-            key={i}
-            className="w-[3px] rounded-full"
-            style={{
-              background: isBlue
-                ? 'linear-gradient(to top, var(--accent-1), var(--accent-2))'
-                : 'linear-gradient(to top, var(--accent-2), var(--accent-3))',
-            }}
-            animate={{
-              height: [
-                `${20 + Math.random() * 30}%`,
-                `${50 + Math.random() * 50}%`,
-                `${20 + Math.random() * 30}%`,
-              ],
-            }}
-            transition={{
-              duration: 1.2 + Math.random() * 0.8,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: i * 0.05,
-            }}
-          />
-        )
-      })}
-    </div>
-  )
-}
+const tags = ['AI Voice', 'Automation', 'Lead Qualification', 'Prompt Engineering', 'Business']
 
 export function VoiceAgentFeature() {
   return (

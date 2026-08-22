@@ -1,21 +1,21 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion } from 'motion/react'
 import { SiPython, SiPostgresql, SiPandas } from 'react-icons/si'
 import { TbBrandOpenai } from 'react-icons/tb'
-import { BrainCircuit, Workflow, BarChart3, X, Sparkles, Award, CheckCircle2 } from 'lucide-react'
+import { BrainCircuit, Workflow, BarChart3, X, Award, CheckCircle2 } from 'lucide-react'
 import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
 import { techSkills } from '@/lib/content'
 
-const iconMap: Record<string, React.ElementType> = {
-  SiPython,
-  SiPostgresql,
-  BrainCircuit,
-  TbBrandOpenai,
-  SiPandas,
-  Workflow,
-  BarChart3,
+const iconMap: Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>> = {
+  SiPython: SiPython as React.ComponentType<{ className?: string; style?: React.CSSProperties }>,
+  SiPostgresql: SiPostgresql as React.ComponentType<{ className?: string; style?: React.CSSProperties }>,
+  BrainCircuit: BrainCircuit as React.ComponentType<{ className?: string; style?: React.CSSProperties }>,
+  TbBrandOpenai: TbBrandOpenai as React.ComponentType<{ className?: string; style?: React.CSSProperties }>,
+  SiPandas: SiPandas as React.ComponentType<{ className?: string; style?: React.CSSProperties }>,
+  Workflow: Workflow as React.ComponentType<{ className?: string; style?: React.CSSProperties }>,
+  BarChart3: BarChart3 as React.ComponentType<{ className?: string; style?: React.CSSProperties }>,
 }
 
 const skillHighlights: Record<string, { category: string; stats: string; details: string[] }> = {

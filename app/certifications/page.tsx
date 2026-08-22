@@ -5,6 +5,7 @@ import { motion, useInView } from 'motion/react'
 import { Award, BadgeCheck, ExternalLink, ShieldCheck, Sparkles, Hourglass, Bookmark } from 'lucide-react'
 import { PageHero } from '@/components/section'
 import { Stagger, StaggerItem, Reveal } from '@/components/reveal'
+import { Tilt } from '@/components/tilt'
 import { certificationsTier1, certificationsTier2 } from '@/lib/content'
 
 const issuerColors: Record<string, string> = {
@@ -101,7 +102,7 @@ export default function CertificationsPage() {
 
             return (
               <StaggerItem key={c.name}>
-                <TiltCard>
+                <Tilt className="h-full">
                   {c.credentialUrl ? (
                     <a href={c.credentialUrl} target="_blank" rel="noopener noreferrer" className="block h-full cursor-pointer">
                       {CardContent}
@@ -109,7 +110,7 @@ export default function CertificationsPage() {
                   ) : (
                     CardContent
                   )}
-                </TiltCard>
+                </Tilt>
               </StaggerItem>
             )
           })}
@@ -142,7 +143,7 @@ export default function CertificationsPage() {
             )
             return (
               <StaggerItem key={c.name}>
-                <TiltCard>
+                <Tilt className="h-full">
                   {c.credentialUrl ? (
                     <a href={c.credentialUrl} target="_blank" rel="noopener noreferrer" className="block h-full cursor-pointer">
                       {CardContent}
@@ -150,7 +151,7 @@ export default function CertificationsPage() {
                   ) : (
                     CardContent
                   )}
-                </TiltCard>
+                </Tilt>
               </StaggerItem>
             )
           })}
@@ -188,45 +189,3 @@ function CountUpNumber({ value, suffix = '', duration = 1500 }: { value: number;
   )
 }
 
-function TiltCard({ children }: { children: React.ReactNode }) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const [rotateX, setRotateX] = useState(0)
-  const [rotateY, setRotateY] = useState(0)
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return
-    const card = cardRef.current
-    const rect = card.getBoundingClientRect()
-    const width = rect.width
-    const height = rect.height
-
-    const mouseX = e.clientX - rect.left - width / 2
-    const mouseY = e.clientY - rect.top - height / 2
-
-    // Max 8 degrees tilt to keep text readable
-    const rX = -(mouseY / (height / 2)) * 8
-    const rY = (mouseX / (width / 2)) * 8
-
-    setRotateX(rX)
-    setRotateY(rY)
-  }
-
-  const handleMouseLeave = () => {
-    setRotateX(0)
-    setRotateY(0)
-  }
-
-  return (
-    <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      animate={{ rotateX, rotateY }}
-      style={{ transformStyle: 'preserve-3d' }}
-      transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-      className="h-full"
-    >
-      {children}
-    </motion.div>
-  )
-}

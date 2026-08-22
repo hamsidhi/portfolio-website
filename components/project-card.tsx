@@ -9,7 +9,7 @@ import { Tilt } from '@/components/tilt'
 import type { Project } from '@/lib/projects'
 
 export function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
-  const detailHref = project.href
+  const detailHref = project.href || `/projects/${project.slug}`
   const hasDetail = Boolean(detailHref)
 
   return (

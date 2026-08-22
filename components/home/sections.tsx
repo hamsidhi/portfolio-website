@@ -2,19 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRef, useEffect, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
-import {
-  Brain,
-  Briefcase,
-  Rocket,
-  Boxes,
-  Workflow,
-  GraduationCap,
-  ArrowRight,
-  Award,
-  MapPin,
-} from 'lucide-react'
+import { ArrowRight, Award, MapPin } from 'lucide-react'
 import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
 import { SectionHeading, SectionLabel } from '@/components/section'
 import { experienceTimeline, certificationsTier1 } from '@/lib/content'

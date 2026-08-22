@@ -3,103 +3,103 @@ export const techSkills = [
     name: 'Python',
     icon: 'SiPython',
     color: '#3776AB',
-    description: 'The backbone of my AI systems. I use it for building FastAPI backends, NLP pipelines, and data processing scripts.',
+    description: 'Core backbone for AI systems, FastAPI backends, NLP pipelines, data processing, and automation CLI tools.',
   },
   {
     name: 'Power BI',
     icon: 'BarChart3',
     color: '#F2C811',
-    description: 'My go-to tool for business intelligence. I build interactive dashboards that translate raw ERP data into strategic insights.',
+    description: 'Primary BI platform for transforming raw ERP exports into interactive dashboards and operational metrics.',
   },
   {
-    name: 'PostgreSQL',
+    name: 'PostgreSQL & SQL',
     icon: 'SiPostgresql',
     color: '#4169E1',
-    description: 'My primary relational database. I use it to securely store and query complex data for applications like AGMIS.',
+    description: 'Relational database querying, schema design, and transactional data storage for data platforms like AGMIS.',
   },
   {
     name: 'Machine Learning',
     icon: 'BrainCircuit',
     color: '#8B5CF6',
-    description: 'Applied ML models. I focus on practical implementations like sentiment analysis and predictive scoring.',
+    description: 'Supervised ML modeling with Scikit-learn, TF-IDF vectorization, Naive Bayes, and predictive risk scoring.',
   },
   {
-    name: 'Prompt Engineering',
+    name: 'RAG & AI Agents',
     icon: 'TbBrandOpenai',
     color: '#10A37F',
-    description: 'Crafting structured, constraint-based prompts to make LLMs predictable and reliable for business workflows.',
+    description: 'Designing structured system prompts, vector document retrieval, and low-latency voice conversational agents.',
   },
   {
-    name: 'Data Analytics',
+    name: 'Data Science & Pandas',
     icon: 'SiPandas',
     color: '#150458',
-    description: 'Processing and cleaning messy datasets. I transform raw data into analysis-ready formats for stakeholders.',
+    description: 'Data cleaning, feature engineering, statistical analysis, and exploratory data visualization across large datasets.',
   },
   {
-    name: 'Automation',
+    name: 'Workflow Automation',
     icon: 'Workflow',
     color: '#F97316',
-    description: 'Connecting systems together. I design automated pipelines and webhooks that eliminate repetitive manual work.',
+    description: 'Connecting APIs, webhooks, CLI scripts, and local LLM pipelines to eliminate manual operational overhead.',
   },
 ]
 
 export interface SkillCategory {
-  title: 'AI' | 'Data' | 'Automation' | 'Backend' | 'BI' | 'Soft Skills';
+  title: 'AI & LLM Systems' | 'Data Science & Analytics' | 'Automation' | 'Backend & Databases' | 'Business Intelligence' | 'Professional Mindset';
   skills: string[];
 }
 
 export const categorizedSkills: SkillCategory[] = [
-  { title: 'AI', skills: ['Applied AI', 'Prompt Engineering', 'RAG Systems', 'NLP', 'AI Agents', 'LLMs'] },
-  { title: 'Data', skills: ['Data Cleaning', 'Data Engineering', 'Pandas', 'SQL'] },
-  { title: 'Automation', skills: ['Workflow Automation', 'Webhooks', 'Process Optimization', 'Voice Systems'] },
-  { title: 'Backend', skills: ['Python', 'FastAPI', 'PostgreSQL', 'REST APIs'] },
-  { title: 'BI', skills: ['Power BI', 'Excel', 'Data Visualization', 'Business Dashboards'] },
-  { title: 'Soft Skills', skills: ['Business Thinking', 'Product Ownership', 'Problem Solving', 'Communication'] },
+  { title: 'AI & LLM Systems', skills: ['Applied AI', 'Prompt Engineering', 'RAG Systems', 'NLP', 'AI Agents', 'LLM Integration', 'Groq API', 'Ollama'] },
+  { title: 'Data Science & Analytics', skills: ['Data Cleaning', 'Feature Engineering', 'Pandas', 'NumPy', 'Scikit-Learn', 'Statistical Modeling', 'Predictive Scoring'] },
+  { title: 'Automation', skills: ['Workflow Automation', 'Webhooks', 'Process Optimization', 'CLI Tools', 'Media Automation', 'Automated Testing'] },
+  { title: 'Backend & Databases', skills: ['Python', 'FastAPI', 'PostgreSQL', 'SQL', 'REST APIs', 'JSON Schema', 'Joblib'] },
+  { title: 'Business Intelligence', skills: ['Power BI', 'Microsoft Excel', 'Data Visualization', 'Interactive Dashboards', 'KPI Tracking'] },
+  { title: 'Professional Mindset', skills: ['Business Thinking', 'Product Ownership', 'Problem Solving', 'Technical Communication', 'Execution First'] },
 ]
 
 export const whyWorkWithMe = [
   {
-    title: 'Business Thinking',
-    body: 'I start from the problem and the outcome, not the framework. Technology is a means to a measurable result.',
+    title: 'Business-First Mindset',
+    body: 'I start with the operational problem and target outcome, choosing technology that drives verifiable business results.',
   },
   {
-    title: 'Applied AI & Data Science',
-    body: 'I build AI-driven products people actually use — predictive analytics, intelligent agents, and scalable data systems, not just demos.',
+    title: 'Production-Ready AI Systems',
+    body: 'I engineer functional AI systems—voice agents, RAG search pipelines, and document synthesizers—backed by clean repositories.',
   },
   {
-    title: 'Execution',
-    body: 'Ideas turn into production-ready systems. I ship, iterate, and pay attention to the details that matter.',
+    title: 'Relentless Execution',
+    body: 'Ideas become working code quickly. I ship fast, iterate deliberately, and focus on system reliability.',
   },
   {
-    title: 'Product Thinking',
-    body: 'I design for real users and real workflows, balancing usefulness, clarity, and long-term maintainability.',
+    title: 'Product & UX Focus',
+    body: 'I design applications for real users and real workflows, balancing interface clarity with technical efficiency.',
   },
   {
-    title: 'Automation Mindset',
-    body: 'I look for repetitive, manual work and replace it with reliable automation that frees people for higher-value tasks.',
+    title: 'Automation Bias',
+    body: 'I identify repetitive manual bottlenecks and replace them with predictable script automations and webhooks.',
   },
   {
-    title: 'Continuous Learning',
-    body: 'AI moves fast. I keep learning deliberately and translate new capabilities into practical business value.',
+    title: 'Continuous Technical Growth',
+    body: 'AI moves rapidly. I continuously build hands-on projects to translate new model capabilities into practical tools.',
   },
 ]
 
 export const businessValue = [
   {
-    title: '24/7 Availability',
-    body: 'Customers are answered any time of day without additional staffing.',
+    title: '24/7 Service Availability',
+    body: 'Automated AI agents handle customer inquiries instantly outside standard business hours.',
   },
   {
-    title: 'Reduced Operational Cost',
-    body: 'Automating routine conversations lowers the cost of customer support.',
+    title: 'Lower Operational Costs',
+    body: 'Automating routine intake and reporting frees up team members for higher-leverage strategic work.',
   },
   {
-    title: 'Lead Qualification',
-    body: 'Conversations capture intent and qualify leads before they reach the team.',
+    title: 'Instant Lead Qualification',
+    body: 'Conversational agents structure and qualify customer intent before routing to sales teams.',
   },
   {
-    title: 'Natural Conversations',
-    body: 'Structured prompts keep responses human, helpful, and on-brand.',
+    title: 'Grounded & Predictable AI',
+    body: 'Structured prompts and vector retrieval ensure AI outputs remain accurate, safe, and on-brand.',
   },
 ]
 
@@ -124,11 +124,11 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'Artificial Intelligence Intern',
     company: 'Codec Technologies',
     date: 'Jul 2026 – Aug 2026',
-    description: 'Engineered AI workflows and intelligent solutions in an AICTE & ICAC approved internship program.',
+    description: 'Engineered intelligent AI workflows and predictive automation solutions in an AICTE & ICAC approved program.',
     achievements: [
-      'Gained hands-on industry experience building AI solutions and optimizing algorithmic performance under weekly supervisor evaluations.',
-      'Worked on real-world IT and business consultancy project deliverables across intelligent data pipelines and model implementations.',
-      'Earned high performance ratings for delivering quality project milestones ahead of deadlines.',
+      'Engineered machine learning pipelines and optimized model inference performance under weekly supervisor evaluations.',
+      'Delivered production-grade IT project milestones covering data extraction, prompt engineering, and API integration ahead of target deadlines.',
+      'Earned top performance evaluation ratings for delivering robust, validated technical deliverables.',
     ],
     type: 'work',
     credentials: [
@@ -140,24 +140,25 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'Data Analyst Intern',
     company: 'Sahil Dresses',
     date: 'Dec 2023 – May 2024',
-    description: 'Transformed business data into strategic insights for operational decision-making.',
+    description: 'Transformed operational sales and inventory data into actionable business intelligence dashboards.',
     achievements: [
-      'Engineered an end-to-end data pipeline from raw ERP exports to interactive Power BI dashboards.',
-      'Identified sales anomalies that improved inventory restocking efficiency.',
-      'Automated weekly reporting, saving hours of manual data entry per week.',
+      'Built end-to-end data processing pipelines converting raw ERP exports into interactive Power BI dashboards for management decision-making.',
+      'Identified key sales anomalies and stock velocity metrics that improved inventory restocking efficiency.',
+      'Automated recurring weekly reporting, eliminating manual spreadsheet entry and saving 5+ hours per week.',
     ],
     type: 'work',
     credentialUrl: '/assets/credentials/Sahil_Dresses.jpg',
   },
   {
-    title: 'AI & Data Science Development',
-    company: 'Personal Projects',
+    title: 'AI & Data Systems Development',
+    company: 'Personal & Open Source Projects',
     date: '2024 – Present',
-    description: 'Building practical, production-ready AI systems and automations.',
+    description: 'Architected and published 10+ open-source AI applications, data analytics platforms, and automation tools on GitHub.',
     achievements: [
-      'Architected AGMIS, an academic data intelligence platform with secure PostgreSQL integration.',
-      'Developed a real-estate AI voice agent capable of autonomous lead qualification.',
-      'Designed automated workflow automations and RAG search pipelines.',
+      'Architected AGMIS, an academic data intelligence platform with PostgreSQL integration and ML risk scoring.',
+      'Developed a real-estate AI voice agent achieving 24/7 automated lead qualification and appointment scheduling.',
+      'Created Huntii Analyser and Natural Voice RAG engines for multi-document synthesis and sub-4s voice Q&A.',
+      'Created an autonomous n8n AI Restaurant Agent combining Mistral LLM, Simple Memory, and Google Sheets APIs for live menu & order automation.',
     ],
     type: 'project',
   },
@@ -165,10 +166,10 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'BSc in Data Science',
     company: 'Atharva College of Engineering',
     date: '2022 – 2025',
-    description: 'Academic foundation in Data Science, Machine Learning, Statistics, and Database Management.',
+    description: 'Academic degree in Data Science, Machine Learning, Statistical Modeling, and Relational Database Management.',
     achievements: [
-      'Specialized in Python programming, machine learning models, and SQL/PostgreSQL databases.',
-      'Completed practical coursework in business intelligence and data visualization with Power BI.',
+      'Maintained CGPI of 8.5 with specialized focus on Python programming, scikit-learn models, and SQL/PostgreSQL databases.',
+      'Completed practical coursework in business analytics, data visualization with Power BI, and machine learning pipelines.',
     ],
     type: 'education',
   },
@@ -176,10 +177,10 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'National Cadet Corps (NCC) Leadership',
     company: 'NCC Unit',
     date: '2022 – 2024',
-    description: 'Rigorous discipline, squad leadership, and teamwork in structured operational environments.',
+    description: 'Disciplined squad leadership, drill coordination, and operational team management under structured conditions.',
     achievements: [
-      'Developed strong leadership, communication, and decision-making under high-pressure scenarios.',
-      'Led cadet units in drill exercises and community outreach programs.',
+      'Developed strong decision-making, crisis communication, and execution discipline across field exercises.',
+      'Led cadet units in official drill parades and community outreach leadership initiatives.',
     ],
     type: 'leadership',
   },
@@ -187,10 +188,9 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'State-Level Basketball Player',
     company: 'State Sports Association',
     date: '2021 – 2023',
-    description: 'Competitive athlete representing at state-level sports competitions.',
+    description: 'Competitive athlete representing regional teams in state-level championship tournaments.',
     achievements: [
-      'Mastered teamwork, adaptability, composure under pressure, and relentless execution.',
-      'Fostered collaborative strategies and fast-paced communication in team settings.',
+      'Fostered high-pressure composure, split-second decision making, and team collaboration in competitive environments.',
     ],
     type: 'leadership',
   },
@@ -207,10 +207,10 @@ export interface Education {
 export const educationTimeline: Education[] = [
   {
     degree: 'BSc in Data Science',
-    institution: 'University Placeholder',
-    timeline: '2022 - Present',
+    institution: 'Atharva College of Engineering',
+    timeline: '2022 – 2025',
     cgpi: '8.5',
-    coursework: ['Machine Learning', 'Database Management', 'Statistical Modeling', 'Data Structures'],
+    coursework: ['Machine Learning', 'Database Management (SQL)', 'Statistical Modeling', 'Python Programming', 'Data Visualization'],
   }
 ]
 
@@ -236,7 +236,7 @@ export const certificationsTier1: Certification[] = [
 export const certificationsTier2: Certification[] = [
   { name: 'Artificial Intelligence Intern Certificate', issuer: 'Codec Technologies', credentialUrl: '/assets/credentials/Codec_Technologies_AI_Intern_Certificate.pdf', date: '2026' },
   { name: 'Industrial Training: EV Conversion & Automotive Tech', issuer: 'GoGo A1', credentialUrl: '/assets/credentials/GOGOA1.jpg', date: '2023' },
-  { name: 'Industry Training (Atharva)', issuer: 'Atharva', credentialUrl: '/assets/credentials/Indrustry_traning_(Atharva).jpg', date: '2023' },
+  { name: 'Industry Training (Atharva)', issuer: 'Atharva Engineering', credentialUrl: '/assets/credentials/Indrustry_traning_(Atharva).jpg', date: '2023' },
   { name: 'Data Analyst Intern Certificate', issuer: 'Sahil Dresses', credentialUrl: '/assets/credentials/Sahil_Dresses.jpg', date: '2024' },
   { name: 'AI & Data Science Workshops', issuer: 'Skill Nation', credentialUrl: '/assets/credentials/Skill_Nation.jpg', date: '2023' },
   { name: 'Workshops Participation Certificate', issuer: 'Various', credentialUrl: '/assets/credentials/certificate.jpg', date: '2023' },

@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { ScrollProgress } from '@/components/scroll-progress'
 import { CursorGlow } from '@/components/cursor-glow'
 import { CommandPalette } from '@/components/command-palette'
+import { site } from '@/lib/site'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({
@@ -21,27 +22,30 @@ const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
 })
 
-const siteUrl = 'https://hamsidhi.me'
+const siteUrl = 'https://hamsidhi.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Hamza Siddiqui | Data Science Graduate | Data Analyst | Automation Builder',
+    default: 'Hamza Siddiqui | Data Science Graduate & AI Systems Engineer',
     template: '%s | Hamza Siddiqui',
   },
   description:
-    'BSc Data Science graduate building data-driven systems, practical automations, healthcare intelligence solutions, and analytics platforms.',
+    'Official portfolio of Hamza Siddiqui — Data Science Graduate, Data Analyst, and AI Systems Builder specializing in RAG, voice agents, predictive ML pipelines, and automations.',
   keywords: [
+    'Hamza Siddiqui',
     'Data Science Graduate',
-    'Healthcare Analytics',
-    'Business Intelligence',
-    'Automation',
-    'Data Analytics',
-    'Machine Learning',
-    'Prompt Engineering',
+    'Data Analyst',
+    'AI Engineer',
+    'RAG Systems',
+    'Voice AI Agent',
     'FastAPI',
     'Python',
+    'Machine Learning',
     'Power BI',
+    'NLP',
+    'Spam Classifier',
+    'AGMIS',
   ],
   authors: [{ name: 'Hamza Siddiqui', url: siteUrl }],
   creator: 'Hamza Siddiqui',
@@ -49,16 +53,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Hamza Siddiqui | Data Science Graduate | Data Analyst | Automation Builder',
+    title: 'Hamza Siddiqui | Data Science Graduate & AI Systems Engineer',
     description:
-      'BSc Data Science graduate building data-driven systems, practical automations, healthcare intelligence solutions, and analytics platforms.',
+      'Official portfolio of Hamza Siddiqui — Data Science Graduate, Data Analyst, and AI Systems Builder specializing in RAG, voice agents, predictive ML pipelines, and automations.',
     siteName: 'Hamza Siddiqui',
+    images: [{ url: '/portfolio.png', width: 1200, height: 630, alt: 'Hamza Siddiqui Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hamza Siddiqui | Data Science Graduate | Data Analyst | Automation Builder',
+    title: 'Hamza Siddiqui | Data Science Graduate & AI Systems Engineer',
     description:
-      'BSc Data Science graduate building data-driven systems, practical automations, healthcare intelligence solutions, and analytics platforms.',
+      'Official portfolio of Hamza Siddiqui — Data Science Graduate, Data Analyst, and AI Systems Builder specializing in RAG, voice agents, predictive ML pipelines, and automations.',
+    images: ['/portfolio.png'],
+  },
+  icons: {
+    icon: '/icon-dark-32x32.png',
+    shortcut: '/icon-dark-32x32.png',
+    apple: '/apple-icon.png',
   },
 }
 
@@ -74,6 +85,44 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLdPerson = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Hamza Siddiqui',
+    jobTitle: 'Data Science Graduate & AI Systems Engineer',
+    url: 'https://hamsidhi.com',
+    sameAs: [
+      'https://github.com/hamsidhi',
+      'https://www.linkedin.com/in/hamza-siddiqui-b84717393/',
+      'https://hamsidhi.com',
+    ],
+    knowsAbout: [
+      'Data Science',
+      'Machine Learning',
+      'Natural Language Processing',
+      'Retrieval-Augmented Generation',
+      'FastAPI',
+      'Python',
+      'PostgreSQL',
+      'Power BI',
+    ],
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'Atharva College of Engineering',
+    },
+  }
+
+  const jsonLdWebsite = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Hamza Siddiqui Portfolio',
+    url: 'https://hamsidhi.com',
+    author: {
+      '@type': 'Person',
+      name: 'Hamza Siddiqui',
+    },
+  }
+
   return (
     <html
       lang="en"
@@ -84,15 +133,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Hamza Siddiqui",
-              "jobTitle": "Data Science Graduate & Automation Builder",
-              "url": "https://hamsidhi.me"
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
         />
       </head>
       <body className="font-sans antialiased">
