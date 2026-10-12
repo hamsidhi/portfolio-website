@@ -6,13 +6,13 @@ import { Reveal } from '@/components/reveal'
 export const metadata: Metadata = {
   title: 'Experience',
   description:
-    'Experience, education, leadership, and journey of Hamza Siddiqui — from a Data Analyst internship to building data-driven systems.',
+    'Experience, education, leadership, and journey of Hamza Siddiqui — from a Data Analyst internship to Applied AI engineering.',
 }
 
 const highlights = [
-  { label: 'Industry Experience', value: '6 months' },
-  { label: 'Flagship Products', value: '2 shipped' },
-  { label: 'Certifications', value: '8+ earned' },
+  { label: 'Industry Internships', value: '3' },
+  { label: 'Flagship Products', value: '4 shipped' },
+  { label: 'Certifications', value: '10+ earned' },
   { label: 'Focus Areas', value: 'AI · Data · Automation' },
 ]
 

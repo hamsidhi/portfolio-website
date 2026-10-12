@@ -84,9 +84,9 @@ const item: Variants = {
 }
 
 const stats = [
-  { value: '5+', label: 'Projects Shipped' },
+  { value: '10+', label: 'Projects Built' },
   { value: '10+', label: 'Certifications' },
-  { value: '6mo', label: 'Industry Experience' },
+  { value: '3', label: 'Industry Internships' },
 ]
 
 export function Hero() {
@@ -137,7 +137,7 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-1 opacity-75" />
                 <span className="relative inline-flex rounded-full size-2 bg-accent-1" />
               </span>
-              <span className="font-medium tracking-wide">Data Science Graduate & Automation Builder</span>
+              <span className="font-medium tracking-wide">Data Science Graduate & Applied AI Engineer Intern</span>
               <span className="text-accent-1/40">•</span>
               <span className="text-muted-foreground">Open to Opportunities</span>
             </span>
@@ -153,7 +153,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-6 max-w-2xl text-pretty text-lg sm:text-xl leading-relaxed text-muted-foreground"
           >
-            BSc Data Science graduate building practical data systems, automation pipelines, and analytics platforms while continuously learning.
+            BSc Data Science graduate and Applied AI Engineer Intern building practical AI systems, data pipelines, and automations.
           </motion.p>
 
           {/* CTAs */}

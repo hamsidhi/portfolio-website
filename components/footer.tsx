@@ -109,7 +109,7 @@ export function Footer() {
           <div>
             <p className="text-sm font-semibold text-foreground">{site.name}</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Data Science Graduate · Data Analyst · Automation Builder
+              Data Science Graduate · Applied AI Engineer Intern · Automation Builder
             </p>
           </div>
 

@@ -11,11 +11,11 @@ import { experienceTimeline, certificationsTier1, techSkills } from '@/lib/conte
 export const metadata: Metadata = {
   title: 'Resume',
   description:
-    'Interactive resume of Hamza Siddiqui — Data Science Graduate, Data Analyst, and Automation Builder. Download or print a clean copy.',
+    'Interactive resume of Hamza Siddiqui — Data Science Graduate, Applied AI Engineer Intern, and Automation Builder. Download or print a clean copy.',
 }
 
 const summary =
-  'BSc Data Science graduate and Automation Builder who builds functional data pipelines, conversational automation, and analytics dashboards. Experienced in translating business objectives into data-driven systems using machine learning, workflow automation, and analytics tools.'
+  'BSc Data Science graduate and Applied AI Engineer Intern building AI-driven systems, data pipelines, conversational automation, and analytics dashboards. Experienced in translating business objectives into practical systems using LLMs, machine learning, workflow automation, and analytics tools.'
 
 const technicalAreas = [
   { label: 'Data & Intelligent Systems', items: 'Conversational Automation, RAG, Prompt Engineering, Applied ML' },
@@ -164,7 +164,7 @@ export default function ResumePage() {
 
         <Reveal className="mt-10 flex flex-col items-center gap-3 text-center print:hidden">
           <p className="text-sm text-muted-foreground">
-            Prefer to talk it through? I&apos;m open to Data Science, Data Analyst, and Automation opportunities.
+            Prefer to talk it through? I&apos;m open to Applied AI, Data Science, Data Analyst, and Automation opportunities.
           </p>
           <Link
             href="/contact"

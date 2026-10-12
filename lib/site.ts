@@ -3,7 +3,7 @@ export const site = {
   domain: 'hamsidhi.com',
   canonicalUrl: 'https://hamsidhi.com',
   tagline: 'Building Data-Driven Systems, Applied AI & Practical Automations.',
-  identity: 'Data Science Graduate · AI & Data Analyst · Automation Builder',
+  identity: 'Data Science Graduate · Applied AI Engineer Intern · Automation Builder',
   email: 'hamsidhi@gmail.com',
   phoneIndia: '+91 9170838459',
   phoneUae: '+971 50 804 2826',

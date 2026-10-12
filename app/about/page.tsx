@@ -8,14 +8,14 @@ import { Reveal, Stagger, StaggerItem } from '@/components/reveal'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Hamza Siddiqui — Data Science Graduate, Data Analyst, and Automation Builder. Dedicated to building practical, data-driven systems and automations.',
+    'Hamza Siddiqui — Data Science Graduate, Applied AI Engineer Intern, and Automation Builder. Dedicated to building practical, data-driven systems and automations.',
 }
 
 const stats = [
-  { value: '5+', label: 'Projects Built' },
+  { value: '10+', label: 'Projects Built' },
   { value: '10+', label: 'Certifications' },
-  { value: '6mo', label: 'Industry Experience' },
-  { value: '2', label: 'Flagship Products' },
+  { value: '3', label: 'Industry Internships' },
+  { value: '4', label: 'Flagship Products' },
 ]
 
 const journey = [
@@ -23,11 +23,12 @@ const journey = [
   { year: '2023–24', title: 'First Industry Experience', body: 'Interned as a Data Analyst at Sahil Dresses — transforming ERP data into Power BI dashboards.' },
   { year: '2024', title: 'Building AGMIS', body: 'Designed and built a full academic intelligence platform from the ground up.' },
   { year: '2025', title: 'Voice Agent Automation', body: 'Created a conversational agent for real estate lead qualification using prompt engineering.' },
-  { year: 'Now', title: 'Building Practical Automations', body: 'Building practical data systems, automation pipelines, and analytics solutions that businesses can use.' },
+  { year: '2026', title: 'Applied AI Engineering', body: 'Interned at Codec Technologies, then joined Dhruvion as an Applied AI Engineer Intern working on its Generative Engine Optimization (GEO) platform.' },
+  { year: 'Now', title: 'Building Practical AI Systems', body: 'Building AI systems, data pipelines, and automations that businesses can actually use.' },
 ]
 
 const focus = [
-  { icon: HeartPulse, title: 'Healthcare Intelligence', body: 'Turning clinical and operational data into earlier, safer decisions.' },
+  { icon: HeartPulse, title: 'Applied AI Systems', body: 'Building RAG pipelines, voice agents, and LLM workflows grounded in real business data.' },
   { icon: BarChart3, title: 'Business Intelligence', body: 'Making data understandable and actionable for the people who decide.' },
   { icon: Workflow, title: 'Automation', body: 'Removing repetitive manual work so people can focus on what matters.' },
 ]
@@ -63,7 +64,7 @@ export default function AboutPage() {
               </div>
               <div className="text-center">
                 <p className="font-semibold text-foreground">Hamza Siddiqui</p>
-                <p className="text-sm text-muted-foreground">Data Science Graduate · Data Analyst</p>
+                <p className="text-sm text-muted-foreground">Data Science Graduate · Applied AI Engineer Intern</p>
                 <span className="mt-2 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
                   <MapPin className="size-3 text-accent-1" />
                   UAE · India · Remote
@@ -199,7 +200,7 @@ export default function AboutPage() {
               Want to work together?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-              I&apos;m always open to discussing Data Science, data systems, automation, and interesting problems.
+              I&apos;m always open to discussing Applied AI, data systems, automation, and interesting problems.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Link

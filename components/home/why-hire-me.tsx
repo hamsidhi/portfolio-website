@@ -83,10 +83,10 @@ const coreValues: CoreValue[] = [
 ]
 
 const stats = [
-  { value: 5, suffix: '+', label: 'AI Systems Built' },
-  { value: 8, suffix: '+', label: 'Certifications' },
-  { value: 35, suffix: '%', label: 'Cost Reduction' },
-  { value: 24, suffix: '/7', label: 'Availability' },
+  { value: 10, suffix: '+', label: 'Projects Built' },
+  { value: 10, suffix: '+', label: 'Certifications' },
+  { value: 35, suffix: '%', label: 'Est. Support Cost Cut (Voice Agent)' },
+  { value: 24, suffix: '/7', label: 'Voice Agent Coverage' },
 ]
 
 export function WhyHireMe() {

@@ -27,15 +27,16 @@ const siteUrl = 'https://hamsidhi.com'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Hamza Siddiqui | Data Science Graduate & AI Systems Engineer',
+    default: 'Hamza Siddiqui | Data Science Graduate & Applied AI Engineer',
     template: '%s | Hamza Siddiqui',
   },
   description:
-    'Official portfolio of Hamza Siddiqui — Data Science Graduate, Data Analyst, and AI Systems Builder specializing in RAG, voice agents, predictive ML pipelines, and automations.',
+    'Official portfolio of Hamza Siddiqui — Data Science Graduate and Applied AI Engineer Intern building RAG systems, voice agents, predictive ML pipelines, and automations.',
   keywords: [
     'Hamza Siddiqui',
     'Data Science Graduate',
     'Data Analyst',
+    'Applied AI Engineer',
     'AI Engineer',
     'RAG Systems',
     'Voice AI Agent',
@@ -53,17 +54,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Hamza Siddiqui | Data Science Graduate & AI Systems Engineer',
+    title: 'Hamza Siddiqui | Data Science Graduate & Applied AI Engineer',
     description:
-      'Official portfolio of Hamza Siddiqui — Data Science Graduate, Data Analyst, and AI Systems Builder specializing in RAG, voice agents, predictive ML pipelines, and automations.',
+      'Official portfolio of Hamza Siddiqui — Data Science Graduate and Applied AI Engineer Intern building RAG systems, voice agents, predictive ML pipelines, and automations.',
     siteName: 'Hamza Siddiqui',
     images: [{ url: '/portfolio.png', width: 1200, height: 630, alt: 'Hamza Siddiqui Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hamza Siddiqui | Data Science Graduate & AI Systems Engineer',
+    title: 'Hamza Siddiqui | Data Science Graduate & Applied AI Engineer',
     description:
-      'Official portfolio of Hamza Siddiqui — Data Science Graduate, Data Analyst, and AI Systems Builder specializing in RAG, voice agents, predictive ML pipelines, and automations.',
+      'Official portfolio of Hamza Siddiqui — Data Science Graduate and Applied AI Engineer Intern building RAG systems, voice agents, predictive ML pipelines, and automations.',
     images: ['/portfolio.png'],
   },
   icons: {
@@ -91,7 +92,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Hamza Siddiqui',
-    jobTitle: 'Data Science Graduate & AI Systems Engineer',
+    jobTitle: 'Data Science Graduate & Applied AI Engineer',
     url: 'https://hamsidhi.com',
     sameAs: [
       'https://github.com/hamsidhi',

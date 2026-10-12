@@ -60,7 +60,7 @@ const skillHighlights: Record<string, { category: string; stats: string; details
     stats: "Systemic Reliability",
     details: [
       "Developed constraints-based templates for conversational AI lead qualification.",
-      "Implemented multi-step agents using RAG architecture for healthcare & real estate.",
+      "Implemented multi-step agents using RAG architecture for real-estate and restaurant use cases.",
       "Mitigated hallucination risks to ensure reliable business output."
     ]
   },
