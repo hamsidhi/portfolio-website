@@ -121,7 +121,7 @@ export interface TimelineItem {
 
 export const experienceTimeline: TimelineItem[] = [
   {
-    title: 'Intern',
+    title: 'Applied AI Engineer Intern',
     company: 'Dhruvion',
     date: 'Jul 2026 – Dec 2026',
     description: 'Supporting the design, development, and testing of practical, AI-enabled applications and prototypes at an AI strategy and digital innovation firm.',
