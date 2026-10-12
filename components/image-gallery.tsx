@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'motion/react'
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react'
@@ -71,7 +72,8 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
         ))}
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox — portaled to <body> so the page-transition filter/transform can't trap position:fixed */}
+      {typeof document !== 'undefined' && createPortal(
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div
@@ -142,7 +144,9 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+      )}
     </>
   )
 }
