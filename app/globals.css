@@ -31,6 +31,8 @@
   --color-accent-1: var(--accent-1);
   --color-accent-2: var(--accent-2);
   --color-accent-3: var(--accent-3);
+  --color-accent-4: var(--accent-4);
+  --color-accent-5: var(--accent-5);
   --color-accent-warn: var(--accent-warn);
   --color-accent-danger: var(--accent-danger);
 
@@ -70,6 +72,8 @@
   --accent-1: #3B82F6;       /* Electric Blue */
   --accent-2: #8B5CF6;       /* Violet */
   --accent-3: #10B981;       /* Emerald */
+  --accent-4: #FB7185;       /* Coral — warm complement to blue/violet */
+  --accent-5: #22D3EE;       /* Cyan — analogous bridge */
   --accent-warn: #F59E0B;    /* Amber */
   --accent-danger: #EF4444;  /* Red */
 
@@ -112,6 +116,8 @@
   --accent-1: #D4A574;       /* Warm Sand / Camel */
   --accent-2: #C97B5A;       /* Burnt Sienna */
   --accent-3: #6B8E7F;       /* Sage Teal */
+  --accent-4: #E07A5F;       /* Terracotta glow */
+  --accent-5: #8FB9A8;       /* Soft sage */
   --accent-warn: #E8A87C;    /* Peach */
   --accent-danger: #C65D4A;  /* Terracotta */
 
@@ -776,4 +782,165 @@ dialog.dialog-modal::backdrop {
   pointer-events: none;
   z-index: 50;
   animation: particle-burst-1 var(--duration) cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   UI/UX ENHANCEMENT LAYER
+   Colour: 60% dark neutral · 30% cool blue/violet · 10% warm coral accent
+   Motion: all decorative animation is disabled under prefers-reduced-motion
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Aurora ambient background (fixed, GPU transform-only) ─── */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora span {
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform;
+}
+.aurora .a1 {
+  width: 62vmax; height: 62vmax; left: -18vmax; top: -22vmax;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent-1) 22%, transparent), transparent);
+  animation: aurora-a 26s ease-in-out infinite alternate;
+}
+.aurora .a2 {
+  width: 56vmax; height: 56vmax; right: -20vmax; top: 10vmax;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent-2) 20%, transparent), transparent);
+  animation: aurora-b 32s ease-in-out infinite alternate;
+}
+.aurora .a3 {
+  width: 48vmax; height: 48vmax; left: 20vmax; bottom: -26vmax;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent-4) 14%, transparent), transparent);
+  animation: aurora-c 38s ease-in-out infinite alternate;
+}
+@keyframes aurora-a { to { transform: translate3d(14vmax, 10vmax, 0) scale(1.15); } }
+@keyframes aurora-b { to { transform: translate3d(-12vmax, 14vmax, 0) scale(0.9); } }
+@keyframes aurora-c { to { transform: translate3d(10vmax, -12vmax, 0) scale(1.2); } }
+
+/* ─── Cursor-tracking spotlight on glass cards ─── */
+.glass-panel:hover {
+  background-image:
+    radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%),
+      color-mix(in srgb, var(--accent-1) 14%, transparent),
+      transparent 65%);
+  border-color: color-mix(in srgb, var(--accent-1) 38%, var(--glass-border-hover));
+}
+
+/* theme-aware hover lift (was hard-coded blue) */
+.antigravity-hover:hover {
+  box-shadow:
+    0 18px 50px -12px color-mix(in srgb, var(--accent-1) 28%, transparent),
+    0 4px 14px -4px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Richer, theme-aware gradient text ─── */
+.text-gradient {
+  background: linear-gradient(110deg, var(--accent-1), var(--accent-5), var(--accent-2), var(--accent-4), var(--accent-1));
+  background-size: 300% auto;
+  animation: shine 9s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-static {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-warm {
+  background: linear-gradient(110deg, var(--accent-4), var(--accent-warn, #F59E0B), var(--accent-4));
+  background-size: 250% auto;
+  animation: shine 7s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ─── Primary buttons: gradient + sweeping shine ─── */
+.btn-glow.bg-accent-1 {
+  background-image: linear-gradient(120deg, var(--accent-1), var(--accent-2));
+}
+.btn-glow {
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease, filter 300ms ease;
+}
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -10px color-mix(in srgb, var(--accent-2) 55%, transparent);
+  filter: saturate(1.15);
+}
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.28) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.btn-glow:hover::after { transform: translateX(120%); }
+
+/* ─── Stat cards: coloured top rail, theme-aware ─── */
+.stat-card::after {
+  background: linear-gradient(90deg, transparent, var(--accent-1), var(--accent-4), transparent);
+}
+
+/* ─── Section label: pulsing dot + warm accent ─── */
+.section-label-dot {
+  position: relative;
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 9999px;
+  background: var(--accent-4);
+}
+.section-label-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 1px solid var(--accent-4);
+  animation: dot-ping 2.4s ease-out infinite;
+}
+@keyframes dot-ping {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ─── Animated gradient hairline between sections ─── */
+.section-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-1), var(--accent-2), var(--accent-4), transparent);
+  background-size: 200% 100%;
+  opacity: 0.45;
+  animation: rule-slide 8s linear infinite;
+}
+@keyframes rule-slide { to { background-position: 200% 0; } }
+
+/* ─── Hero role rotator ─── */
+.role-rotator {
+  display: inline-flex;
+  min-width: 1ch;
+}
+
+/* ─── Link underline draw ─── */
+.nav-underline {
+  background-image: linear-gradient(90deg, var(--accent-1), var(--accent-4));
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-underline:hover { background-size: 100% 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora span, .section-rule, .section-label-dot::after, .text-gradient, .text-gradient-warm {
+    animation: none !important;
+  }
+  .btn-glow::after { display: none; }
 }

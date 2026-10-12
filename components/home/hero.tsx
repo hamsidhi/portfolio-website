@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { motion, type Variants } from 'motion/react'
+import { AnimatePresence, motion, type Variants } from 'motion/react'
 import { ArrowRight, Download, MessageSquare, ChevronDown } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 
 const HeroCanvas = dynamic(() => import('./hero-canvas'), {
@@ -50,6 +50,9 @@ function WireframeSphere() {
 }
 
 /* ─── Word-by-word mask reveal ─── */
+const HIGHLIGHT_WORDS = new Set(['Hamza', 'Siddiqui.', 'Data-Driven', 'Automations.'])
+const WARM_WORDS = new Set(['Automations.'])
+
 function MaskRevealHeadline({ text }: { text: string }) {
   const words = text.split(' ')
   return (
@@ -57,7 +60,7 @@ function MaskRevealHeadline({ text }: { text: string }) {
       {words.map((word, i) => (
         <span key={i} className="inline-block overflow-hidden mr-[0.3em]">
           <motion.span
-            className="inline-block"
+            className={`inline-block ${WARM_WORDS.has(word) ? 'text-gradient-warm' : HIGHLIGHT_WORDS.has(word) ? 'text-gradient' : ''}`}
             initial={{ y: '100%', opacity: 0 }}
             animate={{ y: '0%', opacity: 1 }}
             transition={{
@@ -81,6 +84,36 @@ const container: Variants = {
 const item: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
+const ROLES = ['Applied AI Engineer', 'Data Science Graduate', 'Automation Builder', 'RAG & Voice-Agent Developer']
+
+function RoleRotator() {
+  const [i, setI] = useState(0)
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const t = setInterval(() => setI((n) => (n + 1) % ROLES.length), 2600)
+    return () => clearInterval(t)
+  }, [])
+  return (
+    <div className="mt-5 flex h-8 items-center justify-center gap-2 text-base sm:text-lg" aria-live="off">
+      <span className="text-muted-foreground">Currently</span>
+      <span className="relative inline-flex h-8 min-w-[15ch] items-center justify-start overflow-hidden font-medium text-accent-4">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={ROLES[i]}
+            initial={{ y: '110%', opacity: 0 }}
+            animate={{ y: '0%', opacity: 1 }}
+            exit={{ y: '-110%', opacity: 0 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="whitespace-nowrap"
+          >
+            {ROLES[i]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
+    </div>
+  )
 }
 
 const stats = [
@@ -145,6 +178,8 @@ export function Hero() {
 
           {/* Mask reveal headline */}
           <MaskRevealHeadline text="Hi, I'm Hamza Siddiqui. Building Data-Driven Systems & Practical Automations." />
+
+          <RoleRotator />
 
           {/* Subtitle */}
           <motion.p

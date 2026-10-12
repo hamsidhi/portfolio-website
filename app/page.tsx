@@ -15,9 +15,12 @@ export default function HomePage() {
     <>
       <Hero />
       <VoiceAgentFeature />
+      <div className="section-rule" aria-hidden />
       <AgmisFeature />
+      <div className="section-rule" aria-hidden />
       <WhyHireMe />
       <SelectedProjects />
+      <div className="section-rule" aria-hidden />
       <ExperienceHighlight />
       <CertificationsHighlight />
       <AboutPreview />

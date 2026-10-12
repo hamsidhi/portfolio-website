@@ -8,6 +8,8 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { ScrollProgress } from '@/components/scroll-progress'
 import { CursorGlow } from '@/components/cursor-glow'
 import { CommandPalette } from '@/components/command-palette'
+import { AuroraBackground } from '@/components/aurora-background'
+import { SpotlightEffect } from '@/components/spotlight-effect'
 import { site } from '@/lib/site'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -151,9 +153,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* Fixed background layers */}
+          <AuroraBackground />
           <div className="bg-grid-fixed" aria-hidden />
           <div className="noise-overlay" aria-hidden />
           <CursorGlow />
+          <SpotlightEffect />
           <CommandPalette />
           
           <ScrollProgress />

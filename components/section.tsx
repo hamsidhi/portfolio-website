@@ -3,8 +3,9 @@ import { Reveal } from '@/components/reveal'
 
 export function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-blue-400">
-      <span className="h-px w-6 bg-blue-500/50" />
+    <span className="inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.2em] text-accent-1">
+      <span className="section-label-dot" aria-hidden />
+      <span className="h-px w-6 bg-accent-1/50" />
       {children}
     </span>
   )
