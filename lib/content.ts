@@ -121,6 +121,21 @@ export interface TimelineItem {
 
 export const experienceTimeline: TimelineItem[] = [
   {
+    title: 'Intern',
+    company: 'Dhruvion',
+    date: 'Jul 2026 – Dec 2026',
+    description: 'Supporting the design, development, and testing of practical, AI-enabled applications and prototypes at an AI strategy and digital innovation firm.',
+    achievements: [
+      'Building and documenting AI-powered applications and prototypes using LLMs, prompt engineering, and retrieval-augmented generation (RAG).',
+      'Developing AI workflows and agents with data processing and API integrations, and evaluating model and solution quality.',
+      'Applying security, privacy, and responsible-AI practices across all assigned work.',
+    ],
+    type: 'work',
+    credentials: [
+      { label: 'View Appointment Letter', url: '/assets/credentials/Dhruvion_Appointment_Letter.pdf' },
+    ],
+  },
+  {
     title: 'Artificial Intelligence Intern',
     company: 'Codec Technologies',
     date: 'Jul 2026 – Aug 2026',
