@@ -212,6 +212,77 @@ export const experienceTimeline: TimelineItem[] = [
   },
 ]
 
+export interface SpeakingClip {
+  src: string
+  poster: string
+  label: string
+  portrait?: boolean
+}
+
+export interface SpeakingEngagement {
+  title: string
+  kind: string
+  institution: string
+  department: string
+  date: string
+  dateLabel: string
+  audience: string
+  time: string
+  venue: string
+  role: string
+  summary: string
+  topics: string[]
+  takeaway: string
+  tags: string[]
+  photos: { src: string; alt: string; caption: string }[]
+  clips: SpeakingClip[]
+}
+
+export const speakingEngagements: SpeakingEngagement[] = [
+  {
+    title: 'Applied AI for Everyday Life',
+    kind: 'Guest Lecture',
+    institution: 'Atharva University, Mumbai',
+    department: 'School of Computer Science and Application · Department of Data Science',
+    date: '23 October 2026',
+    dateLabel: 'Oct 2026',
+    audience: 'FY B.Sc. Data Science students (Batch A)',
+    time: '12:30 PM – 1:30 PM',
+    venue: 'Classroom No. 17, 17th Floor',
+    role: 'Invited Guest Speaker · Alumni Engagement',
+    summary:
+      'Delivered an interactive one-hour guest lecture on how artificial intelligence can improve productivity, learning, and problem-solving when used thoughtfully.',
+    topics: [
+      'Applied AI engineering and real-world applications',
+      'Prompt engineering and effective AI workflows',
+      'Responsible AI use, critical thinking, and output verification',
+      'Practical demonstrations of AI tools and automation',
+      'Introduction to AI orchestration and Generative Engine Optimization (GEO)',
+    ],
+    takeaway:
+      'The session encouraged students to use AI as a tool for learning and problem-solving, not as a replacement for their own thinking.',
+    tags: ['Applied AI', 'Prompt Engineering', 'AI Automation', 'Knowledge Sharing'],
+    photos: [
+      {
+        src: '/assets/guest-lecture/session-poster.jpg',
+        alt: 'Hamza Siddiqui presenting at the Applied AI for Everyday Life guest lecture, with the event poster on screen',
+        caption: 'At the lectern, with the official session poster on screen.',
+      },
+      {
+        src: '/assets/guest-lecture/slide-walkthrough.jpg',
+        alt: 'Hamza Siddiqui walking through a prompt-engineering slide during the lecture',
+        caption: 'Walking students through a prompt-testing exercise: run the same prompt on two AIs, then compare and verify.',
+      },
+    ],
+    clips: [
+      { src: '/assets/guest-lecture/clip-1.mp4', poster: '/assets/guest-lecture/clip-1-poster.jpg', label: 'Prompt stress test walkthrough' },
+      { src: '/assets/guest-lecture/clip-2.mp4', poster: '/assets/guest-lecture/clip-2-poster.jpg', label: 'Lessons from one bad day' },
+      { src: '/assets/guest-lecture/clip-3.mp4', poster: '/assets/guest-lecture/clip-3-poster.jpg', label: 'Live explanation', portrait: true },
+      { src: '/assets/guest-lecture/clip-4.mp4', poster: '/assets/guest-lecture/clip-4-poster.jpg', label: 'Q&A moment', portrait: true },
+    ],
+  },
+]
+
 export interface Education {
   degree: string
   institution: string

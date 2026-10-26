@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageHero } from '@/components/section'
 import { Timeline } from '@/components/timeline'
 import { Reveal } from '@/components/reveal'
+import { SpeakingSection } from '@/components/speaking'
 
 export const metadata: Metadata = {
   title: 'Experience',
@@ -13,7 +14,7 @@ const highlights = [
   { label: 'Industry Internships', value: '3' },
   { label: 'Flagship Products', value: '4 shipped' },
   { label: 'Certifications', value: '10+ earned' },
-  { label: 'Focus Areas', value: 'AI · Data · Automation' },
+  { label: 'Guest Lectures', value: '1 delivered' },
 ]
 
 export default function ExperiencePage() {
@@ -44,6 +45,8 @@ export default function ExperiencePage() {
       <section className="mx-auto max-w-4xl px-5 py-16 lg:px-8">
         <Timeline />
       </section>
+
+      <SpeakingSection />
     </>
   )
 }

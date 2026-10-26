@@ -23,7 +23,7 @@ const journey = [
   { year: '2023–24', title: 'First Industry Experience', body: 'Interned as a Data Analyst at Sahil Dresses — transforming ERP data into Power BI dashboards.' },
   { year: '2024', title: 'Building AGMIS', body: 'Designed and built a full academic intelligence platform from the ground up.' },
   { year: '2025', title: 'Voice Agent Automation', body: 'Created a conversational agent for real estate lead qualification using prompt engineering.' },
-  { year: '2026', title: 'Applied AI Engineering', body: 'Interned at Codec Technologies, then joined Dhruvion as an Applied AI Engineer Intern working on its Generative Engine Optimization (GEO) platform.' },
+  { year: '2026', title: 'Applied AI Engineering', body: 'Interned at Codec Technologies, joined Dhruvion as an Applied AI Engineer Intern on its Generative Engine Optimization (GEO) platform, and returned to Atharva as an invited guest speaker on Applied AI for Everyday Life.' },
   { year: 'Now', title: 'Building Practical AI Systems', body: 'Building AI systems, data pipelines, and automations that businesses can actually use.' },
 ]
 

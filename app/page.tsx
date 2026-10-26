@@ -3,6 +3,7 @@ import { VoiceAgentFeature } from '@/components/home/voice-agent-feature'
 import { AgmisFeature } from '@/components/home/agmis-feature'
 import { WhyHireMe } from '@/components/home/why-hire-me'
 import { SelectedProjects } from '@/components/home/selected-projects'
+import { SpeakingHighlight } from '@/components/speaking'
 import {
   ExperienceHighlight,
   CertificationsHighlight,
@@ -22,6 +23,7 @@ export default function HomePage() {
       <SelectedProjects />
       <div className="section-rule" aria-hidden />
       <ExperienceHighlight />
+      <SpeakingHighlight />
       <CertificationsHighlight />
       <AboutPreview />
       <ContactCta />
